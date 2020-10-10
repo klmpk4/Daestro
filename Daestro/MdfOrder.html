@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How To Order</title>
+
+    <!-- CSS Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- JSS Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+    <style>
+        body {
+          background-image: url('img/webimage.png');
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          background-size: cover;
+          font-family:monospace;
+          font-size: larger;
+        }
+        .feather {
+          width: 18px;
+          height: 18px;
+        }
+        .middle {
+          padding-left: 15%;
+          padding-top: 100px;
+        }
+        .header {
+          color: white;
+          margin-top :10%;
+        }
+        h1{
+          font-weight: 700;
+          margin-top: 100px;
+          text-align: center;
+          text-transform: uppercase;
+          letter-spacing: 4px;
+          line-height: 23px;
+        }
+        .responsive {
+            width: 100%;
+            max-width: 1000px;
+            height: auto;
+            padding-top: 10px;
+        }
+        .Order1{
+            margin: auto;
+            max-width: 1080px;
+        }
+        #Order2{
+            position: relative;
+            width: 90%;
+            margin:auto;
+            margin-top: 59px;
+        }
+        #Order2 ul{
+            padding: 0;
+            margin: 0;
+            padding-top: 15px;
+            position: absolute;
+            width: 100%;
+            margin-top: -40px;
+        }
+        #Order2 li::before{
+            content: "";
+            display: block;
+            margin: auto;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: solid 2px #aaa;
+            transition: all ease 0.3s;
+        }
+        #Order2 li.active::before,
+        #Order2 li:hover::before{
+            background: rgb(12, 70, 117);
+        }
+        #Order2 li{
+            list-style: none;
+            float: left;
+            width: 20%;
+            text-align: center;
+            color: #aaa;
+            text-transform: uppercase;
+            font-size: 11px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: all ease 0.2s;
+            vertical-align: bottom;
+            height: 59px;
+            position: relative;
+        }
+        .langkah-pilih{
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            font-size: 12px;
+        }
+        #Order2 li.active,
+        #Order2 li:hover{
+            color: rgb(12, 70, 117);
+        }
+        #Order2 li::after{
+            content: "";
+            display: block;
+            width: 5px;
+            height: 5px;
+            background: #777777;
+            margin: auto;
+            border: solid 7px white;
+            border-radius: 50%;
+            margin-top: 40px;
+            box-shadow: 0 2px 13px -1px rgba(0,0,0,0.3);
+            transition: all ease 0.2s;
+        }
+        #Order2 li:hover::after{
+            background: rgb(12, 70, 117);
+        }
+        #Order2 li.active::after{
+            background: rgb(12, 70, 117);
+        }
+        #Order2 #garis{
+            width: 80%;
+            margin: auto;
+            background: #eee;
+            height: 5px;
+            position: absolute;
+            left: 10%;
+            top:50px;
+            z-index: 1;
+            border-radius: 50px;
+            transition: all ease 0.9s;
+        }
+        #Order2 #garis-progres{
+            content: "";
+            width: 3%;
+            height: 100%;
+            background: rgb(12, 70, 117);
+            background: linear-gradient(to right, rgb(12, 70, 117) 0%, #58bbe2 100%);
+            position: absolute;
+            z-index: 2;
+            border-radius: 50px;
+            transition: all ease 0.9s;
+        }
+        #progress-content-section{
+            width: 90%;
+            margin: auto;
+            background: #f3f3f3;
+            border-radius: 4px;
+        }
+        #progress-content-section .section-content{
+            padding: 30px 40px;
+            text-align: center;
+        }
+        #progress-content-section .section-content h2 {
+            font-size:20px;
+            text-transform:uppercase;
+            font-weight: bold;
+            color:#333;
+            letter-spacing:1px;
+        }
+
+        #progress-content-section .section-content img {
+            font-size:16px;
+            line-height:1.8em;
+            color:#777;
+        }
+
+        #progress-content-section .section-content {
+            display:none;
+            animation: FadeInUp 700ms ease 1;
+            animation-fill-mode:forwards;
+            transform:translateY(15px);
+            opacity:0;
+        }
+
+        #progress-content-section .section-content.active {
+            display:block;
+        }
+
+        @keyframes FadeInUp {
+            0% {
+                transform:translateY(15px);
+                opacity:0;
+            }
+            
+            100% {
+                transform:translateY(0px);
+                opacity:1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+         <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="Main_Page_PR.html"><img src="img/1.png" width="80px" height="40px"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav">
+                <li class="nav-item active">
+                  <a class="nav-link" href="All Product row page.html">ALL PRODUCT<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Category
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="Shirtview.html">Shirt</a>
+                    <a class="dropdown-item" href="T-ShirtView.html">T-Shirt</a>
+                    <a class="dropdown-item" href="Hoodieview.html">Hoodie</a>
+                    <a class="dropdown-item" href="Pantsview.html">Pants</a>
+                    <a class="dropdown-item" href="Bagview.html">Bags</a>
+                  </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="FAQ.html">FAQ<span class="sr-only">(current)</span></a>
+                </li>
+              </ul>
+              
+              <form class="form-inline ml-4">
+                <input class="form-control mr-sm-2" style="font-size: small; width: 650px;" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-light my-2 my-sm-0" type="submit"><i data-feather="search"></i></button>
+              </form>
+    
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="Cart.html"><i data-feather="shopping-bag"></i><span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="Wishlist.html"><i data-feather="heart"></i><span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="Sign-In Page.html"><i data-feather="user"></i><span class="sr-only">(current)</span></a>
+                </li>
+              </ul>
+            </div>
+        </nav>
+    <!--Order-->
+    <br><br>
+    <hr><h1><b>HOW TO ORDER</b></h1><hr><br>
+    <div class="Order1">
+        <div id="Order2">
+            <ul>
+                <li class="langkah langkah1 active">
+                    <div class="langkah-pilih">Langkah 1</div>
+                </li>
+                <li class="langkah langkah2">
+                    <div class="langkah-pilih">Langkah 2</div>
+                </li>
+                <li class="langkah langkah3">
+                    <div class="langkah-pilih">Langkah 3</div>
+                </li>
+                <li class="langkah langkah4">
+                    <div class="langkah-pilih">Langkah 4</div>
+                </li>
+                <li class="langkah langkah5">
+                    <div class="langkah-pilih">Langkah 5</div>
+                </li>
+            </ul>
+            <div id="garis">
+                <div id="garis-progres">
+                </div>
+            </div>
+            <br><br><br><br><br>
+            <div id="progress-content-section">
+                <div class="section-content step1 active">
+                    <h2>Masuk kedalam akun anda</h2>
+                    <img src="img/Langkah 1.png" alt="1" class="responsive" width="1000px" height="500px">
+                </div>
+                <div class="section-content step2">
+                    <h2>Masukkan barang barang yang anda inginkan ke keranjang</h2>
+                    <img src="img/Langkah 2.png" alt="1" class="responsive" width="1000px" height="500px">
+                </div>
+                <div class="section-content step3">
+                    <h2>Setelah selesai klik checkout</h2>
+                    <img src="img/Langkah 3.png" alt="1" class="responsive" width="1000px" height="500px">
+                </div>
+                <div class="section-content step4">
+                    <h2>Masukkan data-data yang dibutuhkan</h2>
+                    <img src="img/Langkah 4.png" alt="1" class="responsive" width="1000px" height="500px">
+                </div>
+                <div class="section-content step5">
+                    <h2>Masukkan bukti pembayaran ke form yang tersedia</h2>
+                    <img src="img/Langkah 5.png" alt="1" class="responsive" width="1000px" height="500px">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+        <style>
+            li > a {
+                color: white;
+            }
+        </style>
+        <div class="footer-bottom bg-dark">
+          <div class="container mt-3">
+              <div class="row justify-content-xl-center">
+                  <div class="col-2 ">
+                      <div class="header">DAESTRO.CLOTH</div>
+                      <br>
+                      <ul class="footer-nav nav flex-column">
+                          <li class="nav-item"><a href="https://www.google.co.id/maps/place/Universitas+Tarumanagara+Kampus+I/@-6.1694043,106.7869128,17z/data=!3m1!4b1!4m5!3m4!1s0x2e69f65c8572640d:0xc0a066d78372614e!8m2!3d-6.1694043!4d106.7891015">
+                              Universitas Tarumanagara Jl. Letjen S. Parman No. 1 Jakarta Barat 11440, Indonesia</a></li>
+                          
+                      </ul>
+                  </div>
+                  <div class="col-2 ">
+                      <div class="header">CUSTOMER CARE</div>
+                      <br>
+                      <ul class="footer-nav nav flex-column">
+                          <li class="nav-item"><a href="FAQ.html">FAQ </a></li>
+                          <li class="nav-item"><a href="MdfOrder.html">How to Order</a></li>
+                          <li class="nav-item"><a href="Complain.html">Complain</a></li>
+                      </ul>
+                  </div>
+                  
+                  <div class="col-2 ">
+                      <div class="header">ABOUT US</div>
+                      <br>
+                      <ul class="footer-nav nav flex-column">
+                          <li class="nav-item"><a href="Dropseller.html">Dropship & Reseller</a></li>
+                          <li class="nav-item"><a href="Privacy & Policy.html">Privacy & Policy</a></li>
+                      </ul>
+                  </div>
+                  <div class="col-2 ">
+                      <div class="header">MY ACCOUNT</div>
+                      <br>
+                      <ul class="footer-nav nav flex-column">
+                          <li class="nav-item"><a href="Sign-In Page.html">Sign In</a></li>
+                          <li class="nav-item"><a href="Sign-Up Page.html">Register</a></li>
+                      </ul>
+                  </div>
+                  <div class="col-2 ">
+                      <div class="header">CONTACT US</div>
+                      <br>
+                      <ul class="footer-nav nav flex-column">
+                          <li class="nav-item"><a href="https://shopee.co.id/daestro.cloth">
+                            <img src="img/shopee.png" width="18px" height="20px">
+                            Shopee</a></li>
+                          <li class="nav-item"><a href="https://www.instagram.com/daestro.cloth/">
+                            <img src="img/instagram.png" width="18px" height="18px">
+                            Instagram</a></li>
+                          <li class="nav-item"><a href="https://www.tokopedia.com/daestrocloth?source=universe&st=product">
+                            <img src="img/tokped.png" width="20px" height="15px">
+                            Tokopedia</a></li>
+                      </ul>
+                  </div>
+              </div>    
+          </div>
+        </div>
+        </div>
+        
+        <!-- feather icons -->
+        <script src="https://unpkg.com/feather-icons"></script>
+        <script>
+        feather.replace()
+        </script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <script>
+            
+            $(".langkah").click( function() {
+            $(this).addClass("active").prevAll().addClass("active");
+            $(this).nextAll().removeClass("active");
+        });
+
+        $(".langkah1").click( function() {
+            $("#garis-progres").css("width", "3%");
+            $(".step1").addClass("active").siblings().removeClass("active");
+        });
+
+        $(".langkah2").click( function() {
+            $("#garis-progres").css("width", "25%");
+            $(".step2").addClass("active").siblings().removeClass("active");
+        });
+
+        $(".langkah3").click( function() {
+            $("#garis-progres").css("width", "50%");
+            $(".step3").addClass("active").siblings().removeClass("active");
+        });
+
+        $(".langkah4").click( function() {
+            $("#garis-progres").css("width", "75%");
+            $(".step4").addClass("active").siblings().removeClass("active");
+        });
+
+        $(".langkah5").click( function() {
+            $("#garis-progres").css("width", "100%");
+            $(".step5").addClass("active").siblings().removeClass("active");
+        });
+        </script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+body{
+    background-image: url("img/webimage.png");
+    background-repeat: round;
+    background-color: white;
+    font-size: small;
+    overflow: auto;
+    font-family:monospace;
+    font-size: larger;
+  }
+  .feather {
+    width: 18px;
+    height: 18px;
+  }
+  .header {
+    color: white;
+    margin-top :10%;
+  }
+  .middle {
+      padding-left: 15%;
+      padding-top: 100px;
+  }
+  #putarlah{
+      position: fixed;
+      z-index: -1;
+      margin-top: 60px;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+  }
+  @media (min-aspect-ratio:16/9){
+      #putarlah{
+          width: 100%;
+          height: auto;
+      }
+  }  
+  @media (max-aspect-ratio:16/9){
+    #putarlah{
+        width: auto;
+        height: 100%;
+      }
+  }
+  input, textarea{
+      outline: none;
+      border: none;
+  }
+  .container-sign{
+      width: auto;
+      display: flex;
+  }
+  .sign-more{
+      width: calc(100% - 520px);
+      position: right;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+  }
+  .wrap-sign{
+      width: 520px;
+      min-height: 100vh;
+      background: white;
+      border-radius: 2px;
+      position: relative;
+      margin-top: 90px;
+      padding: 70px 50px 0px 50px;
+  }
+  .sign-form{
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+  }
+  .sign-form-title{
+      display: block;
+      width: 100%;
+      font-size: 39px;
+      font-weight: 900;
+      color: #333333;
+      line-height: 1.2;
+      text-align: left;
+      padding-bottom: 59px;
+  }
+  .wrap-input{
+      width: 100%;
+      position: relative;
+      border-bottom: 2px solid #dbdbdb;
+      margin-bottom: 45px
+  }
+  .wrap-input2{
+      width: 100%;
+      position: relative;
+      border-top: 2px solid #dbdbdb;
+      margin-bottom: 45px
+  }
+  .lable-input{
+      font-size: 18px;
+      font-weight: 600;
+      color: #999999;
+      line-height: 1.2;
+      padding-left: 2px;
+  }
+  .lable-input2{
+      font-size: 31px;
+      font-weight: 300;
+      color: #999999;
+      line-height: 1.2;
+  }
+  .input{
+      display: block;
+      width: 100%;
+      height: 50px;
+      background:transparent;
+      font-size: 22px;
+      color: #555;
+      line-height: 1.2;
+      padding: 0 2px;
+  }
+  .focus-input{
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+  }
+  .focus-input::before{
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: -2px;
+      left: 0px;
+      width: 0;
+      height: 2px;
+      -webkit-transition: all 0.4s;
+      -o-transition: all 0.4s;
+      -moz-transition:all 0.4s;
+      transition: all 0.4s;
+      background: #122336;
+  }
+  .input:focus+ .focus-input::before{
+      width: 100%;
+  }
+  .container-terms{
+      width: 100%;
+      display: flex;
+      align-items: center;
+      padding-bottom: 35px;
+  }
+  .input.checkbox{
+      display: none;
+  }
+  .label-checkbox{
+      margin:0;
+      display: block;
+      position: relative;
+      padding-left: 26px;
+      cursor: pointer;
+  }
+  .form-group{
+      margin-bottom: 20px;
+  }
