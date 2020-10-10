@@ -150,17 +150,23 @@
   <br>
   <br>
   <div id="footer"></div>
-<script>
-  // Toggle grid padding
-  function myFunction() {
-    var x = document.getElementById("myGrid");
-    if (x.className === "w3-row") {
-      x.className = "w3-row-padding";
-    } else { 
-      x.className = x.className.replace("w3-row-padding", "w3-row");
+
+  <!-- feather icons -->
+  <script src="https://unpkg.com/feather-icons"></script>
+  <script>
+  feather.replace()
+  </script>
+  <script>
+    // Toggle grid padding
+    function myFunction() {
+      var x = document.getElementById("myGrid");
+      if (x.className === "w3-row") {
+        x.className = "w3-row-padding";
+      } else { 
+        x.className = x.className.replace("w3-row-padding", "w3-row");
+      }
     }
-  }
-  document.getElementById("myBtn").click();
-</script>
+    document.getElementById("myBtn").click();
+  </script>
   </body>
 </html>
