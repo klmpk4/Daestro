@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How To Order</title>
+
+    <!-- CSS Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- JSS Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script>
+        $(function() {
+          $('#navbarhome').load('navbar.html');
+          $('#footer').load('footer.html');
+        })
+      </script>
+    <style>
+        body {
+          background-image: url('img/webimage.png');
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          background-size: cover;
+          font-family:monospace;
+          font-size: larger;
+        }
+        .feather {
+          width: 18px;
+          height: 18px;
+        }
+        .middle {
+          padding-left: 15%;
+          padding-top: 100px;
+        }
+        .header {
+          color: white;
+          margin-top :10%;
+        }
+        h1{
+          font-weight: 700;
+          margin-top: 100px;
+          text-align: center;
+          text-transform: uppercase;
+          letter-spacing: 4px;
+          line-height: 23px;
+        }
+        .responsive {
+            width: 100%;
+            max-width: 1000px;
+            height: auto;
+            padding-top: 10px;
+        }
+        .Order1{
+            margin: auto;
+            max-width: 1080px;
+        }
+        #Order2{
+            position: relative;
+            width: 90%;
+            margin:auto;
+            margin-top: 59px;
+        }
+        #Order2 ul{
+            padding: 0;
+            margin: 0;
+            padding-top: 15px;
+            position: absolute;
+            width: 100%;
+            margin-top: -40px;
+        }
+        #Order2 li::before{
+            content: "";
+            display: block;
+            margin: auto;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: solid 2px #aaa;
+            transition: all ease 0.3s;
+        }
+        #Order2 li.active::before,
+        #Order2 li:hover::before{
+            background: rgb(12, 70, 117);
+        }
+        #Order2 li{
+            list-style: none;
+            float: left;
+            width: 20%;
+            text-align: center;
+            color: #aaa;
+            text-transform: uppercase;
+            font-size: 11px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: all ease 0.2s;
+            vertical-align: bottom;
+            height: 59px;
+            position: relative;
+        }
+        .langkah-pilih{
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            font-size: 12px;
+        }
+        #Order2 li.active,
+        #Order2 li:hover{
+            color: rgb(12, 70, 117);
+        }
+        #Order2 li::after{
+            content: "";
+            display: block;
+            width: 5px;
+            height: 5px;
+            background: #777777;
+            margin: auto;
+            border: solid 7px white;
+            border-radius: 50%;
+            margin-top: 40px;
+            box-shadow: 0 2px 13px -1px rgba(0,0,0,0.3);
+            transition: all ease 0.2s;
+        }
+        #Order2 li:hover::after{
+            background: rgb(12, 70, 117);
+        }
+        #Order2 li.active::after{
+            background: rgb(12, 70, 117);
+        }
+        #Order2 #garis{
+            width: 80%;
+            margin: auto;
+            background: #eee;
+            height: 5px;
+            position: absolute;
+            left: 10%;
+            top:50px;
+            z-index: 1;
+            border-radius: 50px;
+            transition: all ease 0.9s;
+        }
+        #Order2 #garis-progres{
+            content: "";
+            width: 3%;
+            height: 100%;
+            background: rgb(12, 70, 117);
+            background: linear-gradient(to right, rgb(12, 70, 117) 0%, #58bbe2 100%);
+            position: absolute;
+            z-index: 2;
+            border-radius: 50px;
+            transition: all ease 0.9s;
+        }
+        #progress-content-section{
+            width: 90%;
+            margin: auto;
+            background: #f3f3f3;
+            border-radius: 4px;
+        }
+        #progress-content-section .section-content{
+            padding: 30px 40px;
+            text-align: center;
+        }
+        #progress-content-section .section-content h2 {
+            font-size:20px;
+            text-transform:uppercase;
+            font-weight: bold;
+            color:#333;
+            letter-spacing:1px;
+        }
+
+        #progress-content-section .section-content img {
+            font-size:16px;
+            line-height:1.8em;
+            color:#777;
+        }
+
+        #progress-content-section .section-content {
+            display:none;
+            animation: FadeInUp 700ms ease 1;
+            animation-fill-mode:forwards;
+            transform:translateY(15px);
+            opacity:0;
+        }
+
+        #progress-content-section .section-content.active {
+            display:block;
+        }
+
+        @keyframes FadeInUp {
+            0% {
+                transform:translateY(15px);
+                opacity:0;
+            }
+            
+            100% {
+                transform:translateY(0px);
+                opacity:1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="navbarhome"></div>
+    <!--Order-->
+    <br><br>
+    <hr><h1><b>HOW TO ORDER</b></h1><hr><br>
+    <div class="Order1">
+        <div id="Order2">
+            <ul>
+                <li class="langkah langkah1 active">
+                    <div class="langkah-pilih">Langkah 1</div>
+                </li>
+                <li class="langkah langkah2">
+                    <div class="langkah-pilih">Langkah 2</div>
+                </li>
+                <li class="langkah langkah3">
+                    <div class="langkah-pilih">Langkah 3</div>
+                </li>
+                <li class="langkah langkah4">
+                    <div class="langkah-pilih">Langkah 4</div>
+                </li>
+                <li class="langkah langkah5">
+                    <div class="langkah-pilih">Langkah 5</div>
+                </li>
+            </ul>
+            <div id="garis">
+                <div id="garis-progres">
+                </div>
+            </div>
+            <br><br><br><br><br>
+            <div id="progress-content-section">
+                <div class="section-content step1 active">
+                    <h2>Masuk kedalam akun anda</h2>
+                    <img src="../img/Langkah 1.png" alt="1" class="responsive" width="1000px" height="500px">
+                </div>
+                <div class="section-content step2">
+                    <h2>Masukkan barang barang yang anda inginkan ke keranjang</h2>
+                    <img src="../img/Langkah 2.png" alt="1" class="responsive" width="1000px" height="500px">
+                </div>
+                <div class="section-content step3">
+                    <h2>Setelah selesai klik checkout</h2>
+                    <img src="../img/Langkah 3.png" alt="1" class="responsive" width="1000px" height="500px">
+                </div>
+                <div class="section-content step4">
+                    <h2>Masukkan data-data yang dibutuhkan</h2>
+                    <img src="../img/Langkah 4.png" alt="1" class="responsive" width="1000px" height="500px">
+                </div>
+                <div class="section-content step5">
+                    <h2>Masukkan bukti pembayaran ke form yang tersedia</h2>
+                    <img src="../img/Langkah 5.png" alt="1" class="responsive" width="1000px" height="500px">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer"></div>
+        <!-- feather icons -->
+        <script src="https://unpkg.com/feather-icons"></script>
+        <script>
+        feather.replace()
+        </script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <script>
+            
+            $(".langkah").click( function() {
+            $(this).addClass("active").prevAll().addClass("active");
+            $(this).nextAll().removeClass("active");
+        });
+
+        $(".langkah1").click( function() {
+            $("#garis-progres").css("width", "3%");
+            $(".step1").addClass("active").siblings().removeClass("active");
+        });
+
+        $(".langkah2").click( function() {
+            $("#garis-progres").css("width", "25%");
+            $(".step2").addClass("active").siblings().removeClass("active");
+        });
+
+        $(".langkah3").click( function() {
+            $("#garis-progres").css("width", "50%");
+            $(".step3").addClass("active").siblings().removeClass("active");
+        });
+
+        $(".langkah4").click( function() {
+            $("#garis-progres").css("width", "75%");
+            $(".step4").addClass("active").siblings().removeClass("active");
+        });
+
+        $(".langkah5").click( function() {
+            $("#garis-progres").css("width", "100%");
+            $(".step5").addClass("active").siblings().removeClass("active");
+        });
+        </script>
+</body>
+</html>
