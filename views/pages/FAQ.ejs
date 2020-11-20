@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ</title>
+
+    <!-- CSS Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- JSS Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script>
+        $(function() {
+          $('#navbarhome').load('navbar.html');
+          $('#footer').load('footer.html');
+        })
+    </script>
+    <style>
+    body {
+        background-image: url('img/webimage.png');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        font-family:monospace;
+        font-size: larger;
+      }
+      
+      .faq-nav {
+        flex-direction: column;
+        margin: 0 0 32px;
+        border-radius: 2px;
+        border: 1px solid #ddd;
+        box-shadow: 0 1px 5px rgba(85, 85, 85, 0.15);
+      }
+      .faq-nav .nav-link {
+        position: relative;
+        display: block;
+        margin: 0;
+        padding: 13px 16px;
+        background-color: #fff;
+        border: 0;
+        border-bottom: 1px solid #ddd;
+        border-radius: 0;
+        color: #616161;
+        transition: background-color .2s ease;
+      }
+      .faq-nav .nav-link:hover {
+        background-color: #f6f6f6;
+      }
+      .faq-nav .nav-link.active {
+        background-color: #f6f6f6;
+        font-weight: 700;
+        color: rgba(0, 0, 0, 0.87);
+      }
+      .faq-nav .nav-link:last-of-type {
+        border-bottom-left-radius: 2px;
+        border-bottom-right-radius: 2px;
+        border-bottom: 0;
+      }
+      .faq-nav .nav-link i.mdi {
+        margin-right: 5px;
+        font-size: 18px;
+        position: relative;
+      }
+      
+      .tab-content {
+        box-shadow: 0 1px 5px rgba(85, 85, 85, 0.15);
+      }
+      .tab-content .card {
+        border-radius: 0;
+      }
+      .tab-content .card-header {
+        padding: 15px 16px;
+        border-radius: 0;
+        background-color: #f6f6f6;
+      }
+      .tab-content .card-header h5 {
+        margin: 0;
+      }
+      .tab-content .card-header h5 button {
+        display: block;
+        width: 100%;
+        padding: 0;
+        border: 0;
+        font-weight: 700;
+        color: rgba(0, 0, 0, 0.87);
+        text-align: left;
+        white-space: normal;
+      }
+      .tab-content .card-header h5 button:hover, .tab-content .card-header h5 button:focus, .tab-content .card-header h5 button:active, .tab-content .card-header h5 button:hover:active {
+        text-decoration: none;
+      }
+      .tab-content .card-body p {
+        color: #616161;
+      }
+      .tab-content .card-body p:last-of-type {
+        margin: 0;
+      }
+      
+      .accordion > .card:not(:first-child) {
+        border-top: 0;
+      }
+      
+      .collapse.show .card-body {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+      }
+
+      .feather {
+        width: 18px;
+        height: 18px;
+      }
+      .middle {
+        padding-left: 15%;
+        padding-top: 100px;
+      }
+      .header {
+        color: white;
+        margin-top :20%;
+      }
+    </style>      
+</head>
+<body>
+    <div id="navbarhome"></div>
+    <br><br><br><br>
+    <!--FAQ-->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="nav nav-pills faq-nav" id="faq-tabs" role="tablist" aria-orientation="vertical">
+                    <a href="#tab1" class="nav-link active" data-toggle="pill" role="tab" aria-controls="tab1" aria-selected="true">
+                         Frequently Asked Questions
+                    </a>
+                    <a href="#tab2" class="nav-link" data-toggle="pill" role="tab" aria-controls="tab2" aria-selected="false">
+                        <i data-feather="user"></i> Account
+                    </a>
+                    <a href="#tab3" class="nav-link" data-toggle="pill" role="tab" aria-controls="tab3" aria-selected="false">
+                        <i data-feather="menu"></i> Transactions
+                    </a>
+                    <a href="#tab4" class="nav-link" data-toggle="pill" role="tab" aria-controls="tab4" aria-selected="false">
+                        <i data-feather="shopping-bag"></i> Order
+                    </a>
+                    <a href="#tab5" class="nav-link" data-toggle="pill" role="tab" aria-controls="tab5" aria-selected="false">
+                        <i data-feather="message-circle"></i> Contact Us
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="tab-content" id="faq-tab-content">
+                    <div class="tab-pane show active" id="tab1" role="tabpanel" aria-labelledby="tab1">
+                        <div class="accordion" id="accordion-tab-1">
+                            <div class="card">
+                                <div class="card-header" id="accordion-tab-1-heading-1">
+                                    <h5>
+                                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#accordion-tab-1-content-1" aria-expanded="false" aria-controls="accordion-tab-1-content-1">Apakah belanja online saya di Daestro aman?</button>
+                                    </h5>
+                                </div>
+                                <div class="collapse show" id="accordion-tab-1-content-1" aria-labelledby="accordion-tab-1-heading-1" data-parent="#accordion-tab-1">
+                                    <div class="card-body">
+                                        <p>
+                                            Di Daestro, keamanan Anda adalah prioritas utama kami. Berikut ada pengingat keamanan untuk pengalaman
+                                            berbelanja yang aman dan terjamin bersama kami.
+                                            <ul>
+                                                <ol>a. Jangan berbagi/menyebar informasi Anda;</ol>
+                                                <ol>b. Waspadalah terhadapat individu atau akun yang menyamar sebagai Daestro;</ol>
+                                                <ol>c. Waspadalah terhadap Situs Web Phishing/Penipuan</ol>
+                                            </ul>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="accordion-tab-1-heading-2">
+                                    <h5>
+                                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#accordion-tab-1-content-2" aria-expanded="false" aria-controls="accordion-tab-1-content-2">Konfirmasi Pembayaran Bank Transfer</button>
+                                    </h5>
+                                </div>
+                                <div class="collapse" id="accordion-tab-1-content-2" aria-labelledby="accordion-tab-1-heading-2" data-parent="#accordion-tab-1">
+                                    <div class="card-body">
+                                        <p>
+                                            Ingin pesanan Anda diproses lebih cepat? Segera lakukan konfirmasi pembayaran <a href="paymentconfirm.html">disini</a> dalam
+                                            1x24 jam untuk menghindari pembatalan pesanan oleh sistem.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="accordion-tab-1-heading-3">
+                                    <h5>
+                                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#accordion-tab-1-content-3" aria-expanded="false" aria-controls="accordion-tab-1-content-3">Metode Pengembalian Produk</button>
+                                    </h5>
+                                </div>
+                                <div class="collapse" id="accordion-tab-1-content-3" aria-labelledby="accordion-tab-1-heading-3" data-parent="#accordion-tab-1">
+                                    <div class="card-body">
+                                        <p>
+                                            Silahkan mengirimkan produk yang ingin Anda return ke alamat <b>Warehouse Daestro</b> di :
+                                            <b>Universitas Tarumanagara Jl. Letjen S. Parman No. 1 Jakarta Barat 11440, Indonesia</b>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="accordion-tab-1-heading-4">
+                                    <h5>
+                                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#accordion-tab-1-content-4" aria-expanded="false" aria-controls="accordion-tab-1-content-4">Kebijakan Pengembalian/Penukaran Produk</button>
+                                    </h5>
+                                </div>
+                                <div class="collapse" id="accordion-tab-1-content-4" aria-labelledby="accordion-tab-1-heading-4" data-parent="#accordion-tab-1">
+                                    <div class="card-body">
+                                        <p>
+                                            Khawatir produk tidak cocok? Jangan khawatir, karena apapun alasannya retur di Daestro gratis dan mudah!
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="tab2" role="tabpanel" aria-labelledby="tab2">
+                        <div class="accordion" id="accordion-tab-2">
+                            <div class="card">
+                                <div class="card-header" id="accordion-tab-2-heading-1">
+                                    <h5>
+                                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#accordion-tab-2-content-1" aria-expanded="false" aria-controls="accordion-tab-2-content-1">Cara Membuat Akun</button>
+                                    </h5>
+                                </div>
+                                <div class="collapse show" id="accordion-tab-2-content-1" aria-labelledby="accordion-tab-2-heading-1" data-parent="#accordion-tab-2">
+                                    <div class="card-body">
+                                        <p>
+                                            Belum punya akun Daestro? Klik <a href="Sign-In Page.html">disini</a> untuk bergabung dengan kami.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="accordion-tab-2-heading-2">
+                                    <h5>
+                                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#accordion-tab-2-content-2" aria-expanded="false" aria-controls="accordion-tab-2-content-2">Mengubah Informasi Langganan Newsletter</button>
+                                    </h5>
+                                </div>
+                                <div class="collapse" id="accordion-tab-2-content-2" aria-labelledby="accordion-tab-2-heading-2" data-parent="#accordion-tab-2">
+                                    <div class="card-body">
+                                        <p>
+                                            Menerima Email Newslatter yang terlalu banyak, terlalu sedikit atau tidak sama sekali?
+                                            Atau Kamu mendapatkan update untuk produk yang tidak sesuai keinginan? Tenang saja! Kamu dapat 
+                                            mengganti pengaturan di Akun kamu.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="accordion-tab-2-heading-3">
+                                    <h5>
+                                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#accordion-tab-2-content-3" aria-expanded="false" aria-controls="accordion-tab-2-content-3">Penggunaan Menu Wishlist</button>
+                                    </h5>
+                                </div>
+                                <div class="collapse" id="accordion-tab-2-content-3" aria-labelledby="accordion-tab-2-heading-3" data-parent="#accordion-tab-2">
+                                    <div class="card-body">
+                                        <p>
+                                            Suka dengan produknya namun tidak ingin beli sekarang? Ingin disimpan untuk pembelanjaan selanjutnya?
+                                            Kamu bisa gunakan menu "Wishlist". 
+                                            "Wishlist" adalah menu dimana Kamu bisa menempatkan item yang Kamu inginkan untuk pembelian selanjutnya.
+                                            Untuk menandakan produk yang diinginkan, Kamu cukup pilih menu berlogo "hati" yang terletak di menu sisi kanan produk.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="accordion-tab-2-heading-4">
+                                    <h5>
+                                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#accordion-tab-2-content-4" aria-expanded="false" aria-controls="accordion-tab-2-content-4">Pengaturan Akun</button>
+                                    </h5>
+                                </div>
+                                <div class="collapse" id="accordion-tab-2-content-4" aria-labelledby="accordion-tab-2-heading-4" data-parent="#accordion-tab-2">
+                                    <div class="card-body">
+                                        <p>
+                                            Jika Kamu ingin melakukan beberapa perubahan di akun, Kamu dapat melakukan :
+                                            <ul>
+                                                <li>Mengubah data informaasi akun</li>
+                                                <li>Lupa Password</li>
+                                                <li>Tambah alamat baru untuk akun</li>
+                                                <li>Cara melihat order sebelumnya</li>
+                                            </ul>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="tab3" role="tabpanel" aria-labelledby="tab3">
+                        <div class="accordion" id="accordion-tab-3">
+                            <div class="card">
+                                <div class="card-header" id="accordion-tab-3-heading-1">
+                                    <h5>
+                                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#accordion-tab-3-content-1" aria-expanded="false" aria-controls="accordion-tab-3-content-1">Pilihn Pembayaran</button>
+                                    </h5>
+                                </div>
+                                <div class="collapse show" id="accordion-tab-3-content-1" aria-labelledby="accordion-tab-3-heading-1" data-parent="#accordion-tab-3">
+                                    <div class="card-body">
+                                        <p>
+                                            Daestro hanya menyediakan opsi pembayaran via Transfer Bank demi kenyamanan pengalaman berbelanja Anda.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="accordion-tab-3-heading-2">
+                                    <h5>
+                                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#accordion-tab-3-content-2" aria-expanded="false" aria-controls="accordion-tab-3-content-2">Cara Menggunakan Kode Voucher</button>
+                                    </h5>
+                                </div>
+                                <div class="collapse" id="accordion-tab-3-content-2" aria-labelledby="accordion-tab-3-heading-2" data-parent="#accordion-tab-3">
+                                    <div class="card-body">
+                                        <p>
+                                            Syarat dan Ketentuan kode voucher :
+                                            <ol>
+                                                <li>Kode voucher hanya bisa digunakan untuk satu kali pemakaian</li>
+                                                <li>Kode voucher tidak dapat digunakan untuk produk tertentu.</li>
+                                            </ol>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="accordion-tab-3-heading-3">
+                                    <h5>
+                                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#accordion-tab-3-content-3" aria-expanded="false" aria-controls="accordion-tab-3-content-3">Produk Tidak Berlaku Voucher (Non-Sale Item)</button>
+                                    </h5>
+                                </div>
+                                <div class="collapse" id="accordion-tab-3-content-3" aria-labelledby="accordion-tab-3-heading-3" data-parent="#accordion-tab-3">
+                                    <div class="card-body">
+                                        <p>
+                                            Dibagian penjelasan produk akan tertera produk tersebut non-sale item atau tidak.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="accordion-tab-3-heading-4">
+                                    <h5>
+                                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#accordion-tab-3-content-4" aria-expanded="false" aria-controls="accordion-tab-3-content-4">Kode Voucher Tidak Bisa Digunakan</button>
+                                    </h5>
+                                </div>
+                                <div class="collapse" id="accordion-tab-3-content-4" aria-labelledby="accordion-tab-3-heading-4" data-parent="#accordion-tab-3">
+                                    <div class="card-body">
+                                        <p>
+                                           Kode Voucher tidak bisa digunakan? Mohon cek kembali apakah produk yang Anda pesan memenuhi syarat dan ketentuan voucher.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="tab4" role="tabpanel" aria-labelledby="tab4">
+                        <div class="accordion" id="accordion-tab-4">
+                            <div class="card">
+                                <div class="card-header" id="accordion-tab-4-heading-1">
+                                    <h5>
+                                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#accordion-tab-4-content-1" aria-expanded="false" aria-controls="accordion-tab-4-content-1">Guest Checkout</button>
+                                    </h5>
+                                </div>
+                                <div class="collapse show" id="accordion-tab-4-content-1" aria-labelledby="accordion-tab-4-heading-1" data-parent="#accordion-tab-4">
+                                    <div class="card-body">
+                                        <p>
+                                            Tentu saja! Anda tetap bisa melakukan pemesanan tanpa harus membuat akun terlebih dahulu dengan menggunakan fitur Guest Checkout.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="accordion-tab-4-heading-2">
+                                    <h5>
+                                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#accordion-tab-4-content-2" aria-expanded="false" aria-controls="accordion-tab-4-content-2">Cara Mengubah/Membatalkan Pesanan</button>
+                                    </h5>
+                                </div>
+                                <div class="collapse" id="accordion-tab-4-content-2" aria-labelledby="accordion-tab-4-heading-2" data-parent="#accordion-tab-4">
+                                    <div class="card-body">
+                                        <p>
+                                            Jika Anda telah melakukan pemesanan, ada beberapa hal yang tidak dapat Anda ubah yaitu :
+                                            Metode pembayaran, Pilihan Produk, dan Voucher. Bila ini adalah hal-hal yang ingin Anda ubah,
+                                            disarankan untuk melakukan Pembatalan Pesanan.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="accordion-tab-4-heading-3">
+                                    <h5>
+                                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#accordion-tab-4-content-3" aria-expanded="false" aria-controls="accordion-tab-4-content-3">Cara Belanja di Daestro</button>
+                                    </h5>
+                                </div>
+                                <div class="collapse" id="accordion-tab-4-content-3" aria-labelledby="accordion-tab-4-heading-3" data-parent="#accordion-tab-4">
+                                    <div class="card-body">
+                                        <p>
+                                            Order bisa dilakukan langsung di website dengan 3 langkah mudah, pilih produk, pilih metode pembayaran, dan
+                                            dan isi data pengiriman.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="accordion-tab-4-heading-4">
+                                    <h5>
+                                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#accordion-tab-4-content-4" aria-expanded="false" aria-controls="accordion-tab-4-content-4">Garansi & Reparasi</button>
+                                    </h5>
+                                </div>
+                                <div class="collapse" id="accordion-tab-4-content-4" aria-labelledby="accordion-tab-4-heading-4" data-parent="#accordion-tab-4">
+                                    <div class="card-body">
+                                        <p>
+                                            Garansi dan reparasi hanya berlaku untuk produk tertentu saja.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="tab5" role="tabpanel" aria-labelledby="tab5">
+                        <div class="accordion" id="accordion-tab-5">
+                            <div class="card">
+                                <div class="card-header" id="accordion-tab-5-heading-1">
+                                    <h5>
+                                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#accordion-tab-5-content-1" aria-expanded="false" aria-controls="accordion-tab-5-content-1">Kerjasama dengan Daestro</button>
+                                    </h5>
+                                </div>
+                                <div class="collapse show" id="accordion-tab-5-content-1" aria-labelledby="accordion-tab-5-heading-1" data-parent="#accordion-tab-5">
+                                    <div class="card-body">
+                                        <p>
+                                            Bergabung menjadi Supplier dapat kirim email ke : brands@daestro.com
+                                        </p>
+                                        <p>
+                                            Bergabung menjadi Seller dapat klik <a href="Dropseller.html">disini</a>
+                                        </p>
+                                        <p>
+                                            Bekerjasama dalam co-marketing/partnership/kemitraan dapat kirim email ke : bd@daestro.com
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="accordion-tab-5-heading-2">
+                                    <h5>
+                                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#accordion-tab-5-content-2" aria-expanded="false" aria-controls="accordion-tab-5-content-2">Customer Service</button>
+                                    </h5>
+                                </div>
+                                <div class="collapse" id="accordion-tab-5-content-2" aria-labelledby="accordion-tab-5-heading-2" data-parent="#accordion-tab-5">
+                                    <div class="card-body">
+                                        <p>
+                                            Silahkan menghubungi kami melalui layanan berikut :
+                                            <ol>
+                                                <li>Email : Daestro@mail.com</li>
+                                                <li>Instagram : Daestro.cloth</li>
+                                            </ol>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div id="footer"></div>
+    <!-- feather icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+    feather.replace()
+    </script>
+    
+</body>
+</html>
