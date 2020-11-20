@@ -11,13 +11,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-    <script>
-      $(function() {
-        $('#navbarhome').load('navbar.html');
-        $('#footer').load('footer.html');
-      })
-    </script>
-
+    
     <style>
       body {
         background-image: url('img/webimage.png');
@@ -77,7 +71,11 @@
     </style>
 </head>
 <body>
-  <div id="navbarhome"></div>
+  <header>
+    <%- include('../layouts/navbar.ejs'); %>
+  </header>
+
+  <main>
     <!-- Profile -->
     <br><br><br><br>
     <!--Section: Block Content-->
@@ -85,7 +83,7 @@
       <div class="col-lg-8" style="margin: 0 auto;">
         <div class="card mb-3">
             <div class="card-body">
-              <img src="img/user.png" alt="Avatar" class="center">
+              <img src="../img/user.png" alt="Avatar" class="center">
               <br>
               <h3 class="mb-4" style="color: dimgray;">Pengaturan Akun</h3>
               <b class="mb-0">Nama</b>
@@ -107,16 +105,19 @@
               <button type="submit" class="btn btn-success btn-info">Save Changes</button>
             </div>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item"><a href="Trackform.html" class="button" style="text-decoration: none;">Track Order</a></li>
-          <li class="list-group-item"><a href="ConfirmPayment.html" class="button" style="text-decoration: none;">Confirm Payment</a></li>
-          <li class="list-group-item"><a href="Sign-In Page.html" class="button" style="text-decoration: none; color: firebrick;">Log Out</a></li>
+          <li class="list-group-item"><a href="../Trackform.ejs" class="button" style="text-decoration: none;">Track Order</a></li>
+          <li class="list-group-item"><a href="../ConfirmPayment.ejs" class="button" style="text-decoration: none;">Confirm Payment</a></li>
+          <li class="list-group-item"><a href="../Sign-In Page.ejs" class="button" style="text-decoration: none; color: firebrick;">Log Out</a></li>
         </ul>
     </div>
     </div>
     </section>
-    <div id="footer"></div>
-    <!-- feather icons -->
-    <div id="footer"></div>
+  </main>
+    
+    <footer>
+      <%- include('../layouts/footer.ejs');
+    </footer>
+
     <!-- feather icons -->
     <script src="https://unpkg.com/feather-icons"></script>
       <script>

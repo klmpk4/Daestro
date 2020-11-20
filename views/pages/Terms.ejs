@@ -10,12 +10,7 @@
   <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-  <script>
-    $(function() {
-      $('#navbarhome').load('navbar.html');
-      $('#footer').load('footer.html');
-    })
-  </script>
+  
   <style>
     body {
         background-image: url('img/webimage.png');
@@ -53,136 +48,145 @@
   </style>
 </head>
 <body>
-    <div id="navbarhome"></div>
-    <!--Terms of Use-->
+    <header>
+      <%- include('../layouts/navbar.ejs'); %>
+    </header>
+
+    <main>
+      <!--Terms of Use-->
     <br><br>
-<div class="privacy bg-light mx-5">
-  <hr><h1><b>Terms of Use</b></h1><hr>
-<p><strong>Effective Date: January 1, 2020</strong></p>
-
-<p>Selamat datang di Daestro-Cloth!</p>
-
-<p>Syarat dan ketentuan ini menguraikan aturan dan regulasi untuk penggunaan Situs Web Daestro, yang terletak di https://daestro-cloth.netlify.app/index.html.</p>
-
-<p>Dengan mengakses situs web ini, kami menganggap Anda menerima syarat dan ketentuan ini. Jangan terus menggunakan Daestro-Cloth jika Anda tidak setuju untuk mengambil semua syarat dan ketentuan yang tercantum di halaman ini.</p>
-
-<p>Terminologi berikut berlaku untuk Syarat dan Ketentuan ini, Pernyataan Privasi dan Pemberitahuan Sanggahan dan semua Perjanjian: "Klien", "Anda" dan "Milik Anda" mengacu pada Anda, orang yang masuk ke situs web ini dan mematuhi syarat dan ketentuan Perusahaan. "Perusahaan", "Diri Kami", "Kami", "Milik Kami", dan "Kami", mengacu pada Perusahaan kami. "Pihak", "Pihak", atau "Kami", mengacu pada Klien dan diri kami sendiri. Semua istilah mengacu pada penawaran, penerimaan, dan pertimbangan pembayaran yang diperlukan untuk melakukan proses bantuan kami kepada Klien dengan cara yang paling tepat untuk tujuan yang jelas dalam memenuhi kebutuhan Klien sehubungan dengan penyediaan layanan yang dinyatakan Perusahaan, sesuai dengan dan tunduk pada, hukum yang berlaku di Belanda.</p>
-
-<h3><strong>Cookies</strong></h3>
-
-<p>Kami menggunakan penggunaan cookie. Dengan mengakses Daestro-Cloth, Anda setuju untuk menggunakan cookie sesuai dengan Kebijakan Privasi Daestro.</p>
-
-<p>Sebagian besar situs web interaktif menggunakan cookie untuk memungkinkan kami mengambil detail pengguna untuk setiap kunjungan. Cookie digunakan oleh situs web kami untuk mengaktifkan fungsionalitas area tertentu untuk memudahkan orang mengunjungi situs web kami. Beberapa afiliasi / mitra periklanan kami juga dapat menggunakan cookie.</p>
-
-<h3><strong>License</strong></h3>
-
-<p>Kecuali dinyatakan lain, Daestro dan / atau pemberi lisensinya memiliki hak kekayaan intelektual untuk semua materi di Daestro-Cloth. Semua hak kekayaan intelektual dilindungi. Anda dapat mengakses ini dari Daestro-Cloth untuk penggunaan pribadi Anda dengan tunduk pada batasan yang ditetapkan dalam syarat dan ketentuan ini.</p>
-
-<p>Anda tidak boleh:</p>
-<ul>
-    <li>Terbitkan ulang materi dari Daestro-Cloth</li>
-    <li>Menjual, menyewakan, atau mensublisensikan materi dari Daestro-Cloth</li>
-    <li>Reproduksi, duplikat, atau salin materi dari Daestro-Cloth</li>
-    <li>Mendistribusikan kembali konten dari Daestro-Cloth</li>
-</ul>
-
-<p>Perjanjian ini akan dimulai pada tanggal perjanjian ini. Syarat dan Ketentuan kami dibuat dengan bantuan Generator Syarat dan Ketentuan dan Generator Kebijakan Privasi</a>.</p>
-
-<p>Bagian dari situs web ini menawarkan kesempatan bagi pengguna untuk memposting dan bertukar pendapat dan informasi di area tertentu di situs web. Daestro tidak memfilter, mengedit, menerbitkan, atau meninjau Komentar sebelum kehadirannya di situs web. Komentar tidak mencerminkan pandangan dan pendapat Daestro, agen dan / atau afiliasinya. Komentar mencerminkan pandangan dan opini orang yang memposting pandangan dan opini mereka. Sejauh diizinkan oleh undang-undang yang berlaku, Daestro tidak bertanggung jawab atas Komentar atau kewajiban, kerusakan atau pengeluaran apa pun yang disebabkan dan / atau diderita sebagai akibat dari penggunaan dan / atau posting dan / atau penampilan Komentar tentang hal ini. situs web.</p>
-
-<p>Daestro berhak memantau semua Komentar dan menghapus setiap Komentar yang dianggap tidak pantas, menyinggung, atau menyebabkan pelanggaran Syarat dan Ketentuan ini.</p>
-
-<p>Anda menjamin dan menyatakan bahwa:</p>
-
-<ul>
-    <li>Anda berhak untuk memposting Keluhan di situs web kami dan memiliki semua lisensi dan persetujuan yang diperlukan untuk melakukannya;</li>
-    <li>Keluhan tidak melanggar hak kekayaan intelektual apa pun, termasuk tanpa batasan hak cipta, paten, atau merek dagang pihak ketiga mana pun;</li>
-    <li>Keluhan tidak mengandung materi yang memfitnah, memfitnah, menyinggung, tidak senonoh atau melanggar hukum yang merupakan pelanggaran privasi</li>
-    <li>Keluhan tidak akan digunakan untuk meminta atau mempromosikan bisnis atau kebiasaan atau menyajikan aktivitas komersial atau aktivitas yang melanggar hukum.</li>
-</ul>
-
-<p>Anda dengan ini memberi Daestro lisensi non-eksklusif untuk menggunakan, mereproduksi, mengedit, dan mengizinkan orang lain untuk menggunakan, mereproduksi, dan mengedit Komentar Anda dalam segala bentuk, format, atau media.</p>
-
-<h3><strong>Melakukan hyperlink ke Konten Kami</strong></h3>
-
-<p>Organisasi berikut dapat menautkan ke Situs Web kami tanpa persetujuan tertulis sebelumnya:</p>
-
-<ul>
-    <li>Agensi pemerintahan;</li>
-    <li>Mesin pencari;</li>
-    <li>Organisasi berita;</li>
-    <li>Distributor direktori online dapat menautkan ke Situs web kami dengan cara yang sama seperti mereka membuat tautan ke Situs Web bisnis terdaftar lainnya; dan</li>
-    <li>Bisnis Terakreditasi di seluruh sistem kecuali meminta organisasi nirlaba, pusat perbelanjaan amal, dan grup penggalangan dana amal yang mungkin tidak hyperlink ke situs Web kami.</li>
-</ul>
-
-<p>Organisasi-organisasi ini dapat menautkan ke beranda kami, ke publikasi atau ke informasi Situs Web lainnya selama tautan tersebut: (a) sama sekali tidak menipu; (b) tidak secara tidak langsung menyiratkan sponsor, dukungan atau persetujuan dari pihak yang menghubungkan dan produk dan / atau layanannya; dan (c) cocok dengan konteks situs pihak yang menautkan.</p>
-
-<p>Kami dapat mempertimbangkan dan menyetujui permintaan tautan lain dari jenis organisasi berikut:</p>
-
-<ul>
-    <li>sumber informasi konsumen dan / atau bisnis yang umum dikenal;</li>
-    <li>situs komunitas dot.com;</li>
-    <li>asosiasi atau kelompok lain yang mewakili badan amal;</li>
-    <li>distributor direktori online;</li>
-    <li>portal internet;</li>
-    <li>firma akuntansi, hukum dan konsultasi; dan</li>
-    <li>lembaga pendidikan dan asosiasi perdagangan.</li>
-</ul>
-
-<p>Kami akan menyetujui permintaan tautan dari organisasi-organisasi ini jika kami memutuskan bahwa: (a) tautan tersebut tidak akan membuat kami terlihat tidak menguntungkan bagi diri kami sendiri atau bisnis terakreditasi kami; (b) organisasi tidak memiliki catatan negatif apa pun dengan kami; (c) keuntungan bagi kami dari visibilitas hyperlink mengkompensasi ketidakhadiran Daestro; dan (d) kaitannya dalam konteks informasi sumber daya umum.</p>
-
-<p>Organisasi-organisasi ini dapat menautkan ke beranda kami selama tautan tersebut: (a) sama sekali tidak menipu; (b) tidak secara tidak langsung menyiratkan sponsor, dukungan atau persetujuan dari pihak yang menghubungkan dan produk atau layanannya; dan (c) cocok dengan konteks situs pihak yang menautkan.</p>
-
-<p>Jika Anda adalah salah satu organisasi yang tercantum dalam paragraf 2 di atas dan tertarik untuk menautkan ke situs web kami, Anda harus memberi tahu kami dengan mengirimkan email ke Daestro. Harap sertakan nama Anda, nama organisasi Anda, informasi kontak serta URL situs Anda, daftar URL apa pun yang ingin Anda tautkan ke Situs web kami, dan daftar URL di situs kami yang Anda inginkan. tautan. Tunggu 2-3 minggu untuk mendapatkan tanggapan.</p>
-
-<p>Organisasi yang disetujui dapat melakukan hyperlink ke Situs Web kami sebagai berikut:</p>
-
-<ul>
-    <li>Dengan menggunakan nama perusahaan kami; atau</li>
-    <li>Dengan menggunakan pencari sumber daya seragam yang ditautkan ke; atau</li>
-    <li>Dengan menggunakan deskripsi lain dari Situs web kami yang ditautkan yang masuk akal dalam konteks dan format konten di situs pihak yang menautkan.</li>
-</ul>
-
-<p>Penggunaan logo Daestro atau karya seni lainnya tidak akan diizinkan untuk menghubungkan jika tidak ada perjanjian lisensi merek dagang.</p>
-
-<h3><strong>iFrames</strong></h3>
-
-<p>Tanpa persetujuan sebelumnya dan izin tertulis, Anda tidak boleh membuat bingkai di sekitar Halaman Web kami yang mengubah presentasi visual atau tampilan Situs Web kami dengan cara apa pun.</p>
-
-<h3><strong>Content Liability</strong></h3>
-
-<p>Kami tidak akan bertanggung jawab atas konten apa pun yang muncul di Situs Web Anda. Anda setuju untuk melindungi dan membela kami dari semua klaim yang muncul di Situs Web Anda. Tidak ada tautan yang muncul di Situs Web mana pun yang dapat diartikan sebagai fitnah, cabul atau kriminal, atau yang melanggar, jika tidak melanggar, atau mendukung pelanggaran atau pelanggaran lain, hak pihak ketiga mana pun.</p>
-
-<h3><strong>Your Privacy</strong></h3>
-
-<p>Silakan baca <a href="Privacy & Policy.html">Privacy Policy</a></p>
-
-<h3><strong>Reservation of Rights</strong></h3>
-
-<p>Kami berhak meminta Anda menghapus semua tautan atau tautan tertentu ke Situs Web kami. Anda setuju untuk segera menghapus semua tautan ke Situs web kami atas permintaan. Kami juga berhak untuk mengubah syarat dan ketentuan ini dan itu menautkan kebijakan kapan saja. Dengan terus menautkan ke Situs Web kami, Anda setuju untuk terikat dan mengikuti syarat dan ketentuan penautan ini.</p>
-
-<h3><strong>Penghapusan tautan dari situs web kami</strong></h3>
-
-<p>Jika Anda menemukan tautan apa pun di Situs Web kami yang menyinggung karena alasan apa pun, Anda bebas untuk menghubungi dan memberi tahu kami kapan saja. Kami akan mempertimbangkan permintaan untuk menghapus tautan tetapi kami tidak berkewajiban atau lebih atau untuk menanggapi Anda secara langsung.</p>
-
-<p>WKami tidak memastikan bahwa informasi di situs web ini benar, kami tidak menjamin kelengkapan atau keakuratannya; kami juga tidak berjanji untuk memastikan bahwa situs web tetap tersedia atau bahwa materi di situs web selalu diperbarui.</p>
-
-<h3><strong>Disclaimer</strong></h3>
-
-<p>Sejauh diizinkan oleh hukum yang berlaku, kami mengecualikan semua pernyataan, jaminan, dan ketentuan yang berkaitan dengan situs web kami dan penggunaan situs web ini. Tidak ada dalam penafian ini yang akan:</p>
-
-<ul>
-    <li>membatasi atau kecualikan tanggung jawab kami atau Anda atas kematian atau cedera pribadi;</li>
-    <li>membatasi atau mengecualikan tanggung jawab kami atau Anda atas penipuan atau kesalahan penafsiran yang menipu;</li>
-    <li>membatasi kewajiban kami atau Anda dengan cara apa pun yang tidak diizinkan berdasarkan hukum yang berlaku; atau</li>
-    <li>mengecualikan salah satu kewajiban kami atau Anda yang mungkin tidak dikecualikan berdasarkan hukum yang berlaku.</li>
-</ul>
-
-<p>Batasan dan larangan tanggung jawab yang ditetapkan dalam Bagian ini dan di tempat lain dalam pelepasan tanggung jawab hukum ini: (a) tunduk pada paragraf sebelumnya; dan (b) mengatur semua kewajiban yang timbul berdasarkan pelepasan tanggung jawab hukum, termasuk kewajiban yang timbul dalam kontrak, dalam wanprestasi dan untuk pelanggaran kewajiban hukum.</p>
-
-<p>Selama situs web dan informasi serta layanan di situs web disediakan secara gratis, kami tidak akan bertanggung jawab atas kehilangan atau kerusakan dalam bentuk apa pun.</p>
-</div>
-<div id="footer"></div>
+    <div class="privacy bg-light mx-5">
+      <hr><h1><b>Terms of Use</b></h1><hr>
+    <p><strong>Effective Date: January 1, 2020</strong></p>
+    
+    <p>Selamat datang di Daestro-Cloth!</p>
+    
+    <p>Syarat dan ketentuan ini menguraikan aturan dan regulasi untuk penggunaan Situs Web Daestro, yang terletak di https://daestro-cloth.netlify.app/</p>
+    
+    <p>Dengan mengakses situs web ini, kami menganggap Anda menerima syarat dan ketentuan ini. Jangan terus menggunakan Daestro-Cloth jika Anda tidak setuju untuk mengambil semua syarat dan ketentuan yang tercantum di halaman ini.</p>
+    
+    <p>Terminologi berikut berlaku untuk Syarat dan Ketentuan ini, Pernyataan Privasi dan Pemberitahuan Sanggahan dan semua Perjanjian: "Klien", "Anda" dan "Milik Anda" mengacu pada Anda, orang yang masuk ke situs web ini dan mematuhi syarat dan ketentuan Perusahaan. "Perusahaan", "Diri Kami", "Kami", "Milik Kami", dan "Kami", mengacu pada Perusahaan kami. "Pihak", "Pihak", atau "Kami", mengacu pada Klien dan diri kami sendiri. Semua istilah mengacu pada penawaran, penerimaan, dan pertimbangan pembayaran yang diperlukan untuk melakukan proses bantuan kami kepada Klien dengan cara yang paling tepat untuk tujuan yang jelas dalam memenuhi kebutuhan Klien sehubungan dengan penyediaan layanan yang dinyatakan Perusahaan, sesuai dengan dan tunduk pada, hukum yang berlaku di Belanda.</p>
+    
+    <h3><strong>Cookies</strong></h3>
+    
+    <p>Kami menggunakan penggunaan cookie. Dengan mengakses Daestro-Cloth, Anda setuju untuk menggunakan cookie sesuai dengan Kebijakan Privasi Daestro.</p>
+    
+    <p>Sebagian besar situs web interaktif menggunakan cookie untuk memungkinkan kami mengambil detail pengguna untuk setiap kunjungan. Cookie digunakan oleh situs web kami untuk mengaktifkan fungsionalitas area tertentu untuk memudahkan orang mengunjungi situs web kami. Beberapa afiliasi / mitra periklanan kami juga dapat menggunakan cookie.</p>
+    
+    <h3><strong>License</strong></h3>
+    
+    <p>Kecuali dinyatakan lain, Daestro dan / atau pemberi lisensinya memiliki hak kekayaan intelektual untuk semua materi di Daestro-Cloth. Semua hak kekayaan intelektual dilindungi. Anda dapat mengakses ini dari Daestro-Cloth untuk penggunaan pribadi Anda dengan tunduk pada batasan yang ditetapkan dalam syarat dan ketentuan ini.</p>
+    
+    <p>Anda tidak boleh:</p>
+    <ul>
+        <li>Terbitkan ulang materi dari Daestro-Cloth</li>
+        <li>Menjual, menyewakan, atau mensublisensikan materi dari Daestro-Cloth</li>
+        <li>Reproduksi, duplikat, atau salin materi dari Daestro-Cloth</li>
+        <li>Mendistribusikan kembali konten dari Daestro-Cloth</li>
+    </ul>
+    
+    <p>Perjanjian ini akan dimulai pada tanggal perjanjian ini. Syarat dan Ketentuan kami dibuat dengan bantuan Generator Syarat dan Ketentuan dan Generator Kebijakan Privasi</a>.</p>
+    
+    <p>Bagian dari situs web ini menawarkan kesempatan bagi pengguna untuk memposting dan bertukar pendapat dan informasi di area tertentu di situs web. Daestro tidak memfilter, mengedit, menerbitkan, atau meninjau Komentar sebelum kehadirannya di situs web. Komentar tidak mencerminkan pandangan dan pendapat Daestro, agen dan / atau afiliasinya. Komentar mencerminkan pandangan dan opini orang yang memposting pandangan dan opini mereka. Sejauh diizinkan oleh undang-undang yang berlaku, Daestro tidak bertanggung jawab atas Komentar atau kewajiban, kerusakan atau pengeluaran apa pun yang disebabkan dan / atau diderita sebagai akibat dari penggunaan dan / atau posting dan / atau penampilan Komentar tentang hal ini. situs web.</p>
+    
+    <p>Daestro berhak memantau semua Komentar dan menghapus setiap Komentar yang dianggap tidak pantas, menyinggung, atau menyebabkan pelanggaran Syarat dan Ketentuan ini.</p>
+    
+    <p>Anda menjamin dan menyatakan bahwa:</p>
+    
+    <ul>
+        <li>Anda berhak untuk memposting Keluhan di situs web kami dan memiliki semua lisensi dan persetujuan yang diperlukan untuk melakukannya;</li>
+        <li>Keluhan tidak melanggar hak kekayaan intelektual apa pun, termasuk tanpa batasan hak cipta, paten, atau merek dagang pihak ketiga mana pun;</li>
+        <li>Keluhan tidak mengandung materi yang memfitnah, memfitnah, menyinggung, tidak senonoh atau melanggar hukum yang merupakan pelanggaran privasi</li>
+        <li>Keluhan tidak akan digunakan untuk meminta atau mempromosikan bisnis atau kebiasaan atau menyajikan aktivitas komersial atau aktivitas yang melanggar hukum.</li>
+    </ul>
+    
+    <p>Anda dengan ini memberi Daestro lisensi non-eksklusif untuk menggunakan, mereproduksi, mengedit, dan mengizinkan orang lain untuk menggunakan, mereproduksi, dan mengedit Komentar Anda dalam segala bentuk, format, atau media.</p>
+    
+    <h3><strong>Melakukan hyperlink ke Konten Kami</strong></h3>
+    
+    <p>Organisasi berikut dapat menautkan ke Situs Web kami tanpa persetujuan tertulis sebelumnya:</p>
+    
+    <ul>
+        <li>Agensi pemerintahan;</li>
+        <li>Mesin pencari;</li>
+        <li>Organisasi berita;</li>
+        <li>Distributor direktori online dapat menautkan ke Situs web kami dengan cara yang sama seperti mereka membuat tautan ke Situs Web bisnis terdaftar lainnya; dan</li>
+        <li>Bisnis Terakreditasi di seluruh sistem kecuali meminta organisasi nirlaba, pusat perbelanjaan amal, dan grup penggalangan dana amal yang mungkin tidak hyperlink ke situs Web kami.</li>
+    </ul>
+    
+    <p>Organisasi-organisasi ini dapat menautkan ke beranda kami, ke publikasi atau ke informasi Situs Web lainnya selama tautan tersebut: (a) sama sekali tidak menipu; (b) tidak secara tidak langsung menyiratkan sponsor, dukungan atau persetujuan dari pihak yang menghubungkan dan produk dan / atau layanannya; dan (c) cocok dengan konteks situs pihak yang menautkan.</p>
+    
+    <p>Kami dapat mempertimbangkan dan menyetujui permintaan tautan lain dari jenis organisasi berikut:</p>
+    
+    <ul>
+        <li>sumber informasi konsumen dan / atau bisnis yang umum dikenal;</li>
+        <li>situs komunitas dot.com;</li>
+        <li>asosiasi atau kelompok lain yang mewakili badan amal;</li>
+        <li>distributor direktori online;</li>
+        <li>portal internet;</li>
+        <li>firma akuntansi, hukum dan konsultasi; dan</li>
+        <li>lembaga pendidikan dan asosiasi perdagangan.</li>
+    </ul>
+    
+    <p>Kami akan menyetujui permintaan tautan dari organisasi-organisasi ini jika kami memutuskan bahwa: (a) tautan tersebut tidak akan membuat kami terlihat tidak menguntungkan bagi diri kami sendiri atau bisnis terakreditasi kami; (b) organisasi tidak memiliki catatan negatif apa pun dengan kami; (c) keuntungan bagi kami dari visibilitas hyperlink mengkompensasi ketidakhadiran Daestro; dan (d) kaitannya dalam konteks informasi sumber daya umum.</p>
+    
+    <p>Organisasi-organisasi ini dapat menautkan ke beranda kami selama tautan tersebut: (a) sama sekali tidak menipu; (b) tidak secara tidak langsung menyiratkan sponsor, dukungan atau persetujuan dari pihak yang menghubungkan dan produk atau layanannya; dan (c) cocok dengan konteks situs pihak yang menautkan.</p>
+    
+    <p>Jika Anda adalah salah satu organisasi yang tercantum dalam paragraf 2 di atas dan tertarik untuk menautkan ke situs web kami, Anda harus memberi tahu kami dengan mengirimkan email ke Daestro. Harap sertakan nama Anda, nama organisasi Anda, informasi kontak serta URL situs Anda, daftar URL apa pun yang ingin Anda tautkan ke Situs web kami, dan daftar URL di situs kami yang Anda inginkan. tautan. Tunggu 2-3 minggu untuk mendapatkan tanggapan.</p>
+    
+    <p>Organisasi yang disetujui dapat melakukan hyperlink ke Situs Web kami sebagai berikut:</p>
+    
+    <ul>
+        <li>Dengan menggunakan nama perusahaan kami; atau</li>
+        <li>Dengan menggunakan pencari sumber daya seragam yang ditautkan ke; atau</li>
+        <li>Dengan menggunakan deskripsi lain dari Situs web kami yang ditautkan yang masuk akal dalam konteks dan format konten di situs pihak yang menautkan.</li>
+    </ul>
+    
+    <p>Penggunaan logo Daestro atau karya seni lainnya tidak akan diizinkan untuk menghubungkan jika tidak ada perjanjian lisensi merek dagang.</p>
+    
+    <h3><strong>iFrames</strong></h3>
+    
+    <p>Tanpa persetujuan sebelumnya dan izin tertulis, Anda tidak boleh membuat bingkai di sekitar Halaman Web kami yang mengubah presentasi visual atau tampilan Situs Web kami dengan cara apa pun.</p>
+    
+    <h3><strong>Content Liability</strong></h3>
+    
+    <p>Kami tidak akan bertanggung jawab atas konten apa pun yang muncul di Situs Web Anda. Anda setuju untuk melindungi dan membela kami dari semua klaim yang muncul di Situs Web Anda. Tidak ada tautan yang muncul di Situs Web mana pun yang dapat diartikan sebagai fitnah, cabul atau kriminal, atau yang melanggar, jika tidak melanggar, atau mendukung pelanggaran atau pelanggaran lain, hak pihak ketiga mana pun.</p>
+    
+    <h3><strong>Your Privacy</strong></h3>
+    
+    <p>Silakan baca <a href="../Privacy & Policy.ejs">Privacy Policy</a></p>
+    
+    <h3><strong>Reservation of Rights</strong></h3>
+    
+    <p>Kami berhak meminta Anda menghapus semua tautan atau tautan tertentu ke Situs Web kami. Anda setuju untuk segera menghapus semua tautan ke Situs web kami atas permintaan. Kami juga berhak untuk mengubah syarat dan ketentuan ini dan itu menautkan kebijakan kapan saja. Dengan terus menautkan ke Situs Web kami, Anda setuju untuk terikat dan mengikuti syarat dan ketentuan penautan ini.</p>
+    
+    <h3><strong>Penghapusan tautan dari situs web kami</strong></h3>
+    
+    <p>Jika Anda menemukan tautan apa pun di Situs Web kami yang menyinggung karena alasan apa pun, Anda bebas untuk menghubungi dan memberi tahu kami kapan saja. Kami akan mempertimbangkan permintaan untuk menghapus tautan tetapi kami tidak berkewajiban atau lebih atau untuk menanggapi Anda secara langsung.</p>
+    
+    <p>WKami tidak memastikan bahwa informasi di situs web ini benar, kami tidak menjamin kelengkapan atau keakuratannya; kami juga tidak berjanji untuk memastikan bahwa situs web tetap tersedia atau bahwa materi di situs web selalu diperbarui.</p>
+    
+    <h3><strong>Disclaimer</strong></h3>
+    
+    <p>Sejauh diizinkan oleh hukum yang berlaku, kami mengecualikan semua pernyataan, jaminan, dan ketentuan yang berkaitan dengan situs web kami dan penggunaan situs web ini. Tidak ada dalam penafian ini yang akan:</p>
+    
+    <ul>
+        <li>membatasi atau kecualikan tanggung jawab kami atau Anda atas kematian atau cedera pribadi;</li>
+        <li>membatasi atau mengecualikan tanggung jawab kami atau Anda atas penipuan atau kesalahan penafsiran yang menipu;</li>
+        <li>membatasi kewajiban kami atau Anda dengan cara apa pun yang tidak diizinkan berdasarkan hukum yang berlaku; atau</li>
+        <li>mengecualikan salah satu kewajiban kami atau Anda yang mungkin tidak dikecualikan berdasarkan hukum yang berlaku.</li>
+    </ul>
+    
+    <p>Batasan dan larangan tanggung jawab yang ditetapkan dalam Bagian ini dan di tempat lain dalam pelepasan tanggung jawab hukum ini: (a) tunduk pada paragraf sebelumnya; dan (b) mengatur semua kewajiban yang timbul berdasarkan pelepasan tanggung jawab hukum, termasuk kewajiban yang timbul dalam kontrak, dalam wanprestasi dan untuk pelanggaran kewajiban hukum.</p>
+    
+    <p>Selama situs web dan informasi serta layanan di situs web disediakan secara gratis, kami tidak akan bertanggung jawab atas kehilangan atau kerusakan dalam bentuk apa pun.</p>
+    </div>
+    </main>
+    
+    <footer>
+      <%- include('../layouts/footer.ejs'); %>
+    </footer>
+    
     <!-- feather icons -->
     <script src="https://unpkg.com/feather-icons"></script>
     <script>

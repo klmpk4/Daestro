@@ -10,12 +10,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-    <script>
-      $(function() {
-        $('#navbarhome').load('navbar.html');
-        $('#footer').load('footer.html');
-      })
-    </script>
+    
     <style>
       body {
         background-image: url('img/webimage.png');
@@ -40,8 +35,11 @@
     </style>
 </head>
 <body>
-    <div id="navbarhome"></div>
-    <br><br><br><br>
+    <header>
+      <%- include('../layouts/navbar.ejs'); %>
+    </header>
+    <main>
+      <br><br><br><br>
     <div class="container">
         <h4 class="text-center">Pesanan Anda Telah Diterima!</h4>
         <br>
@@ -65,11 +63,15 @@
         </p>
         <p>
             Jika dalam 1 x 24 jam belum menerima email verifikasi, silahkan hubungi WA 081234567890 atau konfirmasi
-            pembayaran <a href="paymentconfirm.html">disini</a>.
+            pembayaran <a href="../paymentconfirm.ejs">disini</a>.
         </p>
     </div>
     <br><br>
-    <div id="footer"></div>
+    </main>
+    
+    <footer>
+      <%- include('../layouts/footer.ejs'); %>
+    </footer>
     <!-- feather icons -->
   <script src="https://unpkg.com/feather-icons"></script>
   <script>

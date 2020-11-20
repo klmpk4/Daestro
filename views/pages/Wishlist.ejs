@@ -12,12 +12,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script>
-      $(function() {
-        $('#navbarhome').load('navbar.html');
-        $('#footer').load('footer.html');
-      })
-    </script>
+    
       <style>
         body {
           background-image: url('img/webimage.png');
@@ -42,8 +37,12 @@
       </style>
 </head>
 <body>
-    <div id="navbarhome"></div>
-<!--whishlist-->
+    <header>
+        <%- include('../layouts/navbar.ejs');
+    </header>
+
+    <main>
+        <!--whishlist-->
 <br><br><br><br>
 <div class="container bg-light">
     <br>
@@ -115,7 +114,11 @@
     </div>
 </div>
 <br>
-    <div id="footer"></div>
+    </main>
+
+    <footer>
+        <%- include('../layouts/footer.ejs'); %>
+    </footer>
 <!-- feather icons -->
 <script src="https://unpkg.com/feather-icons"></script>
 <script>

@@ -1,34 +1,15 @@
 {
-<<<<<<< HEAD
-  "name": "daestro",
-  "version": "1.0.0",
-  "description": "Kelompok 4\r - Adela Tania (535190006)\r - Andreas Lie (535190020)\r - Caroline Wili Harto (535190032)\r - David Jansen (535190038)\r - Fernando (535199201)",
-  "main": "counter.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/klmpk4/marketplace.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/klmpk4/marketplace/issues"
-  },
-  "homepage": "https://github.com/klmpk4/marketplace#readme",
-=======
   "name": "marketplace-master",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
+    "express" : "express",
     "dev": "nodemon",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
->>>>>>> 734103c8126d8102b273f00c8dc62a5deadebbd8
   "dependencies": {
     "body-parser": "^1.19.0",
     "ejs": "^3.1.5",

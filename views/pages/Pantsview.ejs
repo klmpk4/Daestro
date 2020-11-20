@@ -9,12 +9,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-    <script>
-      $(function() {
-        $('#navbarhome').load('navbar.html');
-        $('#footer').load('footer.html');
-      })
-    </script>
+    
     <title>Pants</title>
     <style>
         .bloc_left_price {
@@ -102,8 +97,11 @@
     </style>
 </head>
 <body>
-    <div id="navbarhome"></div>
-    <br><br><br>
+    <header>
+      <%- include('../layouts/navbar.ejs'); %>
+    </header>
+    <main>
+      <br><br><br>
     <div class="page-content mt-2">
         <div class="container">
           <hr><h3 class="text-center"><b>PANTS</b></h3><hr>
@@ -153,9 +151,12 @@
               </a>
             </div>
         </div>
-    </div>
-    <div id="footer"></div>
-    <div id="footer"></div>
+      </div>
+    </main>
+    
+    <footer>
+      <%- include('../layouts/footer.ejs'); %>
+    </footer>
         <!-- feather icons -->
         <script src="https://unpkg.com/feather-icons"></script>
         <script>
