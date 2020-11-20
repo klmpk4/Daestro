@@ -9,7 +9,12 @@
     
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-
+    <script>
+        $(function() {
+          $('#navbarhome').load('navbar.html');
+          $('#footer').load('footer.html');
+        })
+    </script>
     <style>
         .item-photo{display:flex;justify-content:center;align-items:center;border-right:1px solid #f6f6f6;}
         .menu-items{list-style-type:none;font-size:11px;display:inline-flex;margin-bottom:0;margin-top:20px}
@@ -40,7 +45,7 @@
         .section{width:104%;}
         .menu-items{padding-left:0;}
         body {
-            background-image: url('img/webimage.png');
+            background-image: url('../img/webimage.png');
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;
@@ -67,64 +72,18 @@
     <title>Bags</title>
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="Main_Page_PR.html"><img src="img/1.png" width="80px" height="40px"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link" href="All Product row page.html">ALL PRODUCT<span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Category
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="Shirtview.html">Shirt</a>
-                <a class="dropdown-item" href="T-ShirtView.html">T-Shirt</a>
-                <a class="dropdown-item" href="Hoodieview.html">Hoodie</a>
-                <a class="dropdown-item" href="Pantsview.html">Pants</a>
-                <a class="dropdown-item" href="Bagview.html">Bags</a>
-              </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="FAQ.html">FAQ<span class="sr-only">(current)</span></a>
-            </li>
-          </ul>
-          
-          <form class="form-inline ml-4">
-            <input class="form-control mr-sm-2" style="font-size: small; width: 650px;" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-light my-2 my-sm-0" type="submit"><i data-feather="search"></i></button>
-          </form>
-
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="Cart.html"><i data-feather="shopping-bag"></i><span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="Wishlist.html"><i data-feather="heart"></i><span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="Sign-In Page.html"><i data-feather="user"></i><span class="sr-only">(current)</span></a>
-            </li>
-          </ul>
-        </div>
-    </nav>
-
+    <div id="navbarhome"></div>
     <br><br><br>
     <div class="container mt-3">
         <div class="row">
            <div class="col-xs-4 item-photo">
-                <img style="max-width:50%;" src="img/bag/Shopper Bag - Black.jpg" />
+                <img style="max-width:50%;" src="../img/bag/Shopper Bag - Black.jpg" />
             </div>
             <div class="col-xs-5" style="border:0px solid gray">
                 <h3>Shopper Bag</h3>    
                 <h5 style="color:#337ab7">Bags <a href="#">Daestro.Cloth</a> · <small style="color:#000000">(2889 views)</small></h5>
                 <h6 class="title-price"><small>PRICE</small></h6>
-                <h3 style="margin-top:0px;">Rp 149.000 </h3>
+                <h3 style="margin-top:0px;">Rp 149.999</h3>
     
                 <div class="section">
                     <h6 class="title-attr" style="margin-top:15px;" ><small>COLOR</small></h6>                    
