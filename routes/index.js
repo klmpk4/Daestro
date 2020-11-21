@@ -24,7 +24,7 @@ const express = require('express'),
         router.get('/hoodie', (req,res) => {
             res.render('pages/Hoodieview');
         });
-
+        
         router.get('/pants', (req,res) => {
             res.render('pages/Pantsview');
         });
@@ -73,84 +73,95 @@ const express = require('express'),
             res.render('pages/paymentconfirm');
        });
 
-       router.get('/Cotton Canvas Bag', (req,res) => {
+       router.get('/terms', (req,res) => {
+            res.render('pages/Terms');
+        });
+
+        router.get('/receipt', (req,res) => {
+            res.render('pages/Receipt');
+        });
+
+        router.get('/status', (req,res) => {
+            res.render('pages/status');
+        });
+
+       router.get('/bags/Cotton_Canvas_Bag', (req,res) => {
             res.render('pages/Produk-Bag2');
         });
 
-        router.get('/pants/Ankle Length Slacks', (req,res) => {
+        router.get('/pants/Ankle_Length_Slacks', (req,res) => {
             res.render('pages/Produk-Pants1');
        });
 
-       router.get('/bags/Shopper Bag', (req,res) => {
+       router.get('/bags/Shopper_Bag', (req,res) => {
             res.render('pages/Produk-Bag3');
         });
 
-        router.get('/shirt/Airy Cotton Shirt', (req,res) => {
+        router.get('/shirt/Airy_Cotton_Shirt', (req,res) => {
             res.render('pages/Produk-Shirt1');
        });
 
-       router.get('/hoodie/Denim Hoodie', (req,res) => {
+       router.get('/hoodie/Denim_Hoodie', (req,res) => {
             res.render('pages/Produk-Hoodie2');
         });
 
-        router.get('/t-shirt/Cotton T-Shirt', (req,res) => {
+        router.get('/t-shirt/Cotton_T-Shirt', (req,res) => {
             res.render('pages/Produk-Tshirt2');
        });
 
-       router.get('/t-shirt/Printed T-Shirt', (req,res) => {
+       router.get('/t-shirt/Printed_T-Shirt', (req,res) => {
             res.render('pages/Produk-Tshirt1');
         });
 
-        router.get('/pants/Cotton Legging', (req,res) => {
+        router.get('/pants/Cotton_Legging', (req,res) => {
             res.render('pages/Produk-Pants2');
        });
 
-       router.get('/shirt/Pattern Shirt', (req,res) => {
+       router.get('/shirt/Pattern_Shirt', (req,res) => {
             res.render('pages/Produk-Shirt3');
         });
 
-        router.get('/bags/Suede Shoulder Bag', (req,res) => {
+        router.get('/bags/Suede_Shoulder_Bag', (req,res) => {
             res.render('pages/Produk-Bag4');
        });
 
-       router.get('/hoodie/Rib-Knit Hoodie', (req,res) => {
+       router.get('/hoodie/Rib-Knit_Hoodie', (req,res) => {
             res.render('pages/Produk-Hoodie4');
         });
 
-        router.get('/pants/Hide-Cut Jeans', (req,res) => {
+        router.get('/pants/Wide-Cut_Jeans', (req,res) => {
             res.render('pages/Produk-Pants4');
        });
 
-       router.get('/pants/Plaid Twill Pants', (req,res) => {
+       router.get('/pants/Plaid_Twill_Pants', (req,res) => {
             res.render('pages/Produk-Pants3');
         });
 
-        router.get('/bags/Waist Bag', (req,res) => {
+        router.get('/bags/Waist_Bag', (req,res) => {
             res.render('pages/Produk-Bag1');
        });
 
-       router.get('/shirt/V-Neck Shirt', (req,res) => {
+       router.get('/shirt/V-Neck_Shirt', (req,res) => {
             res.render('pages/Produk-Shirt4');
         });
 
-        router.get('/t-shirt/Jersey T-Shirt', (req,res) => {
+        router.get('/t-shirt/Jersey_T-Shirt', (req,res) => {
             res.render('pages/Produk-Tshirt3');
        });
 
-       router.get('/shirt/Twill Shacket', (req,res) => {
+       router.get('/shirt/Twill_Shacket', (req,res) => {
             res.render('pages/Produk-Shirt2');
         });
 
-        router.get('/hoodie/Printed Hoodie', (req,res) => {
+        router.get('/hoodie/Printed_Hoodie', (req,res) => {
             res.render('pages/Produk-Hoodie3');
        });
 
-       router.get('/t-shirt/Sports Top', (req,res) => {
+       router.get('/t-shirt/Sports_Top', (req,res) => {
             res.render('pages/Produk-Tshirt4');
         });
 
-        router.get('/hoodie/Cotton Hoodie', (req,res) => {
+        router.get('/hoodie/Cotton_Hoodie', (req,res) => {
             res.render('pages/Produk-Hoodie1');
        });
-
     module.exports = router;
