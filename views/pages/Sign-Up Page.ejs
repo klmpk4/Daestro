@@ -53,7 +53,6 @@
             <video autoplay muted loop id="putarlah">
           <source src="../img/background.mp4" type="video/mp4">
       </video>
-<<<<<<< HEAD
             <div class="wrap-sign">
                 <form class="sign-form">
                     <span class="sign-form-title">Sign Up</span>
@@ -69,7 +68,7 @@
                     </div>
                     <div class="wrap-input">
                         <span class="lable-input">E-mail</span>
-                        <input class="input" type="email" name="email" placeholder="example123@email.com" required="required">
+                        <input class="input" type="email" name="email" id="email" placeholder="example123@email.com" required="required">
                         <span class="focus-input"></span>
                     </div>
                     <div class="wrap-input">
@@ -79,7 +78,7 @@
                     </div>
                     <div class="wrap-input">
                         <span class="lable-input">Password</span>
-                        <input class="input" type="password" name="pass" placeholder="********" required="required">
+                        <input class="input" type="password" name="pass" id="pass" placeholder="********" required="required">
                         <span class="focus-input"></span>
                     </div>
                     <div class="wrap-input">
@@ -91,7 +90,7 @@
                         <label class="checkbox-inline"><input type="checkbox" required="required"> I accept the 
                   <a href='/terms' style="color: black">Terms of Use </a> &amp; 
                   <a href='/privacypolicy' style="color: black">Privacy Policy</a></label>
-                        <button type="submit" class="btn btn-success btn-lg btn-block">Sign Up</button>
+                        <button type="submit" formaction="index.html" onClick="store()" class="btn btn-success btn-lg btn-block">Sign Up</button>
                         <br><br>
                     </div>
                     <div class="wrap-input2">
@@ -102,56 +101,6 @@
                 </form>
             </div>
         </div>
-=======
-      <div class = "wrap-sign">
-          <form class="sign-form">
-              <span class = "sign-form-title">Sign Up</span>
-              <div class = "wrap-input">
-                  <span class = "lable-input">First Name</span>
-                  <input class = "input" type = "text" name="name" placeholder="someone" required="required">
-                  <span class="focus-input"></span>
-              </div>
-              <div class = "wrap-input">
-                <span class = "lable-input">Last Name</span>
-                <input class = "input" type = "text" name="name" placeholder="someone" required="required">
-                <span class="focus-input"></span>
-            </div>
-              <div class = "wrap-input">
-                  <span class = "lable-input">E-mail</span>
-                  <input class = "input" type = "email" name="email" id="email" placeholder="example123@email.com" required="required">
-                  <span class="focus-input"></span>
-              </div>
-              <div class = "wrap-input">
-                  <span class = "lable-input">Username</span>
-                  <input class = "input" type = "text" name="name" placeholder="example123" required="required">
-                  <span class="focus-input"></span>
-              </div>
-              <div class = "wrap-input">
-                  <span class = "lable-input">Password</span>
-                  <input class = "input" type = "password" name="pass" id="pass" placeholder="********" required="required">
-                  <span class="focus-input"></span>
-              </div>
-              <div class = "wrap-input">
-                  <span class = "lable-input">Current Password</span>
-                  <input class = "input" type = "password" name="repeat-pass" placeholder="********" required="required">
-                  <span class="focus-input"></span>
-              </div>
-              <div>
-                  <label class="checkbox-inline"><input type="checkbox" required="required"> I accept the 
-                  <a href='/terms' style="color: black">Terms of Use </a> &amp; 
-                  <a href='/privacypolicy' style="color: black">Privacy Policy</a></label>
-                  <button type="submit" formaction="index.html" onClick="store()" class="btn btn-success btn-lg btn-block">Sign Up</button>
-                  <br><br>
-              </div>
-              <div class="wrap-input2">
-                  <br>
-                  <span class="lable-input2">OR</span>
-                  <span style="font-size: medium;"><br>Already have an account? <a href='/signin' style="color: black">Sign In</a> </span>
-              </div>
-          </form>
-      </div>
-  </div>
->>>>>>> bbca8a0f86ca6010fbd00f1a5e3c25b0ead29506
     </main>
 
     <footer>
