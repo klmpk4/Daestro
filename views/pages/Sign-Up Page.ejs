@@ -83,14 +83,14 @@
                     </div>
                     <div class="wrap-input">
                         <span class="lable-input">Current Password</span>
-                        <input class="input" type="password" name="repeat-pass" placeholder="********" required="required">
+                        <input class="input" type="password" name="repeat-pass" id="pass2" placeholder="********" required="required">
                         <span class="focus-input"></span>
                     </div>
                     <div>
                         <label class="checkbox-inline"><input type="checkbox" required="required"> I accept the 
                   <a href='/terms' style="color: black">Terms of Use </a> &amp; 
                   <a href='/privacypolicy' style="color: black">Privacy Policy</a></label>
-                        <button type="submit" formaction="index.html" onClick="store()" class="btn btn-success btn-lg btn-block">Sign Up</button>
+                        <button type="submit" onclick="return Validate()" formaction="/" onClick="store()" class="btn btn-success btn-lg btn-block">Sign Up</button>
                         <br><br>
                     </div>
                     <div class="wrap-input2">
