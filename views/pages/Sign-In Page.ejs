@@ -60,7 +60,18 @@
     <footer>
         <%- include('../layouts/footer.ejs'); %>
     </footer>
-
+    <script>
+        var xmlhttp = new XMLHttpRequest();
+    
+        xmlhttp.onreadystatechange = function(){
+          if(this,readyState == 4 && this.status == 200){
+            console.log(xmlhttp.response);
+          }
+        }
+    
+        xmlhttp.open("GET", "http://localhost/daestro/RestAPI.php", true);
+        xmlhttp.send();
+      </script>
     <!-- feather icons -->
     <script src="https://unpkg.com/feather-icons"></script>
     <script>
