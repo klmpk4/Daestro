@@ -1,65 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up Page</title>
-     
+
     <!-- CSS Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <!-- JSS Bootstrap -->
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-    
-    <link rel="stylesheet" href="../sign.css">
-</head>
-<body>
-    <header>
-        <%- include('../layouts/navbar.ejs'); %>
-    </header>
 
-        <!-- Registration -->
-    <div class = "container-sign">
-        <div class="sign-more"></div>
-            <video autoplay muted loop id="putarlah">
-                <source src="../img/background.mp4" type="video/mp4">
-            </video>
-            <div class = "wrap-sign">
-                <form class="sign-form">
-                    <span class = "sign-form-title">Sign In</span>
-                    <div class = "wrap-input">
-                        <span class = "lable-input">E-mail</span>
-                        <input class = "input" type = "email" name="email" placeholder="example123@email.com" required="required">
-                        <span class="focus-input"></span>
-                     </div>
-                    <div class = "wrap-input">
-                        <span class = "lable-input">Password</span>
-                        <input class = "input" type = "password" name="pass" placeholder="********" required="required">
-                        <span class="focus-input"></span>
-                    </div>
-                    <div>
-                        <label class="checkbox-inline"><input type="checkbox" required="required"> Remember Me</label>
-                        <br>
-                        <button type="submit" class="btn btn-success btn-lg btn-block">Sign In</button>
-                        <br><br>
-                    </div>
-                    <div class="wrap-input2">
-                        <div class="container mt-3">
-                            <br>
-                            <span class="lable-input2">OR</span>
-                            <span style="font-size: 17px;"><br><br>Forgot password? <a href="#" style="color: black"><i>Click here</i></a> </span>
-                            <span style="font-size: 17px;"><br>Don't have an account? <a href='/signup' style="color: black"><i>Sign Up</i></a> </span>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-    
-    <footer>
-        <%- include('../layouts/footer.ejs'); %>
-    </footer>
+    <link rel="stylesheet" href="/public/css/sign.css" type="text/css">
     <script>
         var xmlhttp = new XMLHttpRequest();
     
@@ -71,11 +25,55 @@
     
         xmlhttp.open("GET", "http://localhost/daestro/RestAPI.php", true);
         xmlhttp.send();
-      </script>
+    </script>
+</head>
+
+<body>
+    <header>
+        <%- include('../layouts/navbar.ejs'); %>
+    </header>
+
+    <!-- Registration -->
+    <div class="container-sign">
+        <div class="sign-more"></div>
+        <video autoplay muted loop id="putarlah">
+                <source src="../img/background.mp4" type="video/mp4">
+            </video>
+        <div class="wrap-sign">
+            <form class="sign-form">
+                <span class="sign-form-title">Sign In</span>
+                <div class="wrap-input">
+                    <span class="lable-input">E-mail</span>
+                    <input class="input" type="email" name="email" id="userEmail" placeholder="example123@email.com" required="required">
+                    <span class="focus-input"></span>
+                </div>
+                <div class="wrap-input">
+                    <span class="lable-input">Password</span>
+                    <input class="input" type="password" name="pass" id="userPass" placeholder="********" required="required">
+                    <span class="focus-input"></span>
+                </div>
+                <div>
+                    <label class="checkbox-inline"><input type="checkbox" > Remember Me</label>
+                    <br>
+                    <button type="submit" onClick="check()" class="btn btn-success btn-lg btn-block">Sign In</button>
+                    <br><br>
+                </div>
+        </div>
+        </form>
+    </div>
+    </div>
+    </div>
+
+    <footer>
+        <%- include('../layouts/footer.ejs'); %>
+    </footer>
+
     <!-- feather icons -->
     <script src="https://unpkg.com/feather-icons"></script>
     <script>
-    feather.replace()
+        feather.replace()
     </script>
+    <script src="sign.js"></script>
 </body>
+
 </html>
