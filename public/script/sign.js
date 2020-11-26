@@ -14,12 +14,22 @@ function check() {
     var userEmail = document.getElementById('userEmail');
     var userPass = document.getElementById('userPass');
 
-    if(userEmail.value == storedEmail && userPass.value == storedPass) {
+    if (userEmail.value == storedEmail && userPass.value == storedPass) {
         alert('You are logged in.');
         window.location.href = "index.html";
-    }else {
+    } else {
         alert('ERROR.');
     }
+}
+
+function Validate() {
+    var password = document.getElementById("pass").value;
+    var confirmPassword = document.getElementById("repeat-pass").value;
+    if (password != confirmPassword) {
+        alert("Passwords do not match.");
+        return false;
+    }
+    return true;
 }
 
 function submit() {
