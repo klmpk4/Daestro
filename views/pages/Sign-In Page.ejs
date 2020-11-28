@@ -14,18 +14,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="/public/css/sign.css" type="text/css">
-    <script>
-        var xmlhttp = new XMLHttpRequest();
-    
-        xmlhttp.onreadystatechange = function(){
-          if(this,readyState == 4 && this.status == 200){
-            console.log(xmlhttp.response);
-          }
-        }
-    
-        xmlhttp.open("GET", "http://localhost/daestro/RestAPI.php", true);
-        xmlhttp.send();
-    </script>
 </head>
 
 <body>
@@ -40,7 +28,7 @@
                 <source src="../img/background.mp4" type="video/mp4">
             </video>
         <div class="wrap-sign">
-            <form class="sign-form">
+            <form class="sign-form" action="/auth/signin" method="post">
                 <span class="sign-form-title">Sign In</span>
                 <div class="wrap-input">
                     <span class="lable-input">E-mail</span>
@@ -55,7 +43,10 @@
                 <div>
                     <label class="checkbox-inline"><input type="checkbox" > Remember Me</label>
                     <br>
-                    <button type="submit" onClick="check()" class="btn btn-success btn-lg btn-block">Sign In</button>
+                    <input type="submit" name="submit" value="Sign In" class="btn btn-success">
+                    <% if (locals.error) { %>
+                        <span class="text-danger pl-2"><%= error %></span>
+                    <% } %>
                     <br><br>
                 </div>
         </div>

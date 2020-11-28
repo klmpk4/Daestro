@@ -33,14 +33,6 @@ const express = require('express'),
             res.render('pages/Trackform');
         });
 
-        router.get('/signin', (req,res) => {
-            res.render('pages/Sign-In Page');
-        });
-
-        router.get('/signup', (req,res) => {
-             res.render('pages/Sign-Up Page');
-        });
-
         router.get('/cart', (req,res) => {
             res.render('pages/Cart');
        });
