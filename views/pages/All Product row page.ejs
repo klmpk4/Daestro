@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- JSS Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <style>
+      body {
+        background-image: url('img/webimage.png');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        font-family:monospace;
+        font-size: larger;
+      }
+      .feather {
+        width: 18px;
+        height: 18px;
+      }
+      .middle {
+        padding-left: 15%;
+        padding-top: 100px;
+      }
+      .header {
+        color: white;
+        margin-top: 10%;
+      }
+      .card-body{
+          color :black
+        }
+    </style>
+    <title>All Products</title>
+  </head>
+  <body>
+    <header>
+      <%- include('../layouts/navbar.ejs'); %>
+    </header>
+    <main>
+      <!-- Product View -->
+  <br><br><br>
+  <div class="page-content mt-2">
+    <div class="container">
+      <hr><h3 class="text-center"><b>ALL PRODUCTS</b></h3><hr>
+      <br>
+      <div class="row row-cols-1 row-cols-md-4">
+        <div class="col mb-4">
+          <a href='/bags/Cotton_Canvas_Bag'>
+          <div class="card">
+            <img src="../img/bag/Cotton Canvas Bag - Natural White.jpg" class="card-img-top" alt="1">
+            <div class="card-body">
+              <h5 class="card-title">Cotton Canvas Bag</h5>
+              <p class="card-text">Rp 49.999</p>
+            </div>
+          </div>
+          </a>
+        </div>
+        <div class="col mb-4">
+          <a href='/pants/Ankle_Length_Slacks'>
+          <div class="card">
+            <img src="../img/pants/Ankle length Slacks.jpg" class="card-img-top" alt="2">
+            <div class="card-body">
+              <h5 class="card-title">Ankle Length Slacks</h5>
+              <p class="card-text">Rp 99.999</p>
+            </div>
+          </div>
+          </a>
+        </div>
+        <div class="col mb-4">
+          <a href='/bags/Shopper_Bag'>
+          <div class="card">
+            <img src="../img/bag/Shopper Bag - Black.jpg" class="card-img-top" alt="3">
+            <div class="card-body">
+              <h5 class="card-title">Shopper Bag</h5>
+              <p class="card-text">Rp 149.999</p>
+            </div>
+          </div>
+          </a>
+        </div>
+        <div class="col mb-4">
+          <a href='/shirt/Airy_Cotton_Shirt'>
+          <div class="card">
+            <img src="../img/shirt/Airy Cotton Shirt - Light Yellow.jpg" class="card-img-top" alt="4">
+            <div class="card-body">
+              <h5 class="card-title">Airy Cotton Shirt</h5>
+              <p class="card-text">Rp 129.999</p>
+            </div>
+          </div>
+          </a>
+        </div>
+        <div class="col mb-4">
+          <a href='/hoodie/Denim_Hoodie'>
+          <div class="card">
+            <img src="../img/hoodie/Hooded Denim hoodie.jpg" class="card-img-top" alt="5">
+            <div class="card-body">
+              <h5 class="card-title">Denim Hoodie</h5>
+              <p class="card-text">Rp 349.999</p>
+            </div>
+          </div>
+          </a>
+        </div>
+        <div class="col mb-4">
+          <a href='/t-shirt/Cotton_T-Shirt'>
+          <div class="card">
+            <img src="../img/t-shirt/Cotton T-shirt - Cream.jpg" class="card-img-top" alt="6">
+            <div class="card-body">
+              <h5 class="card-title">Cotton T-Shirt</h5>
+              <p class="card-text">Rp 49.999</p>
+            </div>
+          </div>
+          </a>
+        </div>
+        <div class="col mb-4">
+          <a href='/t-shirt/Printed_T-Shirt'>
+          <div class="card">
+            <img src="../img/t-shirt/Be Printed T-shirt - White.jpg" class="card-img-top" alt="7">
+            <div class="card-body">
+              <h5 class="card-title">Printed T-Shirt</h5>
+              <p class="card-text">Rp 99.999</p>
+            </div>
+          </div>
+          </a>
+        </div>
+        <div class="col mb-4">
+          <a href='/pants/Cotton_Legging'>
+          <div class="card">
+            <img src="../img/pants/Cotton Leggings.jpg" class="card-img-top" alt="8">
+            <div class="card-body">
+              <h5 class="card-title">Cotton Legging</h5>
+              <p class="card-text">Rp 99.999</p>
+            </div>
+          </div>
+          </a>
+        </div>
+        <div class="col mb-4">
+          <a href='/shirt/Pattern_Shirt'>
+          <div class="card">
+            <img src="../img/shirt/Patterned Resort Shirt - Dark Blue White Striped.jpg" class="card-img-top" alt="9">
+            <div class="card-body">
+              <h5 class="card-title">Pattern Shirt</h5>
+              <p class="card-text">Rp 179.999</p>
+            </div>
+          </div>
+          </a>
+        </div>
+        <div class="col mb-4">
+          <a href='/bags/Suede_Shoulder_Bag'>
+          <div class="card">
+            <img src="../img/bag/Suede-detail Shoulder Bag - Greige.jpg" class="card-img-top" alt="10">
+            <div class="card-body">
+              <h5 class="card-title">Suede Shoulder Bag</h5>
+              <p class="card-text">Rp 129.999</p>
+            </div>
+          </div>
+          </a>
+        </div>
+        <div class="col mb-4">
+          <a href='/hoodie/Rib-Knit_Hoodie'>
+          <div class="card">
+            <img src="../img/hoodie/Rib-knit White Hoodie.jpg" class="card-img-top" alt="11">
+            <div class="card-body">
+              <h5 class="card-title">Rib-Knit Hoodie</h5>
+              <p class="card-text">Rp 399.999</p>
+            </div>
+          </div>
+          </a>
+        </div>
+        <div class="col mb-4">
+          <a href='/pants/Wide-Cut_Jeans'>
+          <div class="card">
+            <img src="../img/pants/Wide-cut Jeans.jpg" class="card-img-top" alt="12">
+            <div class="card-body">
+              <h5 class="card-title">Wide-Cut Jeans</h5>
+              <p class="card-text">Rp 299.999</p>
+            </div>
+          </div>
+          </a>
+        </div>
+        <div class="col mb-4">
+          <a href='/pants/Plaid_Twill_Pants'>
+          <div class="card">
+            <img src="../img/pants/Red n Black Plaid Twill Pants.jpg" class="card-img-top" alt="13">
+            <div class="card-body">
+              <h5 class="card-title">Plaid Twill Pants</h5>
+              <p class="card-text">Ro 149.999</p>       
+            </div>
+          </div>
+          </a>
+        </div>
+        <div class="col mb-4">
+          <a href='/bags/Waist_Bag'>
+          <div class="card">
+            <img src="../img/bag/Chain-detail Waist Bag - Light Brown.jpg" class="card-img-top" alt="14">
+            <div class="card-body">
+              <h5 class="card-title">Waist Bag</h5>
+              <p class="card-text">Rp 179.999</p>
+            </div>
+          </div>
+          </a>
+        </div>
+        <div class="col mb-4">
+          <a href='/shirt/V-Neck_Shirt'>
+          <div class="card">
+            <img src="../img/shirt/V-neck Shirt - White.jpg" class="card-img-top" alt="15">
+            <div class="card-body">
+              <h5 class="card-title">V-Neck Shirt</h5>
+              <p class="card-text">Rp 129.999</p>
+            </div>
+          </div>
+          </a>
+        </div>
+        <div class="col mb-4">
+          <a href='/t-shirt/Jersey_T-Shirt'>
+          <div class="card">
+            <img src="../img/t-shirt/Jersey T-shirt - Black Love.jpg" class="card-img-top" alt="16">
+            <div class="card-body">
+              <h5 class="card-title">Jersey T-Shirt</h5>
+              <p class="card-text">Rp 89.999</p>
+            </div>
+          </div>
+          </a>
+        </div>
+        <div class="col mb-4">
+          <a href='/shirt/Twill_Shacket'>
+          <div class="card">
+            <img src="../img/shirt/Cotton Twill Shacket - Dark Khaki Green.jpg" class="card-img-top" alt="17">
+            <div class="card-body">
+              <h5 class="card-title">Twill Shacket</h5>
+              <p class="card-text">Rp 249.999</p>
+            </div>
+          </div>
+          </a>
+        </div>
+        <div class="col mb-4">
+          <a href='/hoodie/Printed_Hoodie'>
+          <div class="card">
+            <img src="../img/hoodie/NASA Stars Printed Hoodie.jpg" class="card-img-top" alt="18">
+            <div class="card-body">
+              <h5 class="card-title">Printed Hoodie</h5>
+              <p class="card-text">Rp 399.999</p>
+            </div>
+          </div>
+          </a>
+        </div>
+        <div class="col mb-4">
+          <a href='/t-shirt/Sports_Top'>
+          <div class="card">
+            <img src="../img/t-shirt/Sports Top Regular Fit - Black.jpg" class="card-img-top" alt="19">
+            <div class="card-body">
+              <h5 class="card-title">Sports Top</h5>
+              <p class="card-text">Rp 149.999</p>
+            </div>
+          </div>
+          </a>
+        </div>
+        <div class="col mb-4">
+          <a href='/hoodie/Cotton_Hoodie'>
+          <div class="card">
+            <img src="../img/hoodie/Black Relaxed Fit Hoodie.jpg" class="card-img-top" alt="20">
+            <div class="card-body">
+              <h5 class="card-title">Cotton Hoodie</h5>
+              <p class="card-text">Rp 229.999</p>
+            </div>
+          </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+    </main>
+  
+    <footer>
+      <%- include('../layouts/footer.ejs'); %>
+    </footer>
+
+  <!-- feather icons -->
+  <script src="https://unpkg.com/feather-icons"></script>
+  <script>
+  feather.replace()
+  </script>
+  </body>
+</html>

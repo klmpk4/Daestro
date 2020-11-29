@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+
+    <!-- CSS Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- JSS Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    
+    <style>
+      body {
+        background-image: url('img/webimage.png');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+      }
+      .feather {
+        width: 18px;
+        height: 18px;
+      }
+      .middle {
+        padding-left: 15%;
+        padding-top: 100px;
+      }
+      .header {
+        color: white;
+          margin-top :10%;
+      }
+      .row{
+             margin: 0;
+             padding: 0;
+             height: 100%;
+        }
+      .formc{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        box-sizing: border-box;
+        height: 40px;
+        outline: 0;
+        appearance: none;
+        padding-left: 4px;
+        padding-top: 4px;
+        padding-right: 10px;
+      }
+      .button{
+        font-size: x-large;
+        padding: 10px;
+        color: dimgray;
+        position: relative;
+      }
+      .card {
+        margin: 0 auto;
+        float: none;
+        margin-bottom: 10px;
+      }
+      .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+        border-radius: 50%; 
+        width: auto; 
+        height: 200px;
+      }
+    </style>
+</head>
+<body>
+  <header>
+    <%- include('../layouts/navbar.ejs'); %>
+  </header>
+
+  <main>
+    <!-- Profile -->
+    <br><br><br><br>
+    <!--Section: Block Content-->
+    <section>
+      <div class="col-lg-8" style="margin: 0 auto;">
+        <div class="card mb-3">
+            <div class="card-body">
+              <img src="../img/user.png" alt="Avatar" class="center">
+              <br>
+              <h3 class="mb-4" style="color: dimgray;">Pengaturan Akun</h3>
+              <b class="mb-0">Nama</b>
+              <div class="formc">
+                <input type="text" name="nama" value="Someone">
+              </div>
+              <b class="mb-0">Email</b>
+              <div class="formc">
+                <input type="text" name="Email" value="someone123@email.com">
+              </div>
+              <b class="mb-0">Alamat</b>
+              <div class="formc">
+                <input type="text" name="alamat" value="Something Street,District 1, USA">
+              </div>
+              <b class="mb-0">No. Handphone</b>
+              <div class="formc">
+                <input type="text" name="hp" value="081234567898">
+              </div>
+              <button type="submit" class="btn btn-success btn-info">Save Changes</button>
+            </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><a href='/trackorder' class="button" style="text-decoration: none;">Track Order</a></li>
+          <li class="list-group-item"><a href='/confirmpayment' class="button" style="text-decoration: none;">Confirm Payment</a></li>
+          <li class="list-group-item"><a href='/signin' class="button" style="text-decoration: none; color: firebrick;">Log Out</a></li>
+        </ul>
+    </div>
+    </div>
+    </section>
+  </main>
+    
+    <footer>
+      <%- include('../layouts/footer.ejs');
+    </footer>
+
+    <!-- feather icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+      <script>
+         feather.replace()
+      </script>
+</body>
+</html>
