@@ -56,5 +56,5 @@ db.once('open', () => {
 });
 db.on('error', console.error.bind(console, 'MongoDB connection error!'));
 
-app.listen(8000);
+app.listen(port);
 console.log(`${port} is the magic port`);
