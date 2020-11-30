@@ -1,6 +1,10 @@
 const express = require('express'),
         router = express.Router();
 
+        router.get('/', (req,res) => {
+            res.render('pages/index');
+        });
+
         router.get('/allproduct', (req,res) => {
             res.render('pages/All Product row page');
         });

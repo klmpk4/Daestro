@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 
-const port = process.env.port || 8000;
+const port = process.env.port || 7107;
 
 //enable session
 app.use(session ({
@@ -21,12 +21,8 @@ app.use(session ({
     saveUninitialized: true
 }));
 
-
-app.get('/', (req,res) => {
-    res.render('pages/index');
-});
-
 //routes
+const indexRoutes = require ('./routes/index');
 const authRoutes = require ('./routes/auth');
 const shirtRoutes = require ('./routes/shirt');
 const tshirtRoutes = require ('./routes/t-shirt');
@@ -36,6 +32,7 @@ const pantsRoutes = require ('./routes/pants');
 
 app.use('/public', express.static('public'));
 
+app.use('/', indexRoutes);
 app.use('/auth', authRoutes);
 app.use('/shirt', shirtRoutes);
 app.use('/t-shirt', tshirtRoutes);
@@ -59,5 +56,5 @@ db.once('open', () => {
 });
 db.on('error', console.error.bind(console, 'MongoDB connection error!'));
 
-app.listen(8000);
+app.listen(7107);
 console.log(`${port} is the magic port`);
