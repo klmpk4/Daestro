@@ -7,4 +7,4 @@ Kelompok 4
 - David Jansen (535190038)
 - Fernando (535199201)
 
-link url : https://daestro-cloth.netlify.app/index.html
+link url : https://daestro-cloth.herokuapp.com/
