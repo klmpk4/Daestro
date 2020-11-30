@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 
-const port = process.env.port || 7107;
+const port = process.env.PORT || '7017';
 
 //enable session
 app.use(session ({
@@ -56,5 +56,5 @@ db.once('open', () => {
 });
 db.on('error', console.error.bind(console, 'MongoDB connection error!'));
 
-app.listen(7107);
+app.set("port", PORT);
 console.log(`${port} is the magic port`);
