@@ -19,6 +19,7 @@
         "express-session": "^1.17.1",
         "express-validation": "^3.0.6",
         "express-validator": "^6.7.0",
+        "heroku": "^7.47.3",
         "jsonwebtoken": "^8.5.1",
         "mongodb": "^3.6.3",
         "mongoose": "^5.10.16",
