@@ -21,8 +21,12 @@ app.use(session ({
     saveUninitialized: true
 }));
 
+
+app.get('/', (req,res) => {
+    res.render('pages/index');
+});
+
 //routes
-const indexRoutes = require ('./routes/index');
 const authRoutes = require ('./routes/auth');
 const shirtRoutes = require ('./routes/shirt');
 const tshirtRoutes = require ('./routes/t-shirt');
@@ -32,7 +36,6 @@ const pantsRoutes = require ('./routes/pants');
 
 app.use('/public', express.static('public'));
 
-app.use('/', indexRoutes);
 app.use('/auth', authRoutes);
 app.use('/shirt', shirtRoutes);
 app.use('/t-shirt', tshirtRoutes);
