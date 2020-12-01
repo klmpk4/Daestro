@@ -23,7 +23,7 @@
         "heroku": "^7.47.3",
         "jsonwebtoken": "^8.5.1",
         "mongodb": "^3.6.3",
-        "mongoose": "^5.10.16",
+        "mongoose": "^5.11.0",
         "nodemon": "^2.0.6",
         "start": "^5.1.0"
     }
