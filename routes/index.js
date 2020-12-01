@@ -57,4 +57,12 @@ const express = require('express'),
             res.render('pages/status');
         });
 
+        router.get('/checkout', (req,res) => {
+            res.render('pages/checkout');
+        });
+
+        router.get('/ConfirmOrder', (req,res) => {
+            res.render('pages/ConfirmOrder');
+        });
+
     module.exports = router;
