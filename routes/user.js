@@ -155,7 +155,6 @@ router.post('/signin',
                                 }
                             );
                         }
-                    
                 }    
         } catch (e) {
             console.error(e);
