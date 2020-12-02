@@ -71,8 +71,19 @@
                     <div class="wrap-input">
                         <span class="lable-input">Password</span>
                         <input class="input" type="password" name="password" id="pass" placeholder="********" required="required">
+                        <input type="checkbox" onclick="myFunction()"> Show Password
                         <span class="focus-input"></span>
                     </div>
+                    <script>
+                        function myFunction() {
+                          var x = document.getElementById("userPass");
+                          if (x.type === "password") {
+                            x.type = "text";
+                          } else {
+                            x.type = "password";
+                          }
+                        }
+                        </script>
                     <div>
                         <label class="checkbox-inline"><input type="checkbox" required="required"> I accept the 
                   <a href='/terms' style="color: black">Terms of Use </a> &amp; 
