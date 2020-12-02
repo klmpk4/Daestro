@@ -1,9 +1,10 @@
 var email = document.getElementById('email');
 var pass = document.getElementById('pass');
-
+var pass2 = document.getElementById('pass2');
 function store() {
     localStorage.setItem('email', email.value);
     localStorage.setItem('pass', pass.value);
+    validate();
 }
 
 function check() {
@@ -14,22 +15,20 @@ function check() {
     var userEmail = document.getElementById('userEmail');
     var userPass = document.getElementById('userPass');
 
-    if (userEmail.value == storedEmail && userPass.value == storedPass) {
+    if(userEmail.value == storedEmail && userPass.value == storedPass) {
         alert('You are logged in.');
         window.location.href = "index.html";
-    } else {
+    }else {
         alert('ERROR.');
     }
 }
 
-function Validate() {
-    var password = document.getElementById("pass").value;
-    var confirmPassword = document.getElementById("repeat-pass").value;
-    if (password != confirmPassword) {
-        alert("Passwords do not match.");
-        return false;
-    }
-    return true;
+function validate(){
+  if(pass.value != pass2.value) {
+    alert('Password does not match.');
+  } else {
+    window.location.href = "index.html";
+  }
 }
 
 function submit() {
