@@ -64,5 +64,17 @@ const express = require('express'),
         router.get('/ConfirmOrder', (req,res) => {
             res.render('pages/ConfirmOrder');
         });
+        router.get('/add/:id', function(req,res){
+            const productId = req.params.id;
+            const cart = new Cart(req.session.cart ? req.session.cart : {});
 
+            Product.findById(productId, function(err, product){
+                if(err){
+                    return res.redirect('/');
+                }
+                cart.add(product,product.id);
+                req.session.cart = cart;
+                res.redirect('/');
+            })
+        });
     module.exports = router;
