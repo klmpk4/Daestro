@@ -1,10 +1,15 @@
-# marketplace
+<h1 align="center">Daestro Cloth :hearts:</h1>
 
-Kelompok 4
-- Adela Tania (535190006)
-- Andreas Lie (535190020)
-- Caroline Wili Harto (535190032)
-- David Jansen (535190038)
-- Fernando (535199201)
+Daestro cloth is a web application to offer a shopping experience. with features like shopping for clothes and online payments.
 
-link url : https://daestro-cloth.herokuapp.com/
+For the live demo of Daestro Cloth which is our web project, see [Daestro Cloth Website](https://daestro-cloth.herokuapp.com/).
+
+# Our Team Members :eyes:
+
+Name | NIM
+-----|-----
+Adela Tania | 535190006
+Andreas Lie | 535190020
+Caroline Wili Harto | 535190032
+David Jansen | 535190038
+Fernando Lie | 535199201
