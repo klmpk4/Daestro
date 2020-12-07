@@ -87,10 +87,32 @@ const User = require ('../models/user');
                 database.collection('complain').insertOne(cform, function(err,result){
                 assert.strictEqual(null,err);
                 console.log('item inserted');
-            })
+                })
                 res.redirect('/complain');
+            });
         });
-    });
+
+        router.post('/paymentconfirmed',function(req,res){
+            const confirm ={
+                Fullname: req.body.FullName,
+                Email : req.body.Email,
+                Phone : req.body.PhoneNumber,
+                Name: req.body.Name,
+                Bank: req.body.BankName,
+                Jumlah : req.body.Transfer,
+                Tujuan : req.body.Destination,
+                Berita : req.body.Berita
+            };
+            mano.connect(MONGOURI,function(err,db){
+                const database = db.db('daestro')
+                assert.strictEqual(null,err)
+                database.collection('confirmation').insertOne(confirm, function(err,result){
+                assert.strictEqual(null,err);
+                console.log('item inserted');
+                })
+                res.redirect('/');
+            });
+        });
 
         router.get('/add/:id', function(req,res){
             const productId = req.params.id;
