@@ -13,3 +13,6 @@ Andreas Lie | 535190020
 Caroline Wili Harto | 535190032
 David Jansen | 535190038
 Fernando Lie | 535199201
+
+# Disclaimer :interrobang:
+This web app is for educational purposes only.
