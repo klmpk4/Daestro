@@ -1,4 +1,4 @@
-function Subscribe() {
+function ClickSubscribe() {
     var response =$("#subs_r");
     var input = $("#subs").val();
     if (input == "")
