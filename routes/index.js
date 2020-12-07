@@ -1,74 +1,77 @@
-const { mongo } = require('mongoose');
-const Cart = require('../models/cart');
-const Product = require('../models/product');
-const assert = require('assert');
-const mano = require('mongodb').MongoClient;
-const MONGOURI = 'mongodb+srv://adelataniaaa:kelompok4@cluster0.w0g5p.mongodb.net/daestro?retryWrites=true&w=majority';
-const express = require('express'),
-        router = express.Router();
+const express = require('express');
+const router = express.Router();
+const User = require ('../models/user');
 
         router.get('/', (req,res) => {
-            res.render('pages/index');
+            User.find({})
+            .sort({createdAt: "descending"})
+            .exec((err, users) => {
+                if(err){
+                    return next(err);
+                } else {
+                    res.render('pages/index', {currentUser: req.session.user});
+                }
+            });
         });
 
         router.get('/allproduct', (req,res) => {
-            res.render('pages/All Product row page');
+            res.render('pages/All Product row page',{currentUser: req.session.user});
         });
 
         router.get('/faq', (req,res) => {
-            res.render('pages/faq');
+            res.render('pages/faq',{currentUser: req.session.user});
         });
 
         router.get('/howtoorder', (req,res) => {
-            res.render('pages/MdfOrder');
+            res.render('pages/MdfOrder',{currentUser: req.session.user});
         });
 
         router.get('/complain', (req,res) => {
-            res.render('pages/Complain');
+            res.render('pages/Complain',{currentUser: req.session.user});
         });
 
         router.get('/dropseller', (req,res) => {
-            res.render('pages/Dropseller');
+            res.render('pages/Dropseller',{currentUser: req.session.user});
         });
 
         router.get('/privacypolicy', (req,res) => {
-            res.render('pages/Privacy & Policy');
+            res.render('pages/Privacy & Policy',{currentUser: req.session.user});
         });
 
         router.get('/trackorder', (req,res) => {
-            res.render('pages/Trackform');
+            res.render('pages/Trackform',{currentUser: req.session.user});
         });
 
         router.get('/cart', (req,res) => {
-            res.render('pages/Cart');
+            res.render('pages/Cart',{currentUser: req.session.user});
        });
 
        router.get('/wishlist', (req,res) => {
-            res.render('pages/Wishlist');
+            res.render('pages/Wishlist',{currentUser: req.session.user});
         });
 
         router.get('/paymentconfirm', (req,res) => {
-            res.render('pages/paymentconfirm');
+            res.render('pages/paymentconfirm',{currentUser: req.session.user});
        });
 
        router.get('/terms', (req,res) => {
-            res.render('pages/Terms');
+            res.render('pages/Terms',{currentUser: req.session.user});
         });
 
         router.get('/receipt', (req,res) => {
-            res.render('pages/Receipt');
+            res.render('pages/Receipt',{currentUser: req.session.user});
         });
 
         router.get('/status', (req,res) => {
-            res.render('pages/status');
+            res.render('pages/status',{currentUser: req.session.user});
         });
 
         router.get('/checkout', (req,res) => {
-            res.render('pages/checkout');
+            res.render('pages/checkout',{currentUser: req.session.user});
         });
 
         router.get('/ConfirmOrder', (req,res) => {
-            res.render('pages/ConfirmOrder');
+            res.render('pages/ConfirmOrder',{currentUser: req.session.user});
         });
 
         router.post('/complainget',function(req,res){
@@ -103,4 +106,4 @@ const express = require('express'),
             })
         });
         
-    module.exports = router;
+module.exports = router;

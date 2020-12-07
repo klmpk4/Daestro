@@ -1,30 +1,36 @@
 const express = require ('express');
 const router = express.Router();
-const { check, validationResult} = require("express-validator");
+const {check, validationResult} = require ('express-validator');
 const bcrypt = require ("bcryptjs");
-const jwt = require ('jsonwebtoken');
 const User = require('../models/user');
-const auth = require('../middleware/auth');
 const mongoose = require('mongoose');
-const e = require('express');
+const jwt = require ('jsonwebtoken');
 
 mongoose.set('useNewUrlParser', true);
 mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
 
-router.get ('/signup',
-    async (req,res) => {
-        if (req.session.user){
-            res.redirect('/');
-        } else {
-            res.render('pages/Sign-Up Page');
-        }
+//login handle
+router.get('/signin', (req,res) => {
+    if(req.session.user){
+        res.redirect('/');
+    } else {
+        res.render('pages/Sign-In Page', {currentUser: req.session.user});
     }
-);
+});
 
+router.get('/signup', (req,res) => {
+    if(req.session.user){
+        res.redirect('/');
+    } else {
+        res.render ('pages/Sign-Up Page', {currentUser: req.session.user});
+    }
+});
+
+//register handle
 router.post('/signup',
     [
-        check("fullname", "Please enter a valid name")
+        check("fullname", "Please enter your fullname")
         .not()
         .isEmpty(),
         check("email", "Please enter a valid email").isEmail(),
@@ -32,7 +38,7 @@ router.post('/signup',
             min: 8
         })
     ],
-    async(req,res) => {
+    async (req,res) => {
         const errors = validationResult(req);
         if(!errors.isEmpty()){
             return res.status(400).json({
@@ -43,46 +49,46 @@ router.post('/signup',
         const {
             fullname,
             email,
-            password,
+            password
         } = req.body;
         try{
             let user = await User.findOne({
                 email
             });
-            if (user) {
+
+            if(user){
                 res.render('pages/Sign-Up Page', {error: 'User Already Exists'});
-            } else{
+            } else {
                 user = new User({
                     fullname,
                     email,
                     password
                 });
-    
+                
                 const salt = await bcrypt.genSalt(10);
                 user.password = await bcrypt.hash(password, salt);
-    
+
                 await user.save();
-    
+
                 const payload = {
                     user: {
                         id: user.id
                     }
                 };
-    
+
                 jwt.sign(
                     payload,
                     "randomString", {
                         expiresIn: 10000
                     },
-                    (err, token) => {
-                        if (err) {
+                    (err,token) =>{
+                        if(err){
                             throw err;
                         } else {
                             console.log({token});
                             req.session.user = "client";
                             res.redirect('/');
                         }
-                        
                     }
                 );
             }
@@ -93,29 +99,19 @@ router.post('/signup',
     }
 );
 
-router.get ('/signin',
-    async (req,res) => {
-        if (req.session.user){
-            res.redirect('/');
-        } else {
-            res.render('pages/Sign-In Page');
-        }
-    }
-);
-
 router.post('/signin', 
-[
-    check("email", "Please enter a valid email").isEmail(),
-    check("password", "Please enter a valid password").isLength({
-        min: 8
-    }) 
-],
+    [
+        check("email", "Please enter a valid email").isEmail(),
+        check("password", "Please enter a valid password").isLength({
+            min:8
+        })
+    ],
     async(req,res) => {
         const errors = validationResult(req);
 
-        if(!errors.isEmpty()) {
+        if(!errors.isEmpty()){
             return res.status(400).json({
-                errors: errors.aray()
+                errors: errors.array()
             });
         }
 
@@ -127,7 +123,7 @@ router.post('/signin',
             if(!user){
                 res.render('pages/Sign-In Page', {error: 'User Not Exist'});
             } else {
-                    const isMatch = await bcrypt.compare(password, user.password);
+                const isMatch = await bcrypt.compare(password, user.password);
                         if(!isMatch){
                             res.render('pages/Sign-In Page', {error: 'Incorrect Password!'});
                         } else {
@@ -162,25 +158,12 @@ router.post('/signin',
                 message: "Server Error"
             });
         }    
-    }
-);
+    });
 
-router.get('/me', auth, async (req,res) => {
-    try{
-        const user = await User.findById(req.user.id);
-        res.json(user);
-    } catch (e) {
-        res.send({message: "Error in Fetching user"});
-    }
+//logout
+router.get('/logout', (req,res) => {
+    req.session.destroy();
+    res.redirect('/');
 });
-
-router.get('/logout',
-    async(req,res) => {
-        req.session.destroy();
-
-        //redirect to login
-        res.redirect('/user/signin');
-    }
-);
 
 module.exports = router;

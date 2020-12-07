@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up Page</title>
+    <title>Login</title>
 
     <!-- CSS Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -19,10 +19,7 @@
 </head>
 
 <body>
-    <header>
-        <%- include('../layouts/navbar.ejs'); %>
-    </header>
-
+  <%- include('../layouts/navbar.ejs'); %>
     <!-- Registration -->
     <div class="container-sign">
         <div class="sign-more"></div>
@@ -114,7 +111,7 @@ myInput.onkeyup = function() {
                     <input type="submit" name="submit" value="Sign In" class="btn btn-success">
                     <% if (locals.error) { %>
                         <span class="text-danger pl-2"><%= error %></span>
-                        <% } %>
+                    <% } %>
                             <br><br>
                 </div>
                 <div class="wrap-input2">
@@ -127,18 +124,13 @@ myInput.onkeyup = function() {
     </div>
     </div>
     </div>
-
-    <footer>
-        <%- include('../layouts/footer.ejs'); %>
-    </footer>
-
     <!-- feather icons -->
     <script src="https://unpkg.com/feather-icons"></script>
     <script>
         feather.replace()
     </script>
-    <script src="sign.js"></script>
     
+    <%- include('../layouts/footer.ejs'); %>
     
 </body>
 

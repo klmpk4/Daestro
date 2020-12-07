@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up Page</title>
+    <title>Register</title>
 
     <!-- CSS Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -18,10 +18,7 @@
 </head>
 
 <body>
-    <header>
-        <%- include('../layouts/navbar.ejs'); %>
-    </header>
-
+  <%- include('../layouts/navbar.ejs'); %>
     <main>
         <!-- Registration -->
         <div class="container-sign">
@@ -31,14 +28,17 @@
       </video>
             <div class="wrap-sign">
                 <form class="sign-form" action="/user/signup" method="post">
-                    <span class="sign-form-title">Sign Up</span> <% if (locals.error) { %>
-                        <span class="text-danger pl-2"><%= error %></span>
-                    <% } %>
+                    <span class="sign-form-title">Sign Up</span>
                     <div class="wrap-input">
-                        <span class="lable-input">Full Name</span>
-                        <input class="input" type="text" name="fullname" id="name" placeholder="someone" required="required">
+                        <span class="lable-input">First Name</span>
+                        <input class="input" type="text" name="firstname" id="firstname" placeholder="someone" required="required">
                         <span class="focus-input"></span>
                     </div>
+                    <div class="wrap-input">
+                      <span class="lable-input">Last Name</span>
+                      <input class="input" type="text" name="lastname" id="lastname" placeholder="someone" required="required">
+                      <span class="focus-input"></span>
+                  </div>
                     <div class="wrap-input">
                         <span class="lable-input">E-mail</span>
                         <input class="input" type="email" name="email" id="email" placeholder="example123@email.com" required="required">
@@ -46,10 +46,11 @@
                     </div>
                     <div class="wrap-input">
                         <span class="lable-input">Password</span>
-                        <input class="input" type="password" name="password" id="pass" placeholder="********" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required="required">
+                        <input class="input" type="password" name="password" id="password" placeholder="********" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required="required">
                         <input type="checkbox" onclick="myFunction()"> Show Password
                         <span class="focus-input"></span>
                     </div>
+
                     <div id="message">
                         <h5>Password must contain the following:</h5>
                         <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
@@ -125,6 +126,9 @@
                   <a href='/terms' style="color: black">Terms of Use </a> &amp; 
                   <a href='/privacypolicy' style="color: black">Privacy Policy</a></label>
                         <input type="submit" name="submit" value="Sign Up" class="btn btn-success">
+                        <% if (locals.error) { %>
+                          <span class="text-danger pl-2"><%= error %></span>
+                        <% } %>
                         <br><br>
                     </div>
                     <div class="wrap-input2">
@@ -136,16 +140,12 @@
             </div>
         </div>
     </main>
-
-    <footer>
-        <%- include('../layouts/footer.ejs'); %>
-    </footer>
+    <%- include('../layouts/footer.ejs'); %>
     <!-- feather icons -->
     <script src="https://unpkg.com/feather-icons"></script>
     <script>
         feather.replace()
     </script>
-    <script src="sign.js"></script>
 </body>
 
 </html>
