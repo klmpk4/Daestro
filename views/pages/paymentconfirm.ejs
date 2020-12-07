@@ -202,7 +202,7 @@
     <br><br><br><br><br>
     <div id="wizard-validation-form">
         <div class="formContainer">
-            <form action="#" method="post" id="formGeneratorForm">
+            <form action="/paymentconfirmed" method="post" id="formGeneratorForm">
                 <div class="form_generater_form_div">
                     <div class="rows">
                         <div class="col-md-12 clearfix">
@@ -223,7 +223,7 @@
 
                                 <div class="row form_container">
 
-                                    <div class="formElement_1 form-group fadeMe text clearfix col-sm-12 textfield paymentCount" data-count="1" id=""><label class="fitText block_label">Full Name*</label><input class="form-control required" name="Full Name" id="form_input_1" type="text" placeholder=""> </div>
+                                    <div class="formElement_1 form-group fadeMe text clearfix col-sm-12 textfield paymentCount" data-count="1" id=""><label class="fitText block_label">Full Name*</label><input class="form-control required" name="FullName" id="form_input_1" type="text" placeholder=""> </div>
                                     <div class="formElement_2 form-group fadeMe text clearfix col-sm-12 newDate paymentCount" data-count="2" id="">
                                         <div class="row"><label class="fitText col-sm-12 block_label" for="form_input_2">Transfer Date*</label>
                                             <div class="col-sm-12" id="newdate_2"><input class="form-control required" name="Transfer Date" id="form_input_2" type="text" placeholder="" readonly></div>
@@ -231,10 +231,10 @@
                                             </script>
                                         </div>
                                     </div>
-                                    <div class="formElement_3 form-group fadeMe text clearfix col-sm-12 textfield paymentCount" data-count="3" id=""><label class="fitText block_label">Name in Bank Account*</label><input class="form-control required" name="Name in Bank Account" id="form_input_3" type="text" placeholder=""> </div>
-                                    <div class="formElement_4 form-group fadeMe text clearfix col-sm-12 textfield paymentCount" data-count="4" id=""><label class="fitText block_label">Bank Name*</label><input class="form-control required" name="Bank Name" id="form_input_4" type="text" placeholder=""> </div>
-                                    <div class="formElement_5 form-group fadeMe text clearfix col-sm-12 textfield paymentCount" data-count="5" id=""><label class="fitText block_label">Transfer Amount*</label><input class="form-control required" name="Transfer Amount" id="form_input_5" type="text" placeholder=""> </div>
-                                    <div class="formElement_6 form-group fadeMe text clearfix col-sm-12 select paymentCount" data-count="6" id=""><label class="fitText block_label">Destination Account*</label><select name="Destination Account" class="form-control required input6" id="form_input_6"><option value=""> Please Select </option><option value="BCA 1300-300-003 a.n Andre"> BCA 1300-300-003 a.n Andre </option></select>                                        </div>
+                                    <div class="formElement_3 form-group fadeMe text clearfix col-sm-12 textfield paymentCount" data-count="3" id=""><label class="fitText block_label">Name in Bank Account*</label><input class="form-control required" name="Name" id="form_input_3" type="text" placeholder=""> </div>
+                                    <div class="formElement_4 form-group fadeMe text clearfix col-sm-12 textfield paymentCount" data-count="4" id=""><label class="fitText block_label">Bank Name*</label><input class="form-control required" name="BankName" id="form_input_4" type="text" placeholder=""> </div>
+                                    <div class="formElement_5 form-group fadeMe text clearfix col-sm-12 textfield paymentCount" data-count="5" id=""><label class="fitText block_label">Transfer Amount*</label><input class="form-control required" name="Transfer" id="form_input_5" type="text" placeholder=""> </div>
+                                    <div class="formElement_6 form-group fadeMe text clearfix col-sm-12 select paymentCount" data-count="6" id=""><label class="fitText block_label">Destination Account*</label><select name="Destination" class="form-control required input6" id="form_input_6"><option value=""> Please Select </option><option value="BCA 1300-300-003 a.n Andre"> BCA 1300-300-003 a.n Andre </option></select>                                        </div>
                                     <div class="formElement_7 form-group fadeMe text clearfix col-sm-12 image" data-count="7" id="">
                                         <input type="file" name="Upload Bukti Transfer" id="imageupload_7" accept=".gif,.png,.jpg,.jpeg" class="inputfile " data-filetype="image" data-alloudupload="20" data-multiple="true" style="display: none;" multiple="multiple" />
                                         <label for="imageupload_7">Upload Bukti Transfer</label>
