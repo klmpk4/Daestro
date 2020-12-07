@@ -91,11 +91,14 @@ const express = require('express'),
 
         router.post('/paymentconfirmed',function(req,res){
             const confirm ={
-                fullname: req.body.FullName,
-                name: req.body.Name,
-                bank: req.body.BankName,
-                complain : req.body.Transfer,
-                tujuan : req.body.Destination
+                Fullname: req.body.FullName,
+                Email : req.body.Email,
+                Phone : req.body.PhoneNumber,
+                Name: req.body.Name,
+                Bank: req.body.BankName,
+                Jumlah : req.body.Transfer,
+                Tujuan : req.body.Destination,
+                Berita : req.body.Berita
             };
             mano.connect(MONGOURI,function(err,db){
                 const database = db.db('daestro')
