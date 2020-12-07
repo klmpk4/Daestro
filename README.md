@@ -1,10 +1,10 @@
-<h1 align="center">Daestro Cloth :hearts:</h1>
+<h1 align="center">Daestro Cloth :womans_clothes:</h1>
 
 Daestro cloth is a web application to offer a shopping experience. with features like shopping for clothes and online payments.
 
 For the live demo of Daestro Cloth which is our web project, see [Daestro Cloth Website](https://daestro-cloth.herokuapp.com/).
 
-# Our Team Members :eyes:
+# Our Team Members :busts_in_silhouette:
 
 Name | NIM
 -----|-----
