@@ -1,6 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const User = require ('../models/user');
+const Product = require ('../models/product');
+const mongoose = require ('mongoose');
+const Cart = require ('../models/cart');
+mongoose.connect('mongodb+srv://adelataniaaa:kelompok4@cluster0.w0g5p.mongodb.net/daestro?retryWrites=true&w=majority');
 
         router.get('/', (req,res) => {
             User.find({})
@@ -15,7 +19,18 @@ const User = require ('../models/user');
         });
 
         router.get('/allproduct', (req,res) => {
-            res.render('pages/All Product row page',{currentUser: req.session.user});
+            Product.find({},function(err, docs) {
+                if(err){
+                    console.log(err);
+                }else {
+                    var productChunks = [];
+                    var chunkSize = 3;
+                    for(var i=0; i<docs.length; i+= chunkSize){
+                        productChunks.push(docs.slice(i,i + chunkSize));
+                    }
+                    res.render('pages/All Product row page',{currentUser: req.session.user, products: docs});
+                }
+            });
         });
 
         router.get('/faq', (req,res) => {
@@ -42,8 +57,20 @@ const User = require ('../models/user');
             res.render('pages/Trackform',{currentUser: req.session.user});
         });
 
-        router.get('/cart', (req,res) => {
-            res.render('pages/Cart',{currentUser: req.session.user});
+        router.get('/add-to-cart/:id', (req,res,next) => {
+            var productId = req.params.id;
+            var cart = new Cart(req.session.cart ? req.session.cart : {items: {}});
+
+            Product.findById(productId, function(err,product){
+                if(err){
+                    return res.redirect('/');
+                }
+                cart.add(product, product.id);
+                res.session.cart = cart;
+                console.log(req.session.cart);
+                res.redirect('/');
+            });
+
        });
 
        router.get('/wishlist', (req,res) => {
@@ -112,20 +139,6 @@ const User = require ('../models/user');
                 })
                 res.redirect('/');
             });
-        });
-
-        router.get('/add/:id', function(req,res){
-            const productId = req.params.id;
-            const cart = new Cart(req.session.cart ? req.session.cart : {items:{}});
-
-            Product.findById(productId, function(err, product){
-                if(err){
-                    return res.redirect('/');
-                }
-                cart.add(product,product.id);
-                req.session.cart = cart;
-                res.redirect('/');
-            })
         });
         
 module.exports = router;

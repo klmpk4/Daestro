@@ -1,10 +1,12 @@
 const express = require('express');
+const mongoose = require ('mongoose');
 const app = express();
 const bodyParser = require ('body-parser');
 const session = require ('express-session');
 const InitiateMongoServer = require ('./config/db');
+const MongoStore = require('connect-mongo')(session);
+const passport = require('passport');
 const flash = require ('connect-flash');
-const passport = require ('passport');
     
 //ejs
 app.set('view engine', 'ejs');
@@ -19,20 +21,19 @@ InitiateMongoServer();
 //express session
 app.use(session ({
     secret: 'som3_s3cret_key5',
-    resave: true,
-    saveUninitialized: true
+    resave: false,
+    saveUninitialized: false,
+    store: new MongoStore({ mongooseConnection: mongoose.connection }),
+    cookie: { maxAge: 180 * 60 * 1000 }
 }));
 
+app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
 
-//use flash
-app.use(flash());
-app.use((req,res,next) => {
-    res.locals.success_msg = req.flash('success_msg');
-    res.locals.error_msg = req.flash('error_msg');
-    res.locals.error = req.flash('error');
-next();
+app.use(function(req,res,next){
+    res.locals.session = req.session;
+    next();
 });
 
 //routes

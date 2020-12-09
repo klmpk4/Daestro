@@ -18,7 +18,6 @@
 </head>
 
 <body>
-  <%- include('../layouts/navbar.ejs'); %>
     <main>
         <!-- Registration -->
         <div class="container-sign">
@@ -125,7 +124,7 @@
                         <label class="checkbox-inline"><input type="checkbox" required="required"> I accept the 
                   <a href='/terms' style="color: black">Terms of Use </a> &amp; 
                   <a href='/privacypolicy' style="color: black">Privacy Policy</a></label>
-                        <input type="submit" name="submit" value="Sign Up" class="btn btn-success">
+                        <button type="submit" class="btn btn-success">Sign Up</button>
                         <% if (locals.error) { %>
                           <span class="text-danger pl-2"><%= error %></span>
                         <% } %>
@@ -140,7 +139,6 @@
             </div>
         </div>
     </main>
-    <%- include('../layouts/footer.ejs'); %>
     <!-- feather icons -->
     <script src="https://unpkg.com/feather-icons"></script>
     <script>

@@ -8,7 +8,7 @@ module.exports = (req, res, next) => {
         });
     try{
         const decoded = jwt.verify(token, "randomString");
-        req.user = decoder.user;
+        req.user = decoded.user;
         next();
     } catch (e) {
         console.error(e);

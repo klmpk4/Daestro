@@ -30,7 +30,10 @@ router.get('/signup', (req,res) => {
 //register handle
 router.post('/signup',
     [
-        check("fullname", "Please enter your fullname")
+        check("firstname", "Please enter your firstname")
+        .not()
+        .isEmpty(),
+        check("lastname", "Please enter your lastname")
         .not()
         .isEmpty(),
         check("email", "Please enter a valid email").isEmail(),
@@ -47,7 +50,8 @@ router.post('/signup',
         }
 
         const {
-            fullname,
+            firstname,
+            lastname,
             email,
             password
         } = req.body;
@@ -60,7 +64,8 @@ router.post('/signup',
                 res.render('pages/Sign-Up Page', {error: 'User Already Exists'});
             } else {
                 user = new User({
-                    fullname,
+                    firstname,
+                    lastname,
                     email,
                     password
                 });
