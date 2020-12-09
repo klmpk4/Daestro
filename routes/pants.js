@@ -1,7 +1,7 @@
 const express = require ('express');
 const router = express.Router();
     router.get('/', (req,res) => {
-        res.render('pages/Pantsview');
+        res.render('pages/Pantsview',{currentUser: req.session.user});
     });
     router.get('/Ankle_Length_Slacks', (req,res) => {
         res.render('pages/Produk-Pants1',{currentUser: req.session.user});
