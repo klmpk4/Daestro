@@ -28,16 +28,13 @@
             <div class="wrap-sign">
                 <form class="sign-form" action="/user/signup" method="post">
                     <span class="sign-form-title">Sign Up</span>
-                    <div class="wrap-input">
-                        <span class="lable-input">First Name</span>
-                        <input class="input" type="text" name="firstname" id="firstname" placeholder="someone" required="required">
-                        <span class="focus-input"></span>
-                    </div>
-                    <div class="wrap-input">
-                      <span class="lable-input">Last Name</span>
-                      <input class="input" type="text" name="lastname" id="lastname" placeholder="someone" required="required">
-                      <span class="focus-input"></span>
-                  </div>
+                    <% if(hasErrors){ %>
+                      <div class="alert alert-danger">
+                        <% messages.forEach(function(message){ %>
+                        <p><%= message %></p>
+                        <% }); %> 
+                      </div>
+                    <% } %>
                     <div class="wrap-input">
                         <span class="lable-input">E-mail</span>
                         <input class="input" type="email" name="email" id="email" placeholder="example123@email.com" required="required">
@@ -124,6 +121,7 @@
                         <label class="checkbox-inline"><input type="checkbox" required="required"> I accept the 
                   <a href='/terms' style="color: black">Terms of Use </a> &amp; 
                   <a href='/privacypolicy' style="color: black">Privacy Policy</a></label>
+                        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                         <button type="submit" class="btn btn-success">Sign Up</button>
                         <% if (locals.error) { %>
                           <span class="text-danger pl-2"><%= error %></span>

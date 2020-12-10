@@ -107,7 +107,8 @@ myInput.onkeyup = function() {
                 <div>
                     <label class="checkbox-inline"><input type="checkbox" > Remember Me</label>
                     <br>
-                    <input type="submit" name="submit" value="Sign In" class="btn btn-success">
+                    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                    <button type="submit" class="btn btn-success">Sign In</button>
                     <% if (locals.error) { %>
                         <span class="text-danger pl-2"><%= error %></span>
                     <% } %>

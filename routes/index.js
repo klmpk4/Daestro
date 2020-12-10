@@ -2,9 +2,7 @@ const express = require('express');
 const router = express.Router();
 const User = require ('../models/user');
 const Product = require ('../models/product');
-const mongoose = require ('mongoose');
 const Cart = require ('../models/cart');
-mongoose.connect('mongodb+srv://adelataniaaa:kelompok4@cluster0.w0g5p.mongodb.net/daestro?retryWrites=true&w=majority');
 
         router.get('/', (req,res) => {
             User.find({})
@@ -58,19 +56,18 @@ mongoose.connect('mongodb+srv://adelataniaaa:kelompok4@cluster0.w0g5p.mongodb.ne
         });
 
         router.get('/add-to-cart/:id', (req,res,next) => {
-            var productId = req.params.id;
-            var cart = new Cart(req.session.cart ? req.session.cart : {items: {}});
+            const productId = req.params.id;
+            const cart = new Cart(req.session.cart ? req.session.cart : {items: {}});
 
             Product.findById(productId, function(err,product){
                 if(err){
-                    return res.redirect('/');
+                    return res.redirect('/allproduct');
                 }
                 cart.add(product, product.id);
                 res.session.cart = cart;
                 console.log(req.session.cart);
-                res.redirect('/');
+                res.redirect('/allproduct');
             });
-
        });
 
        router.get('/wishlist', (req,res) => {
