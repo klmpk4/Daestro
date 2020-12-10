@@ -28,6 +28,13 @@
         <div class="wrap-sign">
             <form class="sign-form" action="/user/signin" method="post">
                 <span class="sign-form-title">Sign In</span>
+                <% if(hasErrors){ %>
+                  <div class="alert alert-danger">
+                    <% messages.forEach(function(message){ %>
+                    <p><%= message %></p>
+                    <% }); %> 
+                  </div>
+                <% } %>
                 <div class="wrap-input">
                     <span class="lable-input">E-mail</span>
                     <input class="input" type="email" name="email" id="userEmail" placeholder="example123@email.com" required="required">
@@ -109,9 +116,6 @@ myInput.onkeyup = function() {
                     <br>
                     <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                     <button type="submit" class="btn btn-success">Sign In</button>
-                    <% if (locals.error) { %>
-                        <span class="text-danger pl-2"><%= error %></span>
-                    <% } %>
                             <br><br>
                 </div>
                 <div class="wrap-input2">

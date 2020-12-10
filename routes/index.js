@@ -105,7 +105,8 @@ const Cart = require ('../models/cart');
                 email: req.body.email,
                 complain : req.body.complain
             };
-            mano.connect(MONGOURI,function(err,db){
+            mano.connect(path, { useNewUrlParser: true, useUnifiedTopology: true }, 
+                function(err,db){
                 const database = db.db('daestro')
                 assert.strictEqual(null,err)
                 database.collection('complain').insertOne(cform, function(err,result){
@@ -127,7 +128,8 @@ const Cart = require ('../models/cart');
                 Tujuan : req.body.Destination,
                 Berita : req.body.Berita
             };
-            mano.connect(MONGOURI,function(err,db){
+            mano.connect(path, { useNewUrlParser: true, useUnifiedTopology: true },
+                function(err,db){
                 const database = db.db('daestro')
                 assert.strictEqual(null,err)
                 database.collection('confirmation').insertOne(confirm, function(err,result){
