@@ -3,6 +3,9 @@ const router = express.Router();
 const User = require ('../models/user');
 const Product = require ('../models/product');
 const mongoose = require ('mongoose');
+const mano = require('mongodb');
+const assert = require ('assert');
+const path = 'mongodb+srv://adelataniaaa:kelompok4@cluster0.w0g5p.mongodb.net/daestro?retryWrites=true&w=majority';
 const Cart = require ('../models/cart');
 mongoose.connect('mongodb+srv://adelataniaaa:kelompok4@cluster0.w0g5p.mongodb.net/daestro?retryWrites=true&w=majority');
 
@@ -108,7 +111,8 @@ mongoose.connect('mongodb+srv://adelataniaaa:kelompok4@cluster0.w0g5p.mongodb.ne
                 email: req.body.email,
                 complain : req.body.complain
             };
-            mano.connect(MONGOURI,function(err,db){
+            mano.connect(path, { useNewUrlParser: true, useUnifiedTopology: true }, 
+                function(err,db){
                 const database = db.db('daestro')
                 assert.strictEqual(null,err)
                 database.collection('complain').insertOne(cform, function(err,result){
@@ -130,7 +134,8 @@ mongoose.connect('mongodb+srv://adelataniaaa:kelompok4@cluster0.w0g5p.mongodb.ne
                 Tujuan : req.body.Destination,
                 Berita : req.body.Berita
             };
-            mano.connect(MONGOURI,function(err,db){
+            mano.connect(path, { useNewUrlParser: true, useUnifiedTopology: true },
+                function(err,db){
                 const database = db.db('daestro')
                 assert.strictEqual(null,err)
                 database.collection('confirmation').insertOne(confirm, function(err,result){
