@@ -55,59 +55,81 @@
                         <th>Product</th>
                         <th>Quantity</th>
                         <th class="text-center">Price</th>
-                        <th> </th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td class="col-sm-8 col-md-6">
-                        <div class="media">
-                            <a class="thumbnail pull-left" href="#"> <img class="media-object" src="img/bag/Cotton Canvas Bag - Natural White.jpg" style="width: 72px; height: 72px;"> </a>
-                            <div class="media-body ml-3">
-                                <h4>Cotton Canvas Bag</h4>
-                                <span>Status: </span><span class="text-danger"><strong>Out Stock</strong></span>
+                    <div class="card wish-list mb-3">
+                        <div class="card-body">
+                          <% if(products){ %>
+                    <% products.forEach(function(items){ %>
+                    <div class="row mb-4">
+                      <div class="col-md-5 col-lg-3 col-xl-3">
+                        <div class="view zoom overlay z-depth-1 rounded mb-3 mb-md-0">
+                          <img class="img-fluid w-100"
+                            src="<%= items.item.imagePath %>" alt="Sample">
+                        </div>
+                      </div>
+                      <div class="col-md-7 col-lg-9 col-xl-9">
+                        <div>
+                          <div class="d-flex justify-content-between">
+                            <div>
+                              <h5><%= items.item.name %></h5>
+                              <p class="mb-2 text-muted text-uppercase small">Color: <%= items.item.color %></p>
+                              <p class="mb-3 text-muted text-uppercase small">Size: All Size</p>
                             </div>
-                        </div></td>
-                        <td class="col-sm-1 col-md-1" style="text-align: center">
-                            <input class="quantity" min="0" name="quantity" value="1" type="number">
-                        </td>
-                        <td class="col-sm-1 col-md-1 text-center"><strong>Rp49.000</strong></td>
-                        <td class="col-sm-1 col-md-1">
-                        <button type="button" class="btn btn-danger">
-                            <span class="glyphicon glyphicon-remove"></span> Remove
-                        </button></td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-6">
-                        <div class="media">
-                            <a class="thumbnail pull-left" href="#"> <img class="media-object" src="img/pants/Ankle length Slacks.jpg" style="width: 72px; height: 72px;"> </a>
-                            <div class="media-body ml-3">
-                                <h4> Ankle Length Slacks</h4>
-                                <span>Status: </span><span class="text-danger"><strong>Out Stock</strong></span>
+                            <div>
+                                <div class="row">
+                                    <div class = "mb-0 w-100">
+                                          <div class="input-group">
+                                              <span class="input-group-btn">
+                                            <button type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="quant[1]">
+                                                <i data-feather="minus-square"></i>
+                                              </button>
+                                              </span>
+                                              <input type="text" name="quant[1]" disabled ="disabled"class="form-control input-number" value="<%= items.qty %>" min="1" max="10">
+                                              <span class="input-group-btn">
+                                            <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[1]">
+                                                <i data-feather="plus-square"></i>
+                                              </button>
+                                              </span>
+                                          </div>
+                                      </div>
+                                  </div>
                             </div>
-                        </div></td>
-                        <td class="col-md-1" style="text-align: center">
-                            <input class="quantity" min="0" name="quantity" value="1" type="number">
-                        </td>
-                        <td class="col-md-1 text-center"><strong>Rp99.000</strong></td>
-                        <td class="col-md-1">
-                        <button type="button" class="btn btn-danger">
-                            <span class="glyphicon glyphicon-remove"></span> Remove
-                        </button></td>
-                    </tr>
-                    <tr>
-                        <td>   </td>
-                        <td>   </td>
-                        
-                        <td>
-                        <button type="button" class="btn btn-default">
-                            <span class="glyphicon glyphicon-shopping-cart"></span><a href='/'>Continue Shopping</a>
-                        </button></td>
-                        <td>
-                        <button type="button" class="btn btn-default">
-                            <a href="#"> Add To Cart</a> <span class="glyphicon glyphicon-play"></span>
-                        </button></td>
-                    </tr>
+                          </div>
+                          <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                              <a href="/remove-w/<%= items.item._id %>" type="button" class="card-link-secondary small text-uppercase mr-3">
+                                <i data-feather="trash"></i>
+                                Remove item </a>
+                              <a href="/add-to-cart-from-wish/<%= items.item._id %>" type="button" class="card-link-secondary small text-uppercase">
+                                <i data-feather="heart"></i>
+                                Move to Cart </a>
+                            </div>
+                            <p class="mb-0"><span><strong>Rp <%= items.price %></strong></span></p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <% }); %>
+                    
+                      </div>
+                  </div>
+                  </div>
+                
+                  
+                    </div>
+                    <% } else {%>
+                    <div class="card-body" style="width: auto;" >
+                        <div class="row">
+                          <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+                            <h4 class="text-center m-auto" style="color:rgb(88, 99, 102);">Your Wishlist is empty! Go check our product</h4>
+                          </div>
+                        </div>
+                        <br><br><br><br><br><br>
+                       <% } %>
+                    </div>
+                    
                 </tbody>
             </table>
         </div>
