@@ -1,19 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const User = require ('../models/user');
 const Product = require ('../models/product');
 const Cart = require ('../models/cart');
 
         router.get('/', (req,res) => {
-            User.find({})
-            .sort({createdAt: "descending"})
-            .exec((err, users) => {
-                if(err){
-                    return next(err);
-                } else {
-                    res.render('pages/index', {currentUser: req.session.user});
-                }
-            });
+            res.render('pages/index');
         });
 
         router.get('/allproduct', (req,res) => {
@@ -26,76 +17,92 @@ const Cart = require ('../models/cart');
                     for(var i=0; i<docs.length; i+= chunkSize){
                         productChunks.push(docs.slice(i,i + chunkSize));
                     }
-                    res.render('pages/All Product row page',{currentUser: req.session.user, products: docs});
+                    res.render('pages/All Product row page', {products: docs});
                 }
             });
         });
 
         router.get('/faq', (req,res) => {
-            res.render('pages/faq',{currentUser: req.session.user});
+            res.render('pages/faq');
         });
 
         router.get('/howtoorder', (req,res) => {
-            res.render('pages/MdfOrder',{currentUser: req.session.user});
+            res.render('pages/MdfOrder');
         });
 
         router.get('/complain', (req,res) => {
-            res.render('pages/Complain',{currentUser: req.session.user});
+            res.render('pages/Complain');
         });
 
         router.get('/dropseller', (req,res) => {
-            res.render('pages/Dropseller',{currentUser: req.session.user});
+            res.render('pages/Dropseller');
         });
 
         router.get('/privacypolicy', (req,res) => {
-            res.render('pages/Privacy & Policy',{currentUser: req.session.user});
+            res.render('pages/Privacy & Policy');
         });
 
         router.get('/trackorder', (req,res) => {
-            res.render('pages/Trackform',{currentUser: req.session.user});
+            res.render('pages/Trackform');
         });
 
         router.get('/add-to-cart/:id', (req,res,next) => {
             const productId = req.params.id;
-            const cart = new Cart(req.session.cart ? req.session.cart : {items: {}});
+            const cart = new Cart(req.session.cart ? req.session.cart : {});
 
             Product.findById(productId, function(err,product){
                 if(err){
                     return res.redirect('/allproduct');
                 }
                 cart.add(product, product.id);
-                res.session.cart = cart;
+                req.session.cart = cart;
                 console.log(req.session.cart);
                 res.redirect('/allproduct');
             });
        });
 
+       router.get('/cart', function(req,res,next){
+           if(!req.session.cart){
+               return res.render ('pages/Shopping-Cart', {products: null});
+           }
+           var cart = new Cart(req.session.cart);
+           res.render('pages/Shopping-Cart', {products: cart.generateArray(), totalPrice: cart.totalPrice});
+       });
+
        router.get('/wishlist', (req,res) => {
-            res.render('pages/Wishlist',{currentUser: req.session.user});
+            res.render('pages/Wishlist');
         });
 
         router.get('/paymentconfirm', (req,res) => {
-            res.render('pages/paymentconfirm',{currentUser: req.session.user});
+            res.render('pages/paymentconfirm');
        });
 
        router.get('/terms', (req,res) => {
-            res.render('pages/Terms',{currentUser: req.session.user});
+            res.render('pages/Terms');
         });
 
         router.get('/receipt', (req,res) => {
-            res.render('pages/Receipt',{currentUser: req.session.user});
+            res.render('pages/Receipt');
         });
 
         router.get('/status', (req,res) => {
-            res.render('pages/status',{currentUser: req.session.user});
+            res.render('pages/status');
         });
 
-        router.get('/checkout', (req,res) => {
-            res.render('pages/checkout',{currentUser: req.session.user});
+        router.get('/checkout', (req,res,next) => {
+            if(!req.session.cart){
+                return res.redirect('/cart');
+            }
+            var cart = new Cart(req.session.cart);
+            res.render('pages/checkout', {total: cart.totalPrice});
         });
+
+        router.post('/checkout', (req,res,next) => {
+            
+        })
 
         router.get('/ConfirmOrder', (req,res) => {
-            res.render('pages/ConfirmOrder',{currentUser: req.session.user});
+            res.render('pages/ConfirmOrder');
         });
 
         router.post('/complainget',function(req,res){

@@ -18,8 +18,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(validator());
 
 //mongoose
-const url = 'mongodb+srv://adelataniaaa:kelompok4@cluster0.w0g5p.mongodb.net/daestro?retryWrites=true&w=majority';
-mongoose.connect(url, {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true}, (err,res) => {
+mongoose.connect('mongodb+srv://adelataniaaa:kelompok4@cluster0.w0g5p.mongodb.net/daestro?retryWrites=true&w=majority', 
+    {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true}, (err,res) => {
     if(err){
         console.log(err);
     } else {
@@ -27,6 +27,7 @@ mongoose.connect(url, {useNewUrlParser: true, useUnifiedTopology: true, useCreat
     }
 });
 require('./config/passport');
+
 //express session
 app.use(session ({
     secret: 'som3_s3cret_key5',
@@ -35,7 +36,7 @@ app.use(session ({
     store: new MongoStore({ mongooseConnection: mongoose.connection }),
     cookie: { 
         maxAge: 180 * 60 * 1000
-     }
+    }
 }));
 
 app.use(flash());
@@ -44,6 +45,7 @@ app.use(passport.session());
 
 app.use(function(req,res,next) {
     res.locals.login = req.isAuthenticated();
+    res.locals.session = req.session;
     next();
 });
 
