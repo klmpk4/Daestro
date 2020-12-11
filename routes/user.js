@@ -6,10 +6,6 @@ const passport = require('passport');
 const csrfProtection = csrf();
 router.use(csrfProtection);
 
-router.get('/profile', isLoggedIn, function(req,res,next){
-    res.render('pages/Profile');
-});
-
 router.get('/logout', isLoggedIn, function(req,res,next){
     req.logout();
     res.redirect('/');
@@ -26,7 +22,7 @@ router.get('/signup', function(req,res,next){
 
 router.post('/signup', passport.authenticate('local.signup',{
     successRedirect: '/',
-    failureRediredt: '/user/signup',
+    failureRedirect: '/user/signup',
     failureFlash: true
 }));
 
