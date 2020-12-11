@@ -53,7 +53,7 @@
           <!--Card-->
           <div class="card">
             <!--Card content-->
-            <form class="card-body" action="/checkout" method="POST" id="checkout-form">
+            <form class="card-body" action="/checkout" method="post" id="checkout-form">
               <!--Grid row-->
               <div class="row">
                 <!--Grid column-->
@@ -61,7 +61,7 @@
                   <!--firstName-->
                   <div class="md-form ">
                     <label for="firstName" class="">First name</label>
-                    <input type="text" id="firstName" class="form-control">
+                    <input type="text" id="firstName" class="form-control" required name="fname">
                   </div>
                 </div>
                 <!--Grid column-->
@@ -70,7 +70,7 @@
                   <!--lastName-->
                   <div class="md-form">
                     <label for="lastName" class="">Last name</label>
-                    <input type="text" id="lastName" class="form-control">
+                    <input type="text" id="lastName" class="form-control" required name="lname">
                   </div>
                 </div>
                 <!--Grid column-->
@@ -79,12 +79,12 @@
               <!--email-->
               <div class="md-form mb-5">
                 <label for="email" class="">Email</label>
-                <input type="text" id="email" class="form-control" placeholder="youremail@example.com">
+                <input type="text" id="email" class="form-control" required name="email" placeholder="youremail@example.com">
               </div>
               <!--address-->
               <div class="md-form mb-5">
                 <label for="address" class="">Address 1</label>
-                <input type="text" id="address" class="form-control" placeholder="1234 Main St">
+                <input type="text" id="address" class="form-control" required name="address" placeholder="1234 Main St">
               </div>
               <!--address-2-->
               <div class="md-form mb-5">

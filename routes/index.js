@@ -1,7 +1,11 @@
 const express = require('express');
+const mano = require ('mongodb');
+const path = 'mongodb+srv://adelataniaaa:kelompok4@cluster0.w0g5p.mongodb.net/daestro?retryWrites=true&w=majority';
 const router = express.Router();
+const assert = require('assert');
 const Product = require ('../models/product');
 const Cart = require ('../models/cart');
+const Order = require ('../models/order');
 
         router.get('/', (req,res) => {
             res.render('pages/index');
@@ -89,7 +93,7 @@ const Cart = require ('../models/cart');
             res.render('pages/status');
         });
 
-        router.get('/checkout', (req,res,next) => {
+        router.get('/checkout', isLoggedIn, (req,res,next) => {
             if(!req.session.cart){
                 return res.redirect('/cart');
             }
@@ -102,7 +106,30 @@ const Cart = require ('../models/cart');
         })
 
         router.get('/ConfirmOrder', (req,res) => {
-            res.render('pages/ConfirmOrder');
+            if(!req.session.cart){
+                return res.redirect('/cart');
+            }
+            var cart = new Cart(req.session.cart);
+            var order = new Order ({
+                user : req.user,
+                cart : cart,
+                address : req.body.address,
+                fname : req.body.fname,
+                lname : req.body.lname
+            });
+            mano.connect(path, { useNewUrlParser: true, useUnifiedTopology: true },
+                function(err,db){
+                    const database = db.db('daestro')
+                    assert.strictEqual(null,err)
+                    database.collection('usher').insertOne(order,function(err,result){
+                        assert.strictEqual(null,err);
+                        console.log('item inserted');
+                        });
+                req.flash('success','Successfully bought product!!');
+                req.session.cart = null;
+                console.log('cart deleted');
+                res.render('pages/ConfirmOrder');
+            })
         });
 
         router.post('/complainget',function(req,res){
@@ -148,3 +175,11 @@ const Cart = require ('../models/cart');
         });
         
 module.exports = router;
+
+function isLoggedIn(req,res,next){
+    if(req.isAuthenticated()){
+        return next();
+    }
+    req.session.oldUrl = req.url;
+    res.redirect('/user/signin');
+};
