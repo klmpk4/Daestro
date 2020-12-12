@@ -28,7 +28,7 @@ router.get('/allproduct', (req, res) => {
 });
 
 router.get('/faq', (req, res) => {
-    res.render('pages/faq');
+    res.render('pages/FAQ');
 });
 
 router.get('/howtoorder', (req, res) => {
@@ -45,10 +45,6 @@ router.get('/dropseller', (req, res) => {
 
 router.get('/privacypolicy', (req, res) => {
     res.render('pages/Privacy & Policy');
-});
-
-router.get('/trackorder', (req, res) => {
-    res.render('pages/Trackform');
 });
 
 router.get('/remove/:id', (req, res, next) => {
@@ -176,20 +172,12 @@ router.get('/terms', (req, res) => {
     res.render('pages/Terms');
 });
 
-router.get('/receipt', (req, res) => {
-    res.render('pages/Receipt');
-});
-
-router.get('/status', (req, res) => {
-    res.render('pages/status');
-});
-
 router.get('/checkout', isLoggedIn, (req, res, next) => {
     if (!req.session.cart) {
         return res.redirect('/cart');
     }
     var cart = new Cart(req.session.cart);
-    res.render('pages/checkout', { total: cart.totalPrice });
+    res.render('pages/checkout', { products: cart.generateArray(), total: cart.totalPrice });
 });
 
 router.post('/checkout', (req, res, next) => {
@@ -210,8 +198,8 @@ router.post('/checkout', (req, res, next) => {
             function satu(_callback){
             req.flash('success','Successfully bought product!!');
             req.session.cart = null;
-            console.log('cart deleted');
             res.render('pages/ConfirmOrder');
+            console.log('cart deleted');
             _callback()
             }
             assert.strictEqual(null,err)
@@ -229,7 +217,7 @@ router.get('/ConfirmOrder', (req, res) => {
     res.render('pages/ConfirmOrder');
 });
 
-router.post('/complainget', function(req, res) {
+router.post('/complain', function(req, res) {
     const cform = {
         fname: req.body.fname,
         lname: req.body.lname,
@@ -264,7 +252,7 @@ router.post('/subscribe', function(req, res) {
         });
 });
 
-router.post('/paymentconfirmed', function(req, res) {
+router.post('/paymentconfirm', function(req, res) {
     const confirm = {
         Fullname: req.body.FullName,
         Email: req.body.Email,
