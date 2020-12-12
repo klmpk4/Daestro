@@ -111,24 +111,63 @@
                                         Please select a valid country.
                                     </div>
                                 </div>
-                                <!--Grid column-->
-                                <!--Grid column-->
-                                <div class="col-md-4 mb-4">
-                                    <!-- Cart -->
-                                    <ul class="list-group mb-3 z-depth-1">
-                                        <li class="list-group-item d-flex justify-content-between">
-                                            <span>Total</span>
-                                            <strong>Rp <%= total %></strong>
-                                        </li>
-                                    </ul>
-                                    <!-- Cart -->
-                                </div>
-                                <!--Grid column-->
-
-                            </div>
-                            <!--Grid row-->
-
+                <!--Grid column-->
+                <!--Grid column-->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <label for="state">State</label>
+                    <select class="custom-select d-block w-100" id="state" required>
+                      <option value="">Choose...</option>
+                      <option>Bekasi</option>
+                      <option>Bogor</option>
+                      <option>Depok</option>
+                      <option>Jakarta</option>
+                      <option>Tangerang</option>
+                    </select>
+                    <div class="invalid-feedback">
+                      Please provide a valid state.
                     </div>
+                  </div>
+                  <!--Grid column-->
+                  <!--Grid column-->
+                  <div class="col-lg-4 col-md-6 mb-4">
+                    <label for="zip">Zip</label>
+                    <input type="text" class="form-control" id="zip" placeholder="" required>
+                    <div class="invalid-feedback">
+                      Zip code required.
+                    </div>
+                  </div>
+                  <!--Grid column-->
+                </div>
+                <!--Grid row-->
+                <hr>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="same-address">
+                  <label class="custom-control-label" for="same-address">Shipping address is the same as my billing address</label>
+                </div>
+                <hr class="mb-4">
+                <button class="btn btn-primary btn-lg btn-block" type="submit">Pay Now</button>
+              </form>
+            </div>
+            <!--/.Card-->
+          </div>
+          <!--Grid column-->
+          <!--Grid column-->
+          <div class="col-md-4 mb-4">
+            <!-- Cart -->
+            <ul class="list-group mb-3 z-depth-1">
+              <li class="list-group-item d-flex justify-content-between">
+                <span>Total</span>
+                <strong>Rp <%= total %></strong>
+              </li>
+            </ul>
+            <!-- Cart -->
+          </div>
+          <!--Grid column-->
+  
+        </div>
+        <!--Grid row-->
+  
+      </div>
     </main>
     <!--Main layout-->
 

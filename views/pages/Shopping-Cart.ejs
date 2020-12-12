@@ -85,15 +85,15 @@
                                                             <div class="mb-0 w-100">
                                                                 <div class="input-group">
                                                                     <span class="input-group-btn">
-                                                                      <button type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="quant[1]">
+                                                                      <a href = "/reduce/<%= items.item._id %>"><button type="button" class="btn btn-default btn-number" data-type="minus" data-field="quant[1]">
                                                                         <i data-feather="minus-square"></i>
-                                                                      </button>
+                                                                      </button></a>
                                                                     </span>
                                                                     <input type="text" name="quant[1]" disabled="disabled" class="form-control input-number" value="<%= items.qty %>" min="1" max="10">
                                                                     <span class="input-group-btn">
-                                                                      <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[1]">
+                                                                      <a href = "/increase/<%= items.item._id %>"><button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[1]">
                                                                         <i data-feather="plus-square"></i>
-                                                                      </button>
+                                                                      </button></a>
                                                                     </span>
                                                                 </div>
                                                             </div>

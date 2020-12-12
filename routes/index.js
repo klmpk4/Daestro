@@ -60,6 +60,24 @@ router.get('/remove/:id', (req, res, next) => {
     res.redirect('/cart');
 });
 
+router.get('/reduce/:id', (req, res, next) => {
+    const productId = req.params.id;
+    const cart = new Cart(req.session.cart ? req.session.cart : {});
+
+    cart.reduce(productId);
+    req.session.cart = cart;
+    res.redirect('/cart');
+});
+
+router.get('/increase/:id', (req, res, next) => {
+    const productId = req.params.id;
+    const cart = new Cart(req.session.cart ? req.session.cart : {});
+
+    cart.increase(productId);
+    req.session.cart = cart;
+    res.redirect('/cart');
+});
+
 router.get('/remove-w/:id', (req, res, next) => {
     const productId = req.params.id;
     const wish = new Wish(req.session.wish ? req.session.wish : {});
@@ -170,10 +188,6 @@ router.get('/checkout', isLoggedIn, (req, res, next) => {
 });
 
 router.post('/checkout', (req, res, next) => {
-
-})
-
-router.get('/ConfirmOrder', (req, res) => {
     if (!req.session.cart) {
         return res.redirect('/cart');
     }
@@ -186,18 +200,28 @@ router.get('/ConfirmOrder', (req, res) => {
         lname: req.body.lname
     });
     mano.connect(path, { useNewUrlParser: true, useUnifiedTopology: true },
-        function(err, db) {
+        function(err,db){
             const database = db.db('daestro')
-            assert.strictEqual(null, err)
-            database.collection('usher').insertOne(order, function(err, result) {
-                assert.strictEqual(null, err);
-                console.log('item inserted');
-            });
-            req.flash('success', 'Successfully bought product!!');
+            function satu(_callback){
+            req.flash('success','Successfully bought product!!');
             req.session.cart = null;
             console.log('cart deleted');
             res.render('pages/ConfirmOrder');
-        })
+            _callback()
+            }
+            assert.strictEqual(null,err)
+            database.collection('usher').insertOne(order,function dua(err,result){
+                assert.strictEqual(null,err);
+                console.log('item inserted');
+                satu(function(){
+                    console.log('please do')
+                });
+                });
+    })
+});
+
+router.get('/ConfirmOrder', (req, res) => {
+    res.render('pages/ConfirmOrder');
 });
 
 router.post('/complainget', function(req, res) {
