@@ -114,6 +114,21 @@ router.get('/add-to-wish/:id', (req, res, next) => {
     });
 });
 
+router.get('/add-to-wish-from-cart/:id', (req, res, next) => {
+    const productId = req.params.id;
+    const wish = new Wish(req.session.wish ? req.session.wish : {});
+
+    Product.findById(productId, function(err, product) {
+        if (err) {
+            return res.redirect('/allproduct');
+        }
+        wish.add(product, product.id);
+        req.session.wish = wish;
+        console.log(req.session.wish);
+        res.redirect('/cart');
+    });
+});
+
 router.get('/cart', function(req, res, next) {
     if (!req.session.cart) {
         return res.render('pages/Shopping-Cart', { products: null });
