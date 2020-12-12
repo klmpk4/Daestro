@@ -81,15 +81,15 @@
             <div class="panel panel-default ml-5">
                 <div class="panel-body">
                     <ul class="list-group">
-                        <% order.forEach(function(items){ %>
+                        <% order.forEach(function(cart){ %>
                         <li class="list-group-item">
                           <span class="badge"><% price %></span>
-                          <%= items.item.name %>
+                          <%= cart.items.item.name %>
                         </li>
                         <% }); %>
                       </ul>
                 </div>
-            <div class="panel-footer"><%= items.price %></div>
+            <div class="panel-footer"><%= cart.items.price %></div>
             </div>
             <% }); %>
         </div>
