@@ -164,11 +164,12 @@
         <div class="container bg-dark" style="padding: 3%; color: white;">
             <h1>Subscribe</h1>
             <p>To get special offers and VIP treatment:</p>
-            <p><input id="subs" class="w3-input w3-border" type="text" placeholder="Enter e-mail" style="width:100%">
+            <form action="/subscribe", method="post">
+            <p><input id="subs" class="w3-input w3-border" name="email" type="text" placeholder="Enter e-mail" style="width:100%">
                 <span id="subs_r"></span>
             </p>
-
-            <button type="button" id="subs_b" class="btn btn-light w3-btn margin-bottom" onclick="ClickSubscribe()">Subscribe</button>
+            <button type="submit" id="subs_b" class="btn btn-light w3-btn margin-bottom" onclick="ClickSubscribe()">Subscribe</button>
+            </form>
         </div>
         <br>
         <br>
