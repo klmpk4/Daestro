@@ -1,8 +1,12 @@
 const express = require('express');
+const mano = require('mongodb');
+const path = 'mongodb+srv://adelataniaaa:kelompok4@cluster0.w0g5p.mongodb.net/daestro?retryWrites=true&w=majority';
 const router = express.Router();
+const assert = require('assert');
 const Product = require('../models/product');
 const Cart = require('../models/cart');
 const Wish = require('../models/wish');
+const Order = require('../models/order');
 
 router.get('/', (req, res) => {
     res.render('pages/index');
@@ -47,6 +51,24 @@ router.get('/trackorder', (req, res) => {
     res.render('pages/Trackform');
 });
 
+router.get('/remove/:id', (req, res, next) => {
+    const productId = req.params.id;
+    const cart = new Cart(req.session.cart ? req.session.cart : {});
+
+    cart.removeItem(productId);
+    req.session.cart = cart;
+    res.redirect('/cart');
+});
+
+router.get('/remove-w/:id', (req, res, next) => {
+    const productId = req.params.id;
+    const wish = new Wish(req.session.wish ? req.session.wish : {});
+
+    wish.removeItem(productId);
+    req.session.wish = wish;
+    res.redirect('/wishlist');
+});
+
 router.get('/add-to-cart/:id', (req, res, next) => {
     const productId = req.params.id;
     const cart = new Cart(req.session.cart ? req.session.cart : {});
@@ -62,12 +84,19 @@ router.get('/add-to-cart/:id', (req, res, next) => {
     });
 });
 
-router.get('/cart', function(req, res, next) {
-    if (!req.session.cart) {
-        return res.render('pages/Shopping-Cart', { products: null });
-    }
-    var cart = new Cart(req.session.cart);
-    res.render('pages/Shopping-Cart', { products: cart.generateArray(), totalPrice: cart.totalPrice });
+router.get('/add-to-cart-from-wish/:id', (req, res, next) => {
+    const productId = req.params.id;
+    const cart = new Cart(req.session.cart ? req.session.cart : {});
+
+    Product.findById(productId, function(err, product) {
+        if (err) {
+            return res.redirect('/allproduct');
+        }
+        cart.add(product, product.id);
+        req.session.cart = cart;
+        console.log(req.session.cart);
+        res.redirect('/wishlist');
+    });
 });
 
 router.get('/add-to-wish/:id', (req, res, next) => {
@@ -83,6 +112,14 @@ router.get('/add-to-wish/:id', (req, res, next) => {
         console.log(req.session.wish);
         res.redirect('/allproduct');
     });
+});
+
+router.get('/cart', function(req, res, next) {
+    if (!req.session.cart) {
+        return res.render('pages/Shopping-Cart', { products: null });
+    }
+    var cart = new Cart(req.session.cart);
+    res.render('pages/Shopping-Cart', { products: cart.generateArray(), totalPrice: cart.totalPrice });
 });
 
 router.get('/wishlist', (req, res) => {
@@ -109,7 +146,7 @@ router.get('/status', (req, res) => {
     res.render('pages/status');
 });
 
-router.get('/checkout', (req, res, next) => {
+router.get('/checkout', isLoggedIn, (req, res, next) => {
     if (!req.session.cart) {
         return res.redirect('/cart');
     }
@@ -122,7 +159,30 @@ router.post('/checkout', (req, res, next) => {
 })
 
 router.get('/ConfirmOrder', (req, res) => {
-    res.render('pages/ConfirmOrder');
+    if (!req.session.cart) {
+        return res.redirect('/cart');
+    }
+    var cart = new Cart(req.session.cart);
+    var order = new Order({
+        user: req.user,
+        cart: cart,
+        address: req.body.address,
+        fname: req.body.fname,
+        lname: req.body.lname
+    });
+    mano.connect(path, { useNewUrlParser: true, useUnifiedTopology: true },
+        function(err, db) {
+            const database = db.db('daestro')
+            assert.strictEqual(null, err)
+            database.collection('usher').insertOne(order, function(err, result) {
+                assert.strictEqual(null, err);
+                console.log('item inserted');
+            });
+            req.flash('success', 'Successfully bought product!!');
+            req.session.cart = null;
+            console.log('cart deleted');
+            res.render('pages/ConfirmOrder');
+        })
 });
 
 router.post('/complainget', function(req, res) {
@@ -168,3 +228,11 @@ router.post('/paymentconfirmed', function(req, res) {
 });
 
 module.exports = router;
+
+function isLoggedIn(req, res, next) {
+    if (req.isAuthenticated()) {
+        return next();
+    }
+    req.session.oldUrl = req.url;
+    res.redirect('/user/signin');
+};

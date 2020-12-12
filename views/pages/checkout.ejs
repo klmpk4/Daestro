@@ -60,7 +60,7 @@
                     <!--Card-->
                     <div class="card">
                         <!--Card content-->
-                        <form class="card-body" action="/checkout" method="POST" id="checkout-form">
+                        <form class="card-body" action="/checkout" method="post" id="checkout-form">
                             <!--Grid row-->
                             <div class="row">
                                 <!--Grid column-->
@@ -68,7 +68,7 @@
                                     <!--firstName-->
                                     <div class="md-form ">
                                         <label for="firstName" class="">First name</label>
-                                        <input type="text" id="firstName" class="form-control">
+                                        <input type="text" id="firstName" class="form-control" required name="fname">
                                     </div>
                                 </div>
                                 <!--Grid column-->
@@ -77,7 +77,7 @@
                                     <!--lastName-->
                                     <div class="md-form">
                                         <label for="lastName" class="">Last name</label>
-                                        <input type="text" id="lastName" class="form-control">
+                                        <input type="text" id="lastName" class="form-control" required name="lname">
                                     </div>
                                 </div>
                                 <!--Grid column-->
@@ -86,12 +86,12 @@
                             <!--email-->
                             <div class="md-form mb-5">
                                 <label for="email" class="">Email</label>
-                                <input type="text" id="email" class="form-control" placeholder="youremail@example.com">
+                                <input type="text" id="email" class="form-control" required name="email" placeholder="youremail@example.com">
                             </div>
                             <!--address-->
                             <div class="md-form mb-5">
                                 <label for="address" class="">Address 1</label>
-                                <input type="text" id="address" class="form-control" placeholder="1234 Main St">
+                                <input type="text" id="address" class="form-control" required name="address" placeholder="1234 Main St">
                             </div>
                             <!--address-2-->
                             <div class="md-form mb-5">
@@ -104,70 +104,31 @@
                                 <div class="col-lg-4 col-md-12 mb-4">
                                     <label for="country">Country</label>
                                     <select class="custom-select d-block w-100" id="country" required>
-                                        <option value="">Choose...</option>
-                                         <option>Indonesia</option>
-                                    </select>
+                    <option value="">Choose...</option>
+                    <option>Indonesia</option>
+                  </select>
                                     <div class="invalid-feedback">
                                         Please select a valid country.
                                     </div>
                                 </div>
                                 <!--Grid column-->
                                 <!--Grid column-->
-                                <div class="col-lg-4 col-md-6 mb-4">
-                                    <label for="state">State</label>
-                                    <select class="custom-select d-block w-100" id="state" required>
-                                        <option value="">Choose...</option>
-                                        <option>Bekasi</option>
-                                        <option>Bogor</option>
-                                        <option>Depok</option>
-                                        <option>Jakarta</option>
-                                        <option>Tangerang</option>
-                                    </select>
-                                    <div class="invalid-feedback">
-                                        Please provide a valid state.
-                                    </div>
+                                <div class="col-md-4 mb-4">
+                                    <!-- Cart -->
+                                    <ul class="list-group mb-3 z-depth-1">
+                                        <li class="list-group-item d-flex justify-content-between">
+                                            <span>Total</span>
+                                            <strong>Rp <%= total %></strong>
+                                        </li>
+                                    </ul>
+                                    <!-- Cart -->
                                 </div>
                                 <!--Grid column-->
-                                <!--Grid column-->
-                                <div class="col-lg-4 col-md-6 mb-4">
-                                    <label for="zip">Zip</label>
-                                    <input type="text" class="form-control" id="zip" placeholder="" required>
-                                    <div class="invalid-feedback">
-                                        Zip code required.
-                                    </div>
-                                </div>
-                                <!--Grid column-->
+
                             </div>
                             <!--Grid row-->
-                            <hr>
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="same-address">
-                                <label class="custom-control-label" for="same-address">Shipping address is the same as my billing address</label>
-                            </div>
-                            <hr class="mb-4">
-                            <a href="/ConfirmOrder"><button class="btn btn-info btn-lg btn-block" type="button">Pay Now</button></a>
-                        </form>
+
                     </div>
-                    <!--/.Card-->
-                </div>
-                <!--Grid column-->
-                <!--Grid column-->
-                <div class="col-md-4 mb-4">
-                    <!-- Cart -->
-                    <ul class="list-group mb-3 z-depth-1">
-                        <li class="list-group-item d-flex justify-content-between">
-                            <span>Total</span>
-                            <strong>Rp <%= total %></strong>
-                        </li>
-                    </ul>
-                    <!-- Cart -->
-                </div>
-                <!--Grid column-->
-
-            </div>
-            <!--Grid row-->
-
-        </div>
     </main>
     <!--Main layout-->
 
