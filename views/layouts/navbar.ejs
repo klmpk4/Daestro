@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,17 +11,19 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <style>
-      body {
-        font-family:monospace;
-        font-size: larger;
-      }
-      .feather {
-        width: 18px;
-        height: 18px;
-      }
+        body {
+            font-family: monospace;
+            font-size: larger;
+        }
+        
+        .feather {
+            width: 18px;
+            height: 18px;
+        }
     </style>
     <title>navbar</title>
 </head>
+
 <body>
     <!-- Navbar -->
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark" action="/" method="GET">
@@ -29,51 +32,52 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link" href='/allproduct'>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp All Products<span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link" href='/faq'>&nbsp &nbsp &nbsp FAQ<span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href='/howtoorder'>&nbsp &nbsp &nbsp How to Order<span class="sr-only">(current)</span></a>
-          </li>
-          </ul>
-        
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href='/cart'>
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href='/allproduct'>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp All Products<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href='/faq'>&nbsp &nbsp &nbsp FAQ<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href='/howtoorder'>&nbsp &nbsp &nbsp How to Order<span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href='/cart'>
                 Cart<i data-feather="shopping-bag"></i>
                 <% if(session.cart) { %>
-                  <span class="badge badge-success"><%= session.cart.totalQty %></span>
+                  <span class="badge badge-secondary"><%= session.cart.totalQty %></span>
                 <% } %>
               </a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href='/wishlist'>Wishlist<i data-feather="heart"></i><span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item dropdown active">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href='/wishlist'>Wishlist<i data-feather="heart"></i><span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown active">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 User <i data-feather="user"></i>
               </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                      <% if(login) { %>
-                        <a class="dropdown-item" href='/user/logout'>Logout</a>
-                      <% } else { %>
-                        <a class="dropdown-item" href='/user/signin'>Sign In</a>
-                      <a class="dropdown-item" href='/user/signup'>Register</a>
-                      <% } %>
+                        <% if(login) { %>
+                            <a class="dropdown-item" href='/user/logout'>Logout</a>
+                            <% } else { %>
+                                <a class="dropdown-item" href='/user/signin'>Sign In</a>
+                                <a class="dropdown-item" href='/user/signup'>Register</a>
+                                <% } %>
                     </div>
-            </li>
-          </ul>
+                </li>
+            </ul>
         </div>
     </nav>
 
     <!-- feather icons -->
     <script src="https://unpkg.com/feather-icons"></script>
     <script>
-    feather.replace()
+        feather.replace()
     </script>
 </body>
+
 </html>

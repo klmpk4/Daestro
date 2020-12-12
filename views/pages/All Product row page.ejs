@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,67 +13,77 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <style>
-      body {
-        background-image: url('img/webimage.png');
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-size: cover;
-        font-family:monospace;
-        font-size: medium;
-      }
-      .feather {
-        width: 18px;
-        height: 18px;
-      }
-      .middle {
-        padding-left: 15%;
-        padding-top: 100px;
-      }
-      .header {
-        color: white;
-        margin-top: 10%;
-      }
-      .card-body{
-          color :black
+        body {
+            background-image: url('img/webimage.png');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            font-family: monospace;
+            font-size: medium;
+        }
+        
+        .feather {
+            width: 18px;
+            height: 18px;
+        }
+        
+        .middle {
+            padding-left: 15%;
+            padding-top: 100px;
+        }
+        
+        .header {
+            color: white;
+            margin-top: 10%;
+        }
+        
+        .card-body {
+            color: black
         }
     </style>
     <title>All Products</title>
-  </head>
-  <body>
+</head>
+
+<body>
     <header>
-      <%- include('../layouts/navbar.ejs'); %>
+        <%- include('../layouts/navbar.ejs'); %>
     </header>
 
     <main>
-      <br><br><br><br>
-      <div class="container">
-        <div class="row">
-          <% products.forEach(function(product){ %>
-            <div class="col-sm-6 col-md-3 mb-3">
-              <div class="card" style="width: 14rem;">
-                <img class="card-img-top" src="<%= product.imagePath %>" alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title"><%= product.name %></h5>
-                  <div class="price">Rp <%= product.price %></div>
-                  <div class="text-right">
-                    <a href="/add-to-cart/<%= product._id %>" class="btn btn-success" type="button"><i data-feather="shopping-bag"  aria-hidden="true"></i></a>
-                    <a href="#" class="btn btn-success" type="button"><i data-feather="heart"  aria-hidden="true"></i></a>
-                  </div>
-                </div>
-              </div>
+        <br><br><br><br>
+        <div class="container">
+            <div class="row">
+                <% products.forEach(function(product){ %>
+                    <div class="col-sm-6 col-md-3 mb-3">
+                        <div class="card" style="width: 14rem;">
+                            <img class="card-img-top" src="<%= product.imagePath %>" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <%= product.name %>
+                                </h5>
+                                <div class="price">Rp
+                                    <%= product.price %>
+                                </div>
+                                <div class="text-right">
+                                    <a href="/add-to-cart/<%= product._id %>" class="btn btn-info" type="button" data-toggle="tooltip" title="Add to Cart"><i data-feather="shopping-bag"  aria-hidden="true"></i></a>
+                                    <a href="/add-to-wish/<%= product._id %>" class="btn btn-info" type="button" data-toggle="tooltip" title="Add to Wishlist"><i data-feather="heart"  aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <% }) %>
             </div>
-          <% }) %>
-        </div>
     </main>
-  
+
     <footer>
-      <%- include('../layouts/footer.ejs'); %>
+        <%- include('../layouts/footer.ejs'); %>
     </footer>
 
-  <!-- feather icons -->
-  <script src="https://unpkg.com/feather-icons"></script>
-  <script>
-  feather.replace()
-  </script>
-  </body>
+    <!-- feather icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+        feather.replace()
+    </script>
+</body>
+
 </html>

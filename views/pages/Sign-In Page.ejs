@@ -19,10 +19,10 @@
 </head>
 
 <body>
-  <header>
-    <%- include('../layouts/navbar.ejs'); %>
-  </header>
-  <br><br>
+    <header>
+        <%- include('../layouts/navbar.ejs'); %>
+    </header>
+    <br><br>
     <!-- Registration -->
     <div class="container-sign">
         <div class="sign-more"></div>
@@ -33,115 +33,116 @@
             <form class="sign-form" action="/user/signin" method="post">
                 <span class="sign-form-title">Sign In</span>
                 <% if(hasErrors){ %>
-                  <div class="alert alert-danger">
-                    <% messages.forEach(function(message){ %>
-                    <p><%= message %></p>
-                    <% }); %> 
-                  </div>
-                <% } %>
-                <div class="wrap-input">
-                    <span class="lable-input">E-mail</span>
-                    <input class="input" type="email" name="email" id="userEmail" placeholder="example123@email.com" required="required">
-                    <span class="focus-input"></span>
-                </div>
-                <div class="wrap-input">
-                    <span class="lable-input">Password</span>
-                    <input class="input" type="password" name="password" id="userPass" placeholder="********" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required="required">
-                    <input type="checkbox" onclick="myFunction()"> Show Password
-                    <span class="focus-input"></span>
-                </div>
-                
-                <script>
-                    function myFunction() {
-                        var x = document.getElementById("userPass");
-                        if (x.type === "password") {
-                            x.type = "text";
-                        } else {
-                            x.type = "password";
-                        }
-                    }
-                </script>
-                    <script>
-                    var myInput = document.getElementById("userPass");
-var letter = document.getElementById("letter");
-var capital = document.getElementById("capital");
-var number = document.getElementById("number");
-var length = document.getElementById("length");
+                    <div class="alert alert-danger">
+                        <% messages.forEach(function(message){ %>
+                            <p>
+                                <%= message %>
+                            </p>
+                            <% }); %>
+                    </div>
+                    <% } %>
+                        <div class="wrap-input">
+                            <span class="lable-input">E-mail</span>
+                            <input class="input" type="email" name="email" id="userEmail" placeholder="example123@email.com" required="required">
+                            <span class="focus-input"></span>
+                        </div>
+                        <div class="wrap-input">
+                            <span class="lable-input">Password</span>
+                            <input class="input" type="password" name="password" id="userPass" placeholder="********" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required="required">
+                            <input type="checkbox" onclick="myFunction()"> Show Password
+                            <span class="focus-input"></span>
+                        </div>
 
-myInput.onfocus = function() {
-  document.getElementById("message").style.display = "block";
-}
+                        <script>
+                            function myFunction() {
+                                var x = document.getElementById("userPass");
+                                if (x.type === "password") {
+                                    x.type = "text";
+                                } else {
+                                    x.type = "password";
+                                }
+                            }
+                        </script>
+                        <script>
+                            var myInput = document.getElementById("userPass");
+                            var letter = document.getElementById("letter");
+                            var capital = document.getElementById("capital");
+                            var number = document.getElementById("number");
+                            var length = document.getElementById("length");
 
-myInput.onblur = function() {
-  document.getElementById("message").style.display = "none";
-}
+                            myInput.onfocus = function() {
+                                document.getElementById("message").style.display = "block";
+                            }
 
-myInput.onkeyup = function() {
+                            myInput.onblur = function() {
+                                document.getElementById("message").style.display = "none";
+                            }
 
-  var lowerCaseLetters = /[a-z]/g;
-  if(myInput.value.match(lowerCaseLetters)) {  
-    letter.classList.remove("invalid");
-    letter.classList.add("valid");
-  } else {
-    letter.classList.remove("valid");
-    letter.classList.add("invalid");
-  }
-  
-  var upperCaseLetters = /[A-Z]/g;
-  if(myInput.value.match(upperCaseLetters)) {  
-    capital.classList.remove("invalid");
-    capital.classList.add("valid");
-  } else {
-    capital.classList.remove("valid");
-    capital.classList.add("invalid");
-  }
+                            myInput.onkeyup = function() {
 
-  var numbers = /[0-9]/g;
-  if(myInput.value.match(numbers)) {  
-    number.classList.remove("invalid");
-    number.classList.add("valid");
-  } else {
-    number.classList.remove("valid");
-    number.classList.add("invalid");
-  }
-  
-  if(myInput.value.length >= 8) {
-    length.classList.remove("invalid");
-    length.classList.add("valid");
-  } else {
-    length.classList.remove("valid");
-    length.classList.add("invalid");
-  }
-}
-                </script>
+                                var lowerCaseLetters = /[a-z]/g;
+                                if (myInput.value.match(lowerCaseLetters)) {
+                                    letter.classList.remove("invalid");
+                                    letter.classList.add("valid");
+                                } else {
+                                    letter.classList.remove("valid");
+                                    letter.classList.add("invalid");
+                                }
 
-                <div>
-                    <label class="checkbox-inline"><input type="checkbox" > Remember Me</label>
-                    <br>
-                    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-                    <button type="submit" class="btn btn-success">Sign In</button>
+                                var upperCaseLetters = /[A-Z]/g;
+                                if (myInput.value.match(upperCaseLetters)) {
+                                    capital.classList.remove("invalid");
+                                    capital.classList.add("valid");
+                                } else {
+                                    capital.classList.remove("valid");
+                                    capital.classList.add("invalid");
+                                }
+
+                                var numbers = /[0-9]/g;
+                                if (myInput.value.match(numbers)) {
+                                    number.classList.remove("invalid");
+                                    number.classList.add("valid");
+                                } else {
+                                    number.classList.remove("valid");
+                                    number.classList.add("invalid");
+                                }
+
+                                if (myInput.value.length >= 8) {
+                                    length.classList.remove("invalid");
+                                    length.classList.add("valid");
+                                } else {
+                                    length.classList.remove("valid");
+                                    length.classList.add("invalid");
+                                }
+                            }
+                        </script>
+
+                        <div>
+                            <label class="checkbox-inline"><input type="checkbox" > Remember Me</label>
+                            <br>
+                            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                            <button type="submit" class="btn btn-info">Sign In</button>
                             <br><br>
-                </div>
-                <div class="wrap-input2">
-                    <br>
-                    <span class="lable-input2">OR</span>
-                    <span style="font-size: medium;"><br>Don't have an account? <a href='/user/signup' style="color: black">Sign Up</a> </span>
-                </div>
+                        </div>
+                        <div class="wrap-input2">
+                            <br>
+                            <span class="lable-input2">OR</span>
+                            <span style="font-size: medium;"><br>Don't have an account? <a href='/user/signup' style="color: black">Sign Up</a> </span>
+                        </div>
         </div>
         </form>
     </div>
     </div>
     </div>
-    <br><br>
     <footer>
-      <%- include('../layouts/footer.ejs'); %>
-  </footer>
+        <%- include('../layouts/footer.ejs'); %>
+    </footer>
     <!-- feather icons -->
     <script src="https://unpkg.com/feather-icons"></script>
     <script>
         feather.replace()
     </script>
-    
+
 </body>
 
 </html>

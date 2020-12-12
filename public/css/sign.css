@@ -79,7 +79,7 @@ textarea {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    margin-top: 60px;
+    margin-top: 10px;
     justify-content: space-between;
 }
 
@@ -187,13 +187,13 @@ textarea {
 }
 
 #message {
-    display:none;
+    display: none;
     background: #f1f1f1;
     color: #000;
     position: relative;
     padding: 20px;
     margin-top: 10px;
-  }
+}
 
 #message p {
     padding: 10px 35px;
@@ -203,6 +203,7 @@ textarea {
 .valid {
     color: green;
 }
+
 .valid:before {
     position: relative;
     left: -35px;
@@ -212,7 +213,7 @@ textarea {
 .invalid {
     color: red;
 }
-  
+
 .invalid:before {
     position: relative;
     left: -35px;
