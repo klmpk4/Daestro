@@ -16,19 +16,17 @@ module.exports = function Cart(oldCart){
 
     this.reduce = function(id){
         this.items[id].qty--;
-        this.items[id].price -= this.items[id].item.price;
+        this.items[id].price = this.items[id].item.price;
         this.totalQty--;
         this.totalPrice -= this.items[id].price;
-
         if(this.items[id].qty <= 0){
-            this.totalPrice -= this.items[id].price;
             delete this.items[id];
         }
     }
 
     this.increase = function(id){
         this.items[id].qty++;
-        this.items[id].price += this.items[id].item.price;
+        this.items[id].price = this.items[id].item.price;
         this.totalQty++;
         this.totalPrice += this.items[id].price;
     }
