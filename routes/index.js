@@ -118,7 +118,6 @@ router.get('/add-to-cart-from-wish/:id', (req, res, next) => {
         res.redirect('/wishlist');
     });
 });
-});
 
 router.get('/add-to-wish/:id', (req, res, next) => {
     const productId = req.params.id;
