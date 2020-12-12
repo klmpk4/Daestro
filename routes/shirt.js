@@ -1,7 +1,7 @@
 const express = require ('express');
 const router = express.Router();
 
-        router.get('/Airy_Cotton_Shirt', (req,res) => {
+        router.get('/Cotton_Shirt', (req,res) => {
             res.render('pages/Produk-Shirt1');
         });
         router.get('/Pattern_Shirt', (req,res) => {

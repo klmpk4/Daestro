@@ -248,6 +248,22 @@ router.post('/complainget', function(req, res) {
         });
 });
 
+router.post('/subscribe', function(req, res) {
+    const subs = {
+        email: req.body.email
+    };
+    mano.connect(path, { useNewUrlParser: true, useUnifiedTopology: true },
+        function(err, db) {
+            const database = db.db('daestro')
+            assert.strictEqual(null, err)
+            database.collection('subscription').insertOne(subs, function(err, result) {
+                assert.strictEqual(null, err);
+                console.log('item inserted');
+            })
+            res.redirect('/');
+        });
+});
+
 router.post('/paymentconfirmed', function(req, res) {
     const confirm = {
         Fullname: req.body.FullName,

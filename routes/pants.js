@@ -1,7 +1,7 @@
 const express = require ('express');
 const router = express.Router();
 
-    router.get('/Ankle_Length_Slacks', (req,res) => {
+    router.get('/Ankle_Length', (req,res) => {
         res.render('pages/Produk-Pants1');
     });
     router.get('/Cotton_Legging', (req,res) => {
@@ -10,7 +10,7 @@ const router = express.Router();
     router.get('/Wide-Cut_Jeans', (req,res) => {
         res.render('pages/Produk-Pants4');
     });
-    router.get('/Plaid_Twill_Pants', (req,res) => {
+    router.get('/Plaid_Twill', (req,res) => {
         res.render('pages/Produk-Pants3');
     });
     module.exports = router;

@@ -40,6 +40,9 @@
         .card-body {
             color: black
         }
+        .path{
+            color: black;
+        }
     </style>
     <title>All Products</title>
 </head>
@@ -55,7 +58,7 @@
             <div class="row">
                 <% products.forEach(function(product){ %>
                     <div class="col-sm-6 col-md-3 mb-3">
-                        <a href="<%= product.path %>">
+                        <a class="path" href="<%= product.path %>">
                             <div class="card" style="width: 14rem;">
                                 <img class="card-img-top" src="<%= product.imagePath %>" alt="Card image cap">
                                 <div class="card-body">
