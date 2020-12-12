@@ -105,13 +105,15 @@ router.get('/add-to-cart/:id', (req, res, next) => {
 router.get('/add-to-cart-from-wish/:id', (req, res, next) => {
     const productId = req.params.id;
     const cart = new Cart(req.session.cart ? req.session.cart : {});
-
+    const wish = new Wish(req.session.wish ? req.session.wish : {});
     Product.findById(productId, function(err, product) {
         if (err) {
             return res.redirect('/allproduct');
         }
         cart.add(product, product.id);
+        wish.removeItem(productId);
         req.session.cart = cart;
+        req.session.wish = wish;
         console.log(req.session.cart);
         res.redirect('/wishlist');
     });
@@ -135,13 +137,16 @@ router.get('/add-to-wish/:id', (req, res, next) => {
 router.get('/add-to-wish-from-cart/:id', (req, res, next) => {
     const productId = req.params.id;
     const wish = new Wish(req.session.wish ? req.session.wish : {});
+    const cart = new Cart(req.session.cart ? req.session.cart : {});
 
     Product.findById(productId, function(err, product) {
         if (err) {
             return res.redirect('/allproduct');
         }
         wish.add(product, product.id);
+        cart.removeItem(productId);
         req.session.wish = wish;
+        req.session.cart = cart;
         console.log(req.session.wish);
         res.redirect('/cart');
     });
