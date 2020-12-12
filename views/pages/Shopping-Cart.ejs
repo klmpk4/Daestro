@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+
+    <!-- CSS Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- JSS Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+    <style>
+        body {
+            background-image: url('img/webimage.png');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            font-family: monospace;
+            font-size: larger;
+        }
+        
+        .feather {
+            width: 18px;
+            height: 18px;
+        }
+        
+        .middle {
+            padding-left: 15%;
+            padding-top: 100px;
+        }
+        
+        .header {
+            color: white;
+            margin-top: 10%;
+        }
+        
+        .row {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <%- include('../layouts/navbar.ejs'); %>
+    </header>
+    <main>
+        <br><br><br><br>
+        <!--Section: Block Content-->
+        <section>
+            <div class="row">
+                <!--Grid column-->
+                <div class="col-lg-8">
+                    <!-- Card -->
+                    <div class="card wish-list mb-3">
+                        <div class="card-body">
+                            <% if(products){ %>
+                                <% products.forEach(function(items){ %>
+                                    <div class="row mb-4">
+                                        <div class="col-md-5 col-lg-3 col-xl-3">
+                                            <div class="view zoom overlay z-depth-1 rounded mb-3 mb-md-0">
+                                                <img class="img-fluid w-100" src="<%= items.item.imagePath %>" alt="Sample">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7 col-lg-9 col-xl-9">
+                                            <div>
+                                                <div class="d-flex justify-content-between">
+                                                    <div>
+                                                        <h5>
+                                                            <%= items.item.name %>
+                                                        </h5>
+                                                        <p class="mb-2 text-muted text-uppercase small">Color:
+                                                            <%= items.item.color %>
+                                                        </p>
+                                                        <p class="mb-3 text-muted text-uppercase small">Size: All Size</p>
+                                                    </div>
+                                                    <div>
+                                                        <div class="row">
+                                                            <div class="mb-0 w-100">
+                                                                <div class="input-group">
+                                                                    <span class="input-group-btn">
+                                                                      <a href = "/reduce/<%= items.item._id %>"><button type="button" class="btn btn-default btn-number" data-type="minus" data-field="quant[1]">
+                                                                        <i data-feather="minus-square"></i>
+                                                                      </button></a>
+                                                                    </span>
+                                                                    <input type="text" name="quant[1]" disabled="disabled" class="form-control input-number" value="<%= items.qty %>" min="1" max="10">
+                                                                    <span class="input-group-btn">
+                                                                      <a href = "/increase/<%= items.item._id %>"><button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[1]">
+                                                                        <i data-feather="plus-square"></i>
+                                                                      </button></a>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <div>
+                                                        <a href="/remove/<%= items.item._id %>" type="button" class="card-link-secondary small text-uppercase mr-3">
+                                                            <i data-feather="trash"></i> Remove item </a>
+                                                        <a href="/add-to-wish-from-cart/<%= items.item._id %>" type="button" class="card-link-secondary small text-uppercase">
+                                                            <i data-feather="heart"></i> Add to wishlist </a>
+                                                    </div>
+                                                    <p class="mb-0"><span><strong>Rp <%= items.price %></strong></span></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <% }); %>
+                                        <hr class="mb-4">
+                                        <p class="text-primary mb-0"><i class="fas fa-info-circle mr-1"></i> Do not delay the purchase, adding items to your cart does not mean booking them.</p>
+                        </div>
+                    </div>
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="mb-4">Expected shipping delivery</h5>
+                            <p class="mb-0"> Monday - Friday (12.00 - 18.00).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
+                                    <div>
+                                        <strong>The total amount of</strong>
+                                    </div>
+                                    <span><strong>Rp <%= totalPrice %></strong></span>
+                                </li>
+                            </ul>
+                            <a href='/checkout'><button type="button" class="btn btn-primary btn-block waves-effect waves-light">Checkout</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% } else {%>
+                <div class="card-body" style="width: auto;">
+                    <div class="row">
+                        <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+                            <h4 class="text-center m-auto" style="color:rgb(88, 99, 102);">No items in cart!</h4>
+                        </div>
+                    </div>
+                    <br><br><br><br><br><br>
+                    <% } %>
+                </div>
+        </section>
+    </main>
+
+
+    <footer>
+        <%- include('../layouts/footer.ejs'); %>
+    </footer>
+
+    <!-- feather icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+        feather.replace()
+    </script>
+    <script src="../counter.js"></script>
+</body>
+
+</html>

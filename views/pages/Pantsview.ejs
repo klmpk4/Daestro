@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- JSS Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+    <title>Pants</title>
+    <style>
+        .bloc_left_price {
+            color: #c01508;
+            text-align: center;
+            font-weight: bold;
+            font-size: 150%;
+        }
+        
+        .category_block li:hover {
+            background-color: #007bff;
+        }
+        
+        .category_block li:hover a {
+            color: #ffffff;
+        }
+        
+        .category_block li a {
+            color: #343a40;
+        }
+        
+        .add_to_cart_block .price {
+            color: #c01508;
+            text-align: center;
+            font-weight: bold;
+            font-size: 200%;
+            margin-bottom: 0;
+        }
+        
+        .add_to_cart_block .price_discounted {
+            color: #343a40;
+            text-align: center;
+            text-decoration: line-through;
+            font-size: 140%;
+        }
+        
+        .product_rassurance {
+            padding: 10px;
+            margin-top: 15px;
+            background: #ffffff;
+            border: 1px solid #6c757d;
+            color: #6c757d;
+        }
+        
+        .product_rassurance .list-inline {
+            margin-bottom: 0;
+            text-transform: uppercase;
+            text-align: center;
+        }
+        
+        .product_rassurance .list-inline li:hover {
+            color: #343a40;
+        }
+        
+        .reviews_product .fa-star {
+            color: gold;
+        }
+        
+        .pagination {
+            margin-top: 20px;
+        }
+        
+        body {
+            background-image: url('img/webimage.png');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            font-family: monospace;
+            font-size: larger;
+        }
+        
+        .feather {
+            width: 18px;
+            height: 18px;
+        }
+        
+        .middle {
+            padding-left: 15%;
+            padding-top: 100px;
+        }
+        
+        .header {
+            color: white;
+            margin-top: 10%;
+        }
+        
+        .card-body {
+            color: black
+        }
+        
+        .card {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <%- include('../layouts/navbar.ejs'); %>
+    </header>
+    <main>
+        <br><br><br>
+        <div class="page-content mt-2">
+            <div class="container">
+                <hr>
+                <h3 class="text-center"><b>PANTS</b></h3>
+                <hr>
+                <div class="row row-cols-1 row-cols-md-4">
+                    <div class="col mb-4">
+                        <a href='/pants/Ankle_Length_Slacks'>
+                            <div class="card">
+                                <img src="../img/pants/Ankle length Slacks.jpg" class="card-img-top" alt="2">
+                                <div class="card-body">
+                                    <h5 class="card-title">Ankle Length Slacks</h5>
+                                    <p class="card-text">Rp 99.999</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col mb-4">
+                        <a href='/pants/Cotton_Legging'>
+                            <div class="card">
+                                <img src="../img/pants/Cotton Leggings.jpg" class="card-img-top" alt="8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Cotton Legging</h5>
+                                    <p class="card-text">Rp 99.999</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col mb-4">
+                        <a href='/pants/Wide-Cut_Jeans'>
+                            <div class="card">
+                                <img src="../img/pants/Wide-cut Jeans.jpg" class="card-img-top" alt="12">
+                                <div class="card-body">
+                                    <h5 class="card-title">Wide-cut Jeans</h5>
+                                    <p class="card-text">Rp 299.999</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col mb-4">
+                        <a href='/pants/Plaid_Twill_Pants'>
+                            <div class="card">
+                                <img src="../img/pants/Red n Black Plaid Twill Pants.jpg" class="card-img-top" alt="13">
+                                <div class="card-body">
+                                    <h5 class="card-title">Plaid Twill Pants</h5>
+                                    <p class="card-text">Ro 149.999</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+    </main>
+
+    <%- include('../layouts/footer.ejs'); %>
+        <!-- feather icons -->
+        <script src="https://unpkg.com/feather-icons"></script>
+        <script>
+            feather.replace()
+        </script>
+</body>
+
+</html>
