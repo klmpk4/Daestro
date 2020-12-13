@@ -115,7 +115,7 @@ router.get('/add-to-cart-from-wish/:id', (req, res, next) => {
     });
 });
 
-router.get('/add-to-wish/:id', (req, res, next) => {
+router.get('/add-to-wish/:id', isLoggedIn,(req, res, next) => {
     const productId = req.params.id;
     const wish = new Wish(req.session.wish ? req.session.wish : {});
 
@@ -130,7 +130,7 @@ router.get('/add-to-wish/:id', (req, res, next) => {
     });
 });
 
-router.get('/add-to-wish-from-cart/:id', (req, res, next) => {
+router.get('/add-to-wish-from-cart/:id', isLoggedIn,(req, res, next) => {
     const productId = req.params.id;
     const wish = new Wish(req.session.wish ? req.session.wish : {});
     const cart = new Cart(req.session.cart ? req.session.cart : {});
@@ -156,7 +156,7 @@ router.get('/cart', function(req, res, next) {
     res.render('pages/Shopping-Cart', { products: cart.generateArray(), totalPrice: cart.totalPrice });
 });
 
-router.get('/wishlist', (req, res) => {
+router.get('/wishlist', isLoggedIn,(req, res) => {
     if (!req.session.wish) {
         return res.render('pages/Wishlist', { products: null });
     }
