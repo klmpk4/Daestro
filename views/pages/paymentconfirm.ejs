@@ -184,7 +184,7 @@
         }
         
         .formContainer {
-            padding-left: 30%;
+            padding-left: 24%;
         }
         
         .form_generater_form_div {
@@ -199,73 +199,73 @@
     </header>
     <main>
         <!--payment-->
-    <br><br><br><br><br>
-    <div id="wizard-validation-form">
-        <div class="formContainer">
-            <form action="/paymentconfirm" method="post" id="formGeneratorForm">
-                <div class="form_generater_form_div">
-                    <div class="rows">
-                        <div class="col-md-12 clearfix">
-                            <div class="form_title_div">
-                                <hr>
-                                <h3><b>PAYMENT CONFIRMATION</b></h3>
-                                <hr>
-                            </div>
+        <br><br><br><br><br>
+        <div id="wizard-validation-form">
+            <div class="formContainer">
+                <form action="/paymentconfirm" method="post" id="formGeneratorForm">
+                    <div class="form_generater_form_div">
+                        <div class="rows">
                             <div class="col-md-12 clearfix">
-                                <div class="alert_message" style="display:none;">
-                                    <div class="alert alert-success" role="alert">
-                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button> Thank you! The form was submitted successfully.
-                                    </div>
+                                <div class="form_title_div">
+                                    <hr>
+                                    <h3><b>PAYMENT CONFIRMATION</b></h3>
+                                    <hr>
                                 </div>
-                            </div>
-
-                            <div class="col-md-12 form_element clearfix">
-
-                                <div class="row form_container">
-
-                                    <div class="formElement_1 form-group fadeMe text clearfix col-sm-12 textfield paymentCount" data-count="1" id=""><label class="fitText block_label">Full Name*</label><input class="form-control required" name="FullName" id="form_input_1" type="text" placeholder=""> </div>
-                                    <div class="formElement_2 form-group fadeMe text clearfix col-sm-12 textfield paymentCount" data-count="2" id=""><label class="fitText block_label">Email*</label><input class="form-control required" name="Email" id="form_input_2" type="text" placeholder=""> </div>
-                                    <div class="formElement_1 form-group fadeMe text clearfix col-sm-12 textfield paymentCount" data-count="3" id=""><label class="fitText block_label">Phone Number*</label><input onkeypress="return hanyaAngka(event)" class="form-control required" name="PhoneNumber" id="form_input_3" type="text" placeholder=""> </div>
-                                            
+                                <div class="col-md-12 clearfix">
+                                    <div class="alert_message" style="display:none;">
+                                        <div class="alert alert-success" role="alert">
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button> Thank you! The form was submitted successfully.
                                         </div>
                                     </div>
-                                    <div class="formElement_5 form-group fadeMe text clearfix col-sm-12 textfield paymentCount" data-count="5" id=""><label class="fitText block_label">Name in Bank Account*</label><input class="form-control required" name="Name" id="form_input_5" type="text" placeholder=""> </div>
-                                    <div class="formElement_6 form-group fadeMe text clearfix col-sm-12 textfield paymentCount" data-count="6" id=""><label class="fitText block_label">Bank Name*</label><input class="form-control required" name="BankName" id="form_input_6" type="text" placeholder=""> </div>
-                                    <div class="formElement_7 form-group fadeMe text clearfix col-sm-12 textfield paymentCount" data-count="7" id=""><label class="fitText block_label">Transfer Amount*</label><input onkeypress="return hanyaAngka(event)" class="form-control required" name="Transfer" id="form_input_7" type="text" placeholder=""> </div>
-                                    <div class="formElement_8 form-group fadeMe text clearfix col-sm-12 select paymentCount" data-count="8" id=""><label class="fitText block_label">Destination Account*</label><select name="Destination" class="form-control required input6" id="form_input_8"><option value=""> Please Select </option><option value="BCA 1300-300-003 a.n Andre"> BCA 1300-300-003 a.n Andre </option></select></div>
-                                    <div class="formElement_9 form-group fadeMe text clearfix col-sm-12 textfield paymentCount" data-count="9" id=""><label class="fitText block_label">Berita Acara*</label><textarea class="form-control" name="Berita" id="form_input_9" rows="3"></textarea></div>                                  
+                                </div>
+
+                                <div class="col-md-12 form_element clearfix">
+
+                                    <div class="row form_container">
+
+                                        <div class="formElement_1 form-group fadeMe text clearfix col-sm-12 textfield paymentCount" data-count="1" id=""><label class="fitText block_label">Full Name*</label><input class="form-control required" name="FullName" id="form_input_1" type="text" placeholder=""> </div>
+                                        <div class="formElement_2 form-group fadeMe text clearfix col-sm-12 textfield paymentCount" data-count="2" id=""><label class="fitText block_label">Email*</label><input class="form-control required" name="Email" id="form_input_2" type="text" placeholder=""> </div>
+                                        <div class="formElement_1 form-group fadeMe text clearfix col-sm-12 textfield paymentCount" data-count="3" id=""><label class="fitText block_label">Phone Number*</label><input onkeypress="return hanyaAngka(event)" class="form-control required" name="PhoneNumber" id="form_input_3" type="text" placeholder=""> </div>
+
                                     </div>
-
                                 </div>
-                                <div class="clearfix"></div>
-
-
-                                <div class="form_submit_div text-center">
-                                    <button type="submit" class="btn">Confirm Payment<span class="price"></span></button>
-                                </div>
+                                <div class="formElement_5 form-group fadeMe text clearfix col-sm-12 textfield paymentCount" data-count="5" id=""><label class="fitText block_label">Name in Bank Account*</label><input class="form-control required" name="Name" id="form_input_5" type="text" placeholder=""> </div>
+                                <div class="formElement_6 form-group fadeMe text clearfix col-sm-12 textfield paymentCount" data-count="6" id=""><label class="fitText block_label">Bank Name*</label><input class="form-control required" name="BankName" id="form_input_6" type="text" placeholder=""> </div>
+                                <div class="formElement_7 form-group fadeMe text clearfix col-sm-12 textfield paymentCount" data-count="7" id=""><label class="fitText block_label">Transfer Amount*</label><input onkeypress="return hanyaAngka(event)" class="form-control required" name="Transfer" id="form_input_7" type="text" placeholder=""> </div>
+                                <div class="formElement_8 form-group fadeMe text clearfix col-sm-12 select paymentCount" data-count="8" id=""><label class="fitText block_label">Destination Account*</label><select name="Destination" class="form-control required input6" id="form_input_8"><option value=""> Please Select </option><option value="BCA 1300-300-003 a.n Andre"> BCA 1300-300-003 a.n Andre </option></select></div>
+                                <div class="formElement_9 form-group fadeMe text clearfix col-sm-12 textfield paymentCount" data-count="9" id=""><label class="fitText block_label">Berita Acara*</label><textarea class="form-control" name="Berita" id="form_input_9" rows="3"></textarea></div>
                             </div>
+
+                        </div>
+                        <div class="clearfix"></div>
+
+
+                        <div class="form_submit_div text-center">
+                            <button type="submit" class="btn">Confirm Payment<span class="price"></span></button>
                         </div>
                     </div>
-                </div>
-            </form>
+            </div>
+        </div>
+        </div>
+        </form>
         </div>
 
-    </div>
-    <style id="advance_css_text">
-        .sweet-alert[data-has-confirm-button=false][data-has-cancel-button=false] {
-            padding-bottom: 17px;
-        }
-    </style>
+        </div>
+        <style id="advance_css_text">
+            .sweet-alert[data-has-confirm-button=false][data-has-cancel-button=false] {
+                padding-bottom: 17px;
+            }
+        </style>
 
-    <script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js" data-cf-settings="20888b064dc6228849dd403b-|49" defer=""></script>
-    
-    <br>
+        <script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js" data-cf-settings="20888b064dc6228849dd403b-|49" defer=""></script>
+
+        <br>
     </main>
-    
+
     <footer>
         <%- include('../layouts/footer.ejs'); %>
     </footer>
-    
+
     <!-- feather icons -->
     <script src="https://unpkg.com/feather-icons"></script>
     <script src="../script/numbervalidate.js"></script>
