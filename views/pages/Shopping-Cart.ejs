@@ -59,12 +59,12 @@
         <section>
             <div class="row">
                 <!--Grid column-->
-                <% if(products.length > 0) { %>
-                    <% products.forEach(function(items){ %>
-                <div class="col-lg-8">
                     <!-- Card -->
+                <% if(products.length > 0) { %>
+                    <div class="col-lg-8">
                     <div class="card wish-list mb-3">
                         <div class="card-body">
+                    <% products.forEach(function(items){ %>
                                     <div class="row mb-4">
                                         <div class="col-md-5 col-lg-3 col-xl-3">
                                             <div class="view zoom overlay z-depth-1 rounded mb-3 mb-md-0">
@@ -148,12 +148,15 @@
                 <div class="col-md-8 offset-md-2">
                     <!-- Card -->
                     <div class="card wish-list mb-3">
-                    <div class="card-body" style="width: auto;">
-                        <div class="row">
-                            <div class="col-md-8 offset-md-2">
-                                <h4 class="text-center m-auto" style="color:rgb(88, 99, 102);"><br><br><br>No items in Cart!<br></h4>
-                            </div>
+                        <div class="card-body">
+                <div class="card-body" style="width: auto;">
+                    <div class="row">
+                        <div class="col-md-8 offset-md-2">
+                            <h4 class="text-center m-auto" style="color:rgb(88, 99, 102);"><br><br><br>No items in Cart!<br></h4>
                         </div>
+                    </div>
+                    </div>
+                    </div>
                     <br><br><br><br><br><br>
                     <% } %>
                 </div>
