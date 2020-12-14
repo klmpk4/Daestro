@@ -150,7 +150,7 @@ router.get('/add-to-wish-from-cart/:id', isLoggedIn,(req, res, next) => {
 
 router.get('/cart', function(req, res, next) {
     if (!req.session.cart) {
-        return res.render('pages/Shopping-Cart', { products: null });
+        return res.render('pages/Shopping-Cart', { products: 0 });
     }
     var cart = new Cart(req.session.cart);
     res.render('pages/Shopping-Cart', { products: cart.generateArray(), totalPrice: cart.totalPrice });
