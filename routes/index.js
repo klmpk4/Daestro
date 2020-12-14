@@ -158,7 +158,7 @@ router.get('/cart', function(req, res, next) {
 
 router.get('/wishlist', isLoggedIn,(req, res) => {
     if (!req.session.wish) {
-        return res.render('pages/Wishlist', { products: null });
+        return res.render('pages/Wishlist', { products: 0});
     }
     var wish = new Wish(req.session.wish);
     res.render('pages/Wishlist', { products: wish.generateArray() });

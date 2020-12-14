@@ -7,20 +7,6 @@ const Order = require('../models/order');
 const csrfProtection = csrf();
 router.use(csrfProtection);
 
-router.get('/Profile', isLoggedIn, function(req,res,next){
-    Order.find({user: req.user}, function(err,orders){
-        if(err){
-            return res.write('Error!');
-        }
-        var cart;
-        orders.forEach(function(order){
-            cart = new Cart(order.cart);
-            order.items = cart.generateArray();
-        });
-        res.render('pages/Profile',{orders : orders});
-    });
-});
-
 router.get('/logout', isLoggedIn, function(req,res,next){
     req.logout();
     res.redirect('/');
